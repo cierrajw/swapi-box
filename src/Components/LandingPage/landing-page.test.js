@@ -9,7 +9,7 @@ describe('Landing Page', () => {
 
     const wrapper = shallow(<LandingPage />);
 
-    expect(wrapper).toMatchSnapShot();
+    expect(wrapper).toMatchSnapshot();
 
   });
 
