@@ -6,7 +6,7 @@ class LandingPage extends Component{
     super();
 
     this.state={
-      filmText: []
+      filmText: ''
     }
   }
 
@@ -19,7 +19,6 @@ class LandingPage extends Component{
       fetch('https://swapi.co/api/films/')
         .then(response => response.json())
         .then(starWarsData => this.getFilm(starWarsData.results))
-
     } catch(error) {
       console.log(error)
     }
@@ -30,11 +29,12 @@ class LandingPage extends Component{
       return film.opening_crawl
     })
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)]
+    this.setState({filmText: randomScroll})
   }
 
   render(){
     return(
-      <div>HIIIII</div>
+      <div>{this.state.filmText}</div>
     )
   }
 }
