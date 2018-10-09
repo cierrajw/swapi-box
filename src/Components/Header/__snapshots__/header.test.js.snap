@@ -18,6 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": "The Header",
+      "className": "header-div",
     },
     "ref": null,
     "rendered": "The Header",
@@ -30,6 +31,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "The Header",
+        "className": "header-div",
       },
       "ref": null,
       "rendered": "The Header",
