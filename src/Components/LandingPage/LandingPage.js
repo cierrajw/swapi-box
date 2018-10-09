@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { shallow, mount } from 'enzyme';
+import './landing-page.css'
 
 class LandingPage extends Component{
   constructor(){
@@ -34,7 +35,7 @@ class LandingPage extends Component{
 
   render(){
     return(
-      <div>{this.state.filmText}</div>
+      <div className="film-text">{this.state.filmText}</div>
     )
   }
 }
