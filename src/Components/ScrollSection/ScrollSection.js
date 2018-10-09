@@ -36,10 +36,10 @@ class ScrollSection extends Component{
   render(){
     return(
       <div className="swapi-text-div">
-      <h1 className="swapi-title">Swapi Box</h1>
-      <section className="filmtext-container">
-      <div className="film-text">{this.state.filmText}</div>
-      </section>
+        <h1 className="swapi-title">Swapi Boy</h1>
+        <section className="filmtext-container">
+          <div className="film-text">{this.state.filmText}</div>
+        </section>
       </div>
     )
   }
