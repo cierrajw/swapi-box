@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -20,6 +15,34 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.component-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+.right-section{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr;
+}
+
+.scroll-section{
+  grid-column: 1;
+  grid-row: 1/3;
+  height: 100vh;
+}
+
+.header{
+  background-color: yellow;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.card-container{
+  grid-row: 2;
 }
 
 @keyframes App-logo-spin {

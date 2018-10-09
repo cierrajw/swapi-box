@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
-import SideNav from './SideNav.js';
+import ScrollSection from './ScrollSection.js';
 
-describe('Side Nav', () => {
+describe('Scroll Section', () => {
 
   it('should match the snapshot', () => {
 
-    const wrapper = shallow(<SideNav />);
+    const wrapper = shallow(<ScrollSection />);
 
     expect(wrapper).toMatchSnapshot();
 

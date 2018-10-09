@@ -1,10 +1,11 @@
 import React from 'react';
+import './card-container.css'
 
 const CardContainer = () => {
 
   return (
-    <div>
-    CardContainer
+    <div className="card-container">
+    The CardContainer
     </div>
   );
 }
