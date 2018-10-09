@@ -1,0 +1,6 @@
+.buttons-section{
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  background-color: red;
+}
