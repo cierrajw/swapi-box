@@ -1,3 +1,17 @@
 .header-div{
   background-color: green;
 }
+
+.header-section{
+  display: grid;
+  grid-template-areas:
+  "title title title title title favorite";
+}
+
+.swapi-title{
+  grid-area: title;
+}
+
+.favorite{
+  grid-area: favorite;
+}

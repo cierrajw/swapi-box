@@ -20,9 +20,9 @@ class App extends Component {
         <main className="component-container">
         <ScrollSection className="scroll-section"/>
         <section className="right-section">
-          <Header className="header" />
-          <CardContainer className="card-container" />
-          <Buttons className="buttons-section" />
+          <Header className="header"/>
+          <CardContainer className="card-container"/>
+          <Buttons className="buttons-section"/>
         </section>
         </main>
       </div>

@@ -29,13 +29,12 @@
   height: 100vh;
 }
 
-.header{
-  grid-area: header;
+.buttons-section{
+  grid-area: buttons;
 }
 
-.buttons-section{
-  background-color: red;
-  grid-area: buttons;
+.header{
+  grid-area: header;
 }
 
 .card-container{

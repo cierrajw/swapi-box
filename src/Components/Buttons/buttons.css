@@ -1,6 +1,14 @@
 .buttons-section{
   display: flex;
-  justify-content: space-between;
-  width: 400px;
-  background-color: red;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 50rem;
+}
+
+.card-section-button{
+  height: 50px;
+  width: 150px;
+  background-color: #17212B;
+  color: yellow;
 }

@@ -4,13 +4,11 @@ import './buttons.css'
 const Buttons = () => {
 
   return (
-    <div className="card-container">
     <section className="buttons-section">
-    <button>Button1</button>
-    <button>Button2</button>
-    <button>Button3</button>
+    <button className="people-button card-section-button">Button1</button>
+    <button className="planets-button card-section-button">Button2</button>
+    <button className="vehicles-button card-section-button">Button3</button>
     </section>
-    </div>
   );
 }
 
