@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Buttons from '../Buttons/Buttons';
 import CardContainer from '../CardContainer/CardContainer';
 import './App.css';
+import { fetchPeople } from './helper.js'
 
 class App extends Component {
   constructor(){
@@ -14,9 +15,15 @@ class App extends Component {
       favoriteCards: []
     }
   }
+
+  componentDidMount() {
+    fetchPeople()
+  }
+
   render() {
     return (
       <div className="App">
+        <h1 className="swapi-title">Swapi Boy</h1>
         <main className="component-container">
         <ScrollSection className="scroll-section"/>
         <section className="right-section">
