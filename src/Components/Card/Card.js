@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { shallow, mount } from 'enzyme';
+import './card.css'
 
 class Card extends Component{
   constructor(){
@@ -8,7 +9,7 @@ class Card extends Component{
 
   render(){
     return(
-      <div>This is a card</div>
+      <div className="card">This is a card</div>
     )
   }
 }

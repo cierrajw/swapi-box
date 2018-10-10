@@ -4,14 +4,23 @@
 
 .header-section{
   display: grid;
-  grid-template-areas:
-  "title title title title title favorite";
+  grid-template-columns: 1.2fr 1fr;
+  /* grid-template-areas:
+  ". title favorite"; */
 }
 
 .swapi-title{
-  grid-area: title;
+  grid-column: 1;
+  display: flex;
+  justify-self: flex-end;
 }
 
-.favorite{
-  grid-area: favorite;
+.favorites-button{
+  text-align: center;
+  grid-column: 2;
+  height: 30px;
+  width: 80px;
+  display: flex;
+  justify-self: flex-end;
+  margin: 1em;
 }
