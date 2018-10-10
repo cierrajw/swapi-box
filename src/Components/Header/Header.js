@@ -7,8 +7,8 @@ const Header = () => {
     <div className="header-div">
     <section className="header-section">
     <h1 className="swapi-title">Swapi Box</h1>
+    <button className="favorites-button">Favorites</button>
     </section>
-    <button className="favorite">Favorites</button>
     </div>
   );
 }

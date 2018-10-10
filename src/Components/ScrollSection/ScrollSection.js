@@ -13,6 +13,7 @@ class ScrollSection extends Component{
 
   componentDidMount = () => {
     this.displayFilmText()
+    console.log(this.state.filmText)
   }
 
   displayFilmText = () => {
