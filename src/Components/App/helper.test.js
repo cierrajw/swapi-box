@@ -1,33 +1,39 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import helper from './helper.js'
+import * as helper from './helper.js'
 
 describe('Helper', () => {
 
-  describe('fetchPeople', () => {
+  let mockName;
+  let mockPeople;
 
-    let mockName;
-    let mockPersonObj;
+  beforeEach(()=>{
 
-    beforeEach(()=>{
+  mockPeople =
+    [
+      {
+        "name": "Luke Skywalker"
+      }
+    ]
 
-    mockPersonObj = {
-    "results": [
-        {
-            "name": "Luke Skywalker"
-        }
-      ]
-    }
-
-    window.fetch = jest.fn().mockImplementation(()=>{
-      Promise.resolve({
-        json: () => Promise.resolve(mockPersonObj)
-      })
+  window.fetch = jest.fn().mockImplementation(()=>{
+    Promise.resolve({
+      json: () => Promise.resolve(mockPeople)
     })
   })
 
-    it('should fetch  with correct params', () => {
-      //setup
+  });
+
+  describe('fetchPeople', () => {
+
+    it('should fetch with correct params', async () => {
+
+      const expected = 'https://swapi.co/api/people/';
+
+      await helper.fetchPeople();
+
+      expect(window.fetch).toHaveBeenCalledWith(expected);
+
     });
 
   });
