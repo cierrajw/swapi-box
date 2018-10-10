@@ -23,7 +23,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="swapi-title">Swapi Boy</h1>
         <main className="component-container">
         <ScrollSection className="scroll-section"/>
         <section className="right-section">
