@@ -18,6 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": "This is a card",
+      "className": "card",
     },
     "ref": null,
     "rendered": "This is a card",
@@ -30,6 +31,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "This is a card",
+        "className": "card",
       },
       "ref": null,
       "rendered": "This is a card",
