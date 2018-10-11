@@ -36,11 +36,7 @@ class ScrollSection extends Component{
 
   render(){
     return(
-      <div className="crawl-text-div">
-        <section className="filmtext-content">
-          <div className="film-text">{this.state.filmText}</div>
-        </section>
-      </div>
+          <div className="scroll-section">{this.state.filmText}</div>
     )
   }
 }

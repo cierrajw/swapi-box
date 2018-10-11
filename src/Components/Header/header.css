@@ -1,5 +1,6 @@
 .header-div{
   background-color: green;
+  height: 6em;
 }
 
 .header-section{
@@ -9,7 +10,7 @@
   ". title favorite"; */
 }
 
-.swapi-title{
+.swapi-header-title{
   grid-column: 1;
   display: flex;
   justify-self: flex-end;

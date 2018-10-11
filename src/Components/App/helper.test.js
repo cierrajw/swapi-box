@@ -4,7 +4,7 @@ import * as helper from './helper.js'
 
 describe('Helper', () => {
 
-  let mockName;
+  let mockPerson;
   let mockPeople;
 
   beforeEach(()=>{
@@ -15,6 +15,14 @@ describe('Helper', () => {
         "name": "Luke Skywalker"
       }
     ]
+
+  mockPerson = {
+    [
+      {
+        "name:" "Luke Skywalker"
+      }
+    ]
+  }
 
   window.fetch = jest.fn().mockImplementation(()=>{
     Promise.resolve({
@@ -40,10 +48,26 @@ describe('Helper', () => {
 
   describe('fetchNames', () => {
 
+
+  });
+
+  describe('fetchSpecies', () => {
+
+    it('should call fetchNames with correct params', () => {
+      expect(window.fetch).toHaveBeenCalledWithS()
+    });
+
+
+  });
+
+  describe('fetchHomeWorld', () => {
+
     it('should call fetchNames with correct params', () => {
       //setup
     });
 
   });
+
+
 
 });
