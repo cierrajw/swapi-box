@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import ScrollSection from '../ScrollSection/ScrollSection';
-import Header from '../Header/Header';
-import Buttons from '../Buttons/Buttons';
 import CardContainer from '../CardContainer/CardContainer';
+import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { fetchPeople } from './helper.js'
 
@@ -11,14 +9,16 @@ class App extends Component {
     super();
 
     this.state = {
-      displayedCards: [],
+      filmText: '',
       peopleCards: [],
-      favoriteCards: []
+      favoriteCards: [],
+      redirect: false,
+      filmTextShown: true,
     }
   }
 
   componentDidMount() {
-    
+    this.displayFilmText()
   }
 
   displayPeopleCards = async() => {
@@ -26,23 +26,48 @@ class App extends Component {
     this.setState({peopleCards: peopleData});
   }
 
+  displayFilmText = () => {
+    try {
+      fetch('https://swapi.co/api/films/')
+        .then(response => response.json())
+        .then(starWarsData => this.getFilm(starWarsData.results))
+    } catch(error) {
+      console.log(error)
+    }
+  }
+
+  getFilm = (films) => {
+    const filmScrolls = films.map((film, index) => {
+      return film.opening_crawl
+    })
+    const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)]
+    this.setState({filmText: randomScroll})
+  }
+
+  setRedirect = () =>{
+    this.setState({
+      redirect: true,
+      filmTextShown: false
+    })
+  }
+
   render() {
-    return (
-      <div className="App">
-        <main className="component-container">
-        <ScrollSection className="scroll-section"/>
-        <section className="right-section">
-          <Header className="header"/>
-          <CardContainer className="card-container"
-            displayedCards={this.state.peopleCards}
-          />
-          <Buttons className="buttons-section"
-            displayCards = {this.displayPeopleCards}
-          />
-        </section>
-        </main>
-      </div>
-    );
+    const { redirect, filmTextShown } = this.state;
+
+     if(redirect && !filmTextShown){
+       return(
+         <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards}/>
+       )
+     }else{
+       return(
+         <div className={filmTextShown ? 'crawl-text-div' : 'film-text-no-display'}>
+           <section className="filmtext-content">
+             <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
+           </section>
+         </div>
+
+       )
+    }
   }
 }
 
