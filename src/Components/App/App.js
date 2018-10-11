@@ -9,20 +9,39 @@ class App extends Component {
     super();
 
     this.state = {
+      filmText: '',
       peopleCards: [],
       favoriteCards: [],
       redirect: false,
-      filmTextShown: true
+      filmTextShown: true,
     }
   }
 
   componentDidMount() {
-
+    this.displayFilmText()
   }
 
   displayPeopleCards = async() => {
     const peopleData = await fetchPeople();
     this.setState({peopleCards: peopleData});
+  }
+
+  displayFilmText = () => {
+    try {
+      fetch('https://swapi.co/api/films/')
+        .then(response => response.json())
+        .then(starWarsData => this.getFilm(starWarsData.results))
+    } catch(error) {
+      console.log(error)
+    }
+  }
+
+  getFilm = (films) => {
+    const filmScrolls = films.map((film, index) => {
+      return film.opening_crawl
+    })
+    const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)]
+    this.setState({filmText: randomScroll})
   }
 
   setRedirect = () =>{
@@ -43,7 +62,7 @@ class App extends Component {
        return(
          <div className={filmTextShown ? 'crawl-text-div' : 'film-text-no-display'}>
            <section className="filmtext-content">
-             <div className='film-text' onClick={this.setRedirect}>LALALALALLALA</div>
+             <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
            </section>
          </div>
 
