@@ -11,25 +11,34 @@ class App extends Component {
     super();
 
     this.state = {
-      allCards: [],
+      displayedCards: [],
+      peopleCards: [],
       favoriteCards: []
     }
   }
 
   componentDidMount() {
-    fetchPeople()
+    
+  }
+
+  displayPeopleCards = async() => {
+    const peopleData = await fetchPeople();
+    this.setState({peopleCards: peopleData});
   }
 
   render() {
     return (
       <div className="App">
-        <h1 className="swapi-title">Swapi Boy</h1>
         <main className="component-container">
         <ScrollSection className="scroll-section"/>
         <section className="right-section">
-          <Header className="header" />
-          <CardContainer className="card-container" />
-          <Buttons className="buttons-section" />
+          <Header className="header"/>
+          <CardContainer className="card-container"
+            displayedCards={this.state.peopleCards}
+          />
+          <Buttons className="buttons-section"
+            displayCards = {this.displayPeopleCards}
+          />
         </section>
         </main>
       </div>
