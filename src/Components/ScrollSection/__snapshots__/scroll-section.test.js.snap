@@ -17,16 +17,12 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <section
-        className="filmtext-content"
-      >
-        <div
-          className="film-text"
-        >
+      "children": <section>
+        <div>
           
         </div>
       </section>,
-      "className": "crawl-text-div",
+      "className": "scroll-div",
     },
     "ref": null,
     "rendered": Object {
@@ -34,12 +30,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <div
-          className="film-text"
-        >
+        "children": <div>
           
         </div>,
-        "className": "filmtext-content",
       },
       "ref": null,
       "rendered": Object {
@@ -48,7 +41,6 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "",
-          "className": "film-text",
         },
         "ref": null,
         "rendered": "",
@@ -64,16 +56,12 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <section
-          className="filmtext-content"
-        >
-          <div
-            className="film-text"
-          >
+        "children": <section>
+          <div>
             
           </div>
         </section>,
-        "className": "crawl-text-div",
+        "className": "scroll-div",
       },
       "ref": null,
       "rendered": Object {
@@ -81,12 +69,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <div
-            className="film-text"
-          >
+          "children": <div>
             
           </div>,
-          "className": "filmtext-content",
         },
         "ref": null,
         "rendered": Object {
@@ -95,7 +80,6 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "",
-            "className": "film-text",
           },
           "ref": null,
           "rendered": "",
