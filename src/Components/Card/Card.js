@@ -8,8 +8,14 @@ class Card extends Component{
   }
 
   render(){
+    const {name, age, species} = this.props;
+
     return(
-      <div className="card">This is a card</div>
+      <div className="card">
+        <h2>{name}</h2>
+        <h4>{age}</h4>
+        <h4>{species}</h4>
+      </div>
     )
   }
 }

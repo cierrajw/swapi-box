@@ -19,7 +19,7 @@ class LandingPage extends Component{
         <section className="right-section">
           <Header className="header"/>
           <CardContainer className="card-container" displayedCards={this.props.displayedCards}/>
-          <Buttons className="buttons-section" displayCards={this.props.displayCards}/>
+          <Buttons className="buttons-section" displayCards={()=>this.props.displayCards}/>
         </section>
         </main>
       </div>

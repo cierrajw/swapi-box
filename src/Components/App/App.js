@@ -11,6 +11,7 @@ class SplashPage extends Component{
     super();
 
     this.state={
+      testCards: [{name: 'bob', age: 12, species: 'human'}, {name: 'lauren', age: 23, species: 'droid'}, {name: 'lauren', age: 23, species: 'droid'}],
       displayedCards: [],
       peopleCards: [],
       favoriteCards: [],
@@ -61,13 +62,13 @@ class SplashPage extends Component{
 
     if(redirect && !filmTextShown){
       return(
-        <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards}/>
+        <LandingPage displayedCards={this.state.testCards} displayCards={()=> this.displayPeopleCards}/>
       )
     }else{
       return(
         <div className={filmTextShown ? 'crawl-text-div' : 'film-text-no-display'}>
           <section className="filmtext-content">
-            <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
+            <div className='film-text' onClick={this.setRedirect}>LALALALALLALA</div>
           </section>
         </div>
 

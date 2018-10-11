@@ -4,7 +4,7 @@ import './card-container.css'
 
 const CardContainer = (props) => {
 
-console.log(props)
+console.log(props.displayedCards);
   const displayCards = props.displayedCards.map(card =>
     <Card
       {...card}
