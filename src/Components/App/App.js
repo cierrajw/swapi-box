@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import ScrollSection from '../ScrollSection/ScrollSection';
-import Header from '../Header/Header';
-import Buttons from '../Buttons/Buttons';
+
 import CardContainer from '../CardContainer/CardContainer';
 import './App.css';
 import { fetchPeople } from './helper.js'
@@ -18,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   displayPeopleCards = async() => {
