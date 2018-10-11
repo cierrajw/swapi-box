@@ -1,7 +1,6 @@
-.crawl-text-div{
+/*.crawl-text-div{
   background-color: black;
   height: 90rem;
-  /*width: 47%;*/
   -ms-transform-origin: 50% 100%;
   -webkit-box-shadow: 0 0 10px #9ecaed;
   -webkit-transform-origin: 50% 100%;
@@ -11,18 +10,13 @@
   box-shadow: 0 0 33px #f11203;
   color: red;
   font-family: "Nanum Gothic Coding", monospace;
-  /*font-size: 370%;*/
   font-weight: bold;
-  /*height: 26rem;*/
-  /*left: 50%;*/
   line-height: 18vh;
-  /*margin-left: -12rem;*/
   outline: none;
   overflow: hidden;
   text-align: justify;
   transform-origin: 50% 100%;
   transform: perspective(364px) rotateX(20deg);
-  /*width: 16rem; */
 }
 
 .filmtext-content {
@@ -35,4 +29,4 @@
   font-family: yellow;
   font-size: 5rem;
   padding: 2vh;
-}
+}*/
