@@ -11,13 +11,19 @@ class App extends Component {
     super();
 
     this.state = {
-      allCards: [],
+      displayedCards: [],
+      peopleCards: [],
       favoriteCards: []
     }
   }
 
   componentDidMount() {
-    fetchPeople()
+    
+  }
+
+  displayPeopleCards = async() => {
+    const peopleData = await fetchPeople();
+    this.setState({peopleCards: peopleData});
   }
 
   render() {
@@ -27,8 +33,12 @@ class App extends Component {
         <ScrollSection className="scroll-section"/>
         <section className="right-section">
           <Header className="header"/>
-          <CardContainer className="card-container"/>
-          <Buttons className="buttons-section"/>
+          <CardContainer className="card-container"
+            displayedCards={this.state.peopleCards}
+          />
+          <Buttons className="buttons-section"
+            displayCards = {this.displayPeopleCards}
+          />
         </section>
         </main>
       </div>

@@ -1,47 +1,38 @@
 export const fetchPeople = async () => {
-  try {
-    const url = 'https://swapi.co/api/people/';
-    const response = await fetch(url);
-    const data = await response.json();
-    const names = await fetchNames(data.results);
-    const species = await fetchSpecies(data.results);
-    const homeworld = await fetchHomeWorld(data.results);
-
-    const personCard = await {names, species, homeworld}
-
-    return personCard;
-
-  } catch(error) {
-
-  }
+ try {
+   const url = 'https://swapi.co/api/people/';
+   const response = await fetch(url);
+   const data = await response.json();
+   const unresolvedCharacterPromises = data.results.map(async character => {
+     const name = character.name
+     const species = await fetchSpecies(character.species)
+     const homeworld = await fetchHomeWorld(character.homeworld)
+     const peopleCard = {name, ...species, ...homeworld}
+     console.log()
+     return peopleCard
+   })
+   return Promise.all(unresolvedCharacterPromises)
+ } catch(error) {
+   throw new Error(error.message);
+ }
 }
 
-export const fetchNames = (people) => {
-  const names = people.map(person => person.name)
-
-  return {...names};
+export const fetchSpecies = async(url) => {
+ try {
+   const response = await fetch(url);
+   const speciesData = await response.json();
+   return {species: speciesData.name, language: speciesData.language}
+ } catch(error) {
+   throw new Error(error.message)
+ }
 }
 
-export const fetchSpecies = (people) => {
-
-  const species = people.map(person =>{
-        const unresolvedPromises = person.species.map(async type=>{
-        const response = await fetch(type);
-        const data = await response.json();
-        return {species: data.name}
-      })
-    return Promise.all(unresolvedPromises);
-  })
-  return species;
-}
-
-export const fetchHomeWorld = (people) => {
-  const homeworld = people.map(async person => {
-    const response = await fetch(person.homeworld);
-    const data = await response.json();
-    return {homeworld: data.name, population: data.population}
-  })
-
-  return homeworld;
-
+export const fetchHomeWorld = async (url) => {
+ try {
+   const response = await fetch(url);
+   const homeworldData = await response.json();
+   return {homeworld: homeworldData.name, population: homeworldData.population}
+ } catch(error) {
+   throw new Error(error.message);
+ }
 }

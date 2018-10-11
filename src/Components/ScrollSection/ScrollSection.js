@@ -22,7 +22,7 @@ class ScrollSection extends Component{
         .then(response => response.json())
         .then(starWarsData => this.getFilm(starWarsData.results))
     } catch(error) {
-      console.log(error)
+      throw new Error(error.message)
     }
   }
 
