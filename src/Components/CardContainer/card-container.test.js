@@ -5,9 +5,28 @@ import CardContainer from './CardContainer.js';
 
 describe('Card Container', () => {
 
-  it('should match the snapshot', () => {
+  let displayCards;
 
-    const wrapper = shallow(<CardContainer />);
+  beforeEach(()=>{
+    displayCards = [
+        {
+          homeworld: 'lalla',
+          species: 'human',
+          language: 'Anglish',
+          population: 2000
+        },
+        {
+          homeworld: 'planet earth',
+          species: 'droid',
+          language: 'bblahblah',
+          population: 400
+        }
+    ]
+  });
+
+  it('should match the snapshot', async () => {
+
+    const wrapper = shallow(<CardContainer displayedCards={displayCards}/>);
 
     expect(wrapper).toMatchSnapshot();
 

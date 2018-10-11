@@ -23,7 +23,7 @@ ShallowWrapper {
         <h1
           className="swapi-title"
         >
-          Swapi Box
+          SWAPI BOX
         </h1>
         <button
           className="favorites-button"
@@ -43,7 +43,7 @@ ShallowWrapper {
           <h1
             className="swapi-title"
           >
-            Swapi Box
+            SWAPI BOX
           </h1>,
           <button
             className="favorites-button"
@@ -60,11 +60,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Swapi Box",
+            "children": "SWAPI BOX",
             "className": "swapi-title",
           },
           "ref": null,
-          "rendered": "Swapi Box",
+          "rendered": "SWAPI BOX",
           "type": "h1",
         },
         Object {
@@ -96,7 +96,7 @@ ShallowWrapper {
           <h1
             className="swapi-title"
           >
-            Swapi Box
+            SWAPI BOX
           </h1>
           <button
             className="favorites-button"
@@ -116,7 +116,7 @@ ShallowWrapper {
             <h1
               className="swapi-title"
             >
-              Swapi Box
+              SWAPI BOX
             </h1>,
             <button
               className="favorites-button"
@@ -133,11 +133,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Swapi Box",
+              "children": "SWAPI BOX",
               "className": "swapi-title",
             },
             "ref": null,
-            "rendered": "Swapi Box",
+            "rendered": "SWAPI BOX",
             "type": "h1",
           },
           Object {

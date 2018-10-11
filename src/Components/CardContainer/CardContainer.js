@@ -3,8 +3,10 @@ import Card from '../Card/Card'
 import './card-container.css'
 
 const CardContainer = ({displayedCards}) => {
+
+  console.log(displayedCards)
   const displayCards = displayedCards.map(card =>
-    <Card 
+    <Card
       {...card}
       key={card.name}
     />
@@ -12,7 +14,7 @@ const CardContainer = ({displayedCards}) => {
   // console.log(displayCards)
   return (
     <div className="card-container">
-     {displayCards} 
+     {displayCards}
     </div>
   );
 }
