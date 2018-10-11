@@ -1,29 +1,79 @@
 import React, { Component } from 'react';
-import SplashPage from '../SplashPage/SplashPage'
-import './App.css';
-import { fetchPeople } from './helper.js'
+import { Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { shallow, mount } from 'enzyme';
+import { fetchPeople } from './helper.js';
+import LandingPage from '../LandingPage/LandingPage';
+import './App.css'
 
-class App extends Component {
+class SplashPage extends Component{
   constructor(){
     super();
 
-    this.state = {
-      allCards: [],
-      favoriteCards: []
+    this.state={
+      displayedCards: [],
+      peopleCards: [],
+      favoriteCards: [],
+      filmText: '',
+      redirect: false,
+      filmTextShown: true
     }
   }
 
-  componentDidMount() {
-    fetchPeople()
+  componentDidMount = () => {
+    this.displayFilmText()
+    console.log(this.state.filmText)
   }
 
-  render() {
-    return (
-      <div className="App">
-        <SplashPage />
-      </div>
-    );
+  displayPeopleCards = async() => {
+      const peopleData = await fetchPeople();
+      this.setState({peopleCards: peopleData});
+  }
+
+  displayFilmText = () => {
+    try {
+      fetch('https://swapi.co/api/films/')
+        .then(response => response.json())
+        .then(starWarsData => this.getFilm(starWarsData.results))
+    } catch(error) {
+      console.log(error)
+    }
+  }
+
+  getFilm = (films) => {
+    const filmScrolls = films.map((film, index) => {
+      return film.opening_crawl
+    })
+    const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)]
+    this.setState({filmText: randomScroll})
+  }
+
+  setRedirect = () =>{
+    this.setState({
+      redirect: true,
+      filmTextShown: false
+    })
+  }
+
+  render(){
+
+    const { redirect, filmTextShown } = this.state;
+
+    if(redirect && !filmTextShown){
+      return(
+        <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards}/>
+      )
+    }else{
+      return(
+        <div className={filmTextShown ? 'crawl-text-div' : 'film-text-no-display'}>
+          <section className="filmtext-content">
+            <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
+          </section>
+        </div>
+
+      )
+    }
   }
 }
 
-export default App;
+export default SplashPage;

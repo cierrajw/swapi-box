@@ -18,8 +18,8 @@ class LandingPage extends Component{
         <ScrollSection className="scroll-section"/>
         <section className="right-section">
           <Header className="header"/>
-          <CardContainer className="card-container"/>
-          <Buttons className="buttons-section"/>
+          <CardContainer className="card-container" displayedCards={this.props.displayedCards}/>
+          <Buttons className="buttons-section" displayCards={this.props.displayCards}/>
         </section>
         </main>
       </div>

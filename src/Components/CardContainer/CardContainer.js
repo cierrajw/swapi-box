@@ -2,11 +2,18 @@ import React from 'react';
 import Card from '../Card/Card'
 import './card-container.css'
 
-const CardContainer = () => {
+const CardContainer = (props) => {
 
+console.log(props)
+  const displayCards = props.displayedCards.map(card =>
+    <Card
+      {...card}
+      key={card.name}
+    />
+  )
   return (
     <div className="card-container">
-    <Card />
+     {displayCards}
     </div>
   );
 }
