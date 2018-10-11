@@ -1,16 +1,14 @@
 import React from 'react';
 import './buttons.css'
 
-const Buttons = () => {
+const Buttons = ({displayCards}) => {
 
   return (
-    <div className="card-container">
     <section className="buttons-section">
-    <button>Button1</button>
-    <button>Button2</button>
-    <button>Button3</button>
+    <button className="people-button card-section-button" onClick={()=>displayCards()}>People</button>
+    <button className="planets-button card-section-button">Planets</button>
+    <button className="vehicles-button card-section-button">Vehicles</button>
     </section>
-    </div>
   );
 }
 
