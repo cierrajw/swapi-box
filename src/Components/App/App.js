@@ -8,13 +8,19 @@ class App extends Component {
     super();
 
     this.state = {
-      allCards: [],
+      displayedCards: [],
+      peopleCards: [],
       favoriteCards: []
     }
   }
 
   componentDidMount() {
-    fetchPeople()
+    
+  }
+
+  displayPeopleCards = async() => {
+    const peopleData = await fetchPeople();
+    this.setState({peopleCards: peopleData});
   }
 
   render() {
