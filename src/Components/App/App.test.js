@@ -1,9 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+
+
+describe('App', () => {
+  let wrapper;
+  let mockEvent;
+
+  beforeEach(() => {
+    wrapper=shallow(<App />);
+    mockEvent=jest.fn();
+  })
+
+  it('matches the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  }); 
+
+  it('should invoke displayFilmText on page load', () => {
+    wrapper.instance().displayFilmText(mockEvent);
+    expect(mockEvent).toHaveBeenCalled();
+  })
+  
+})

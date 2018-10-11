@@ -12,10 +12,10 @@ class Card extends Component{
     return(
       <div className="card">
         <h2>{name}</h2>
-        <h4>{homeworld}</h4>
-        <h4>{species}</h4>
-        <h4>{language}</h4>
-        <h4>{population}</h4>
+        <h4>Homeworld: {homeworld}</h4>
+        <h4>Species: {species}</h4>
+        <h4>Language: {language}</h4>
+        <h4>Population: {population}</h4>
       </div>
     )
   }
