@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import ScrollSection from '../ScrollSection/ScrollSection';
-import Header from '../Header/Header';
-import Buttons from '../Buttons/Buttons';
-import CardContainer from '../CardContainer/CardContainer';
+import SplashPage from '../SplashPage/SplashPage'
 import './App.css';
 import { fetchPeople } from './helper.js'
 
@@ -23,14 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <main className="component-container">
-        <ScrollSection className="scroll-section"/>
-        <section className="right-section">
-          <Header className="header"/>
-          <CardContainer className="card-container"/>
-          <Buttons className="buttons-section"/>
-        </section>
-        </main>
+        <SplashPage />
       </div>
     );
   }
