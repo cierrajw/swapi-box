@@ -1,32 +1,4 @@
-/*.crawl-text-div{
-  background-color: black;
-  height: 90rem;
-  -ms-transform-origin: 50% 100%;
-  -webkit-box-shadow: 0 0 10px #9ecaed;
-  -webkit-transform-origin: 50% 100%;
-  -webkit-transform: perspective(300px) rotateX(25deg);
-  border-color: #fb0022;
-  bottom: 0;
-  box-shadow: 0 0 33px #f11203;
-  color: red;
-  font-family: "Nanum Gothic Coding", monospace;
-  font-weight: bold;
-  line-height: 18vh;
-  outline: none;
-  overflow: hidden;
-  text-align: justify;
-  transform-origin: 50% 100%;
-  transform: perspective(364px) rotateX(20deg);
+.scroll-div{
+  background-color: blue;
+  height: 100%;
 }
-
-.filmtext-content {
-  animation: scroll 100s linear 6s;
-  position: absolute;
-  top: 100%; 
-}
-
-.film-text {
-  font-family: yellow;
-  font-size: 5rem;
-  padding: 2vh;
-}*/

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import CardContainer from '../CardContainer/CardContainer';
+import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { fetchPeople } from './helper.js'
 
@@ -9,9 +9,10 @@ class App extends Component {
     super();
 
     this.state = {
-      displayedCards: [],
       peopleCards: [],
-      favoriteCards: []
+      favoriteCards: [],
+      redirect: false,
+      filmTextShown: true
     }
   }
 
@@ -24,23 +25,30 @@ class App extends Component {
     this.setState({peopleCards: peopleData});
   }
 
+  setRedirect = () =>{
+    this.setState({
+      redirect: true,
+      filmTextShown: false
+    })
+  }
+
   render() {
-    return (
-      <div className="App">
-        <main className="component-container">
-        <ScrollSection className="scroll-section"/>
-        <section className="right-section">
-          <Header className="header"/>
-          <CardContainer className="card-container"
-            displayedCards={this.state.peopleCards}
-          />
-          <Buttons className="buttons-section"
-            displayCards = {this.displayPeopleCards}
-          />
-        </section>
-        </main>
-      </div>
-    );
+    const { redirect, filmTextShown } = this.state;
+
+     if(redirect && !filmTextShown){
+       return(
+         <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards}/>
+       )
+     }else{
+       return(
+         <div className={filmTextShown ? 'crawl-text-div' : 'film-text-no-display'}>
+           <section className="filmtext-content">
+             <div className='film-text' onClick={this.setRedirect}>LALALALALLALA</div>
+           </section>
+         </div>
+
+       )
+    }
   }
 }
 
