@@ -17,7 +17,7 @@ describe('Helper', () => {
     ]
 
   window.fetch = jest.fn().mockImplementation(()=>{
-    Promise.resolve({
+    return Promise.resolve({
       json: () => Promise.resolve(mockPeople)
     })
   })
@@ -26,11 +26,11 @@ describe('Helper', () => {
 
   describe('fetchPeople', () => {
 
-    it('should fetch with correct params', async () => {
+    it.skip('should fetch with correct params', async () => {
 
       const expected = 'https://swapi.co/api/people/';
 
-      await helper.fetchPeople();
+      await helper.fetchPeople(expected);
 
       expect(window.fetch).toHaveBeenCalledWith(expected);
 
@@ -38,10 +38,53 @@ describe('Helper', () => {
 
   });
 
-  describe('fetchNames', () => {
+  describe('fetchSpecies', () => {
 
-    it('should call fetchNames with correct params', () => {
+    it('should call fetchSpecies with correct params', async () => {
       //setup
+
+      const expectedURL = "https://swapi.co/api/species/1/";
+
+      await helper.fetchSpecies(expectedURL);
+
+      expect(window.fetch).toHaveBeenCalledWith(expectedURL);
+
+    });
+
+    it('should return an object if fetch is successful', async () => {
+
+      // let mockObj = {species: 'human', language: 'anglish'}
+
+      let mockObj = {language: 'anglish'}
+
+      window.fetch = jest.fn().mockImplementation(()=>{
+        return Promise.resolve({
+          json: () => Promise.resolve(mockObj)
+        })
+      })
+
+      const expectedURL = "https://swapi.co/api/species/1/";
+
+      const result = await helper.fetchSpecies(expectedURL);
+
+      console.log(result)
+
+      expect(result).toEqual(mockObj)
+
+    });
+
+  });
+
+  describe('fetchHomeWorld', () => {
+
+    it('should call fetchHomeWorld with correct params', () => {
+      //setup
+
+      // const expectedURL = "https://swapi.co/api/species/1/";
+      //
+      // await helper.fetchHomeWorld(expectedURL);
+      //
+      // expect(window.fetch).toHaveBeenCalledWith(expectedURL);
     });
 
   });

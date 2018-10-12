@@ -4,19 +4,7 @@ exports[`Buttons should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Buttons
-    displayCards={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
+    displayCards={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -34,6 +22,7 @@ ShallowWrapper {
       "children": Array [
         <button
           className="people-button card-section-button"
+          onClick={[Function]}
         >
           People
         </button>,
@@ -59,7 +48,7 @@ ShallowWrapper {
         "props": Object {
           "children": "People",
           "className": "people-button card-section-button",
-          "onClick": undefined,
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "People",
@@ -101,6 +90,7 @@ ShallowWrapper {
         "children": Array [
           <button
             className="people-button card-section-button"
+            onClick={[Function]}
           >
             People
           </button>,
@@ -126,7 +116,7 @@ ShallowWrapper {
           "props": Object {
             "children": "People",
             "className": "people-button card-section-button",
-            "onClick": undefined,
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "People",
