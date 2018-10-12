@@ -60,7 +60,7 @@ class App extends Component {
        )
      }else{
        return(
-         <main>
+         <main className="main-div">
          <div className="swapi-button-section">
          <h1 className="swapi-intro-title">SwapiBox</h1>
          <button className="swapi-button">Explore!</button>

@@ -7,13 +7,19 @@ body{
   flex-direction: column;
 }
 
+.main-div{
+  border: 8px ridge purple;
+  height: 100vh;
+  margin: 2em;
+}
+
 .swapi-intro-title{
   padding: .3em;
   margin:auto;
   color: yellow;
   background-color: black;
   font-size: 7rem;
-  border: 1px solid white;
+  border: 5px groove blue;
   margin-top: .3em;
 }
 
