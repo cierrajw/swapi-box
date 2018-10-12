@@ -1,5 +1,30 @@
 body{
+  background-image: url('./maxresdefault.jpg');
+}
+
+.swapi-button-section{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.swapi-intro-title{
+  padding: .3em;
+  margin:auto;
+  color: yellow;
   background-color: black;
+  font-size: 7rem;
+  border: 1px solid white;
+  margin-top: .3em;
+}
+
+.swapi-button{
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  margin: 1em auto;
+  height: 120px;
+  width: 120px;
+  background-color: yellow;
+  color: black;
 }
 
 .crawl-text-div{
@@ -10,11 +35,6 @@ body{
     right:0;
     transform-origin:50% 100%;
     transform:perspective(300px) rotateX(20deg);
-}
-
-.swapi-title{
-  position: relative;
-  bottom: 2000px;
 }
 
 .film-text{
@@ -29,12 +49,11 @@ body{
     text-align:center;
     font-family:sans-serif;
     font-size: 4rem;
-}
-.film-text{
     padding-top:3500px;
     animation:autoscroll 1000s linear;
 }
-.film-text-no-display{
+
+.no-display{
   display: none;
 }
 
