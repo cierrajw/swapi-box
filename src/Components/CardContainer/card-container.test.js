@@ -6,9 +6,8 @@ import CardContainer from './CardContainer.js';
 describe('Card Container', () => {
 
   it('should match the snapshot', () => {
-
-    const wrapper = shallow(<CardContainer />);
-
+    const mockProps=[{}]
+    const wrapper = shallow(<CardContainer displayedCards={mockProps}/>);
     expect(wrapper).toMatchSnapshot();
 
   });

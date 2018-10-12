@@ -17,11 +17,105 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "This is a card",
+      "children": Array [
+        <h2 />,
+        <h4>
+          Homeworld: 
+        </h4>,
+        <h4>
+          Species: 
+        </h4>,
+        <h4>
+          Language: 
+        </h4>,
+        <h4>
+          Population: 
+        </h4>,
+      ],
       "className": "card",
     },
     "ref": null,
-    "rendered": "This is a card",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Homeworld: ",
+            undefined,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Homeworld: ",
+          undefined,
+        ],
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Species: ",
+            undefined,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Species: ",
+          undefined,
+        ],
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Language: ",
+            undefined,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Language: ",
+          undefined,
+        ],
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Population: ",
+            undefined,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Population: ",
+          undefined,
+        ],
+        "type": "h4",
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -30,11 +124,105 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "This is a card",
+        "children": Array [
+          <h2 />,
+          <h4>
+            Homeworld: 
+          </h4>,
+          <h4>
+            Species: 
+          </h4>,
+          <h4>
+            Language: 
+          </h4>,
+          <h4>
+            Population: 
+          </h4>,
+        ],
         "className": "card",
       },
       "ref": null,
-      "rendered": "This is a card",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Homeworld: ",
+              undefined,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Homeworld: ",
+            undefined,
+          ],
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Species: ",
+              undefined,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Species: ",
+            undefined,
+          ],
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Language: ",
+              undefined,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Language: ",
+            undefined,
+          ],
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Population: ",
+              undefined,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Population: ",
+            undefined,
+          ],
+          "type": "h4",
+        },
+      ],
       "type": "div",
     },
   ],
