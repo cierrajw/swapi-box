@@ -5,7 +5,6 @@ body{
 .swapi-button-section{
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 }
 
 .swapi-intro-title{
@@ -56,22 +55,6 @@ body{
 .no-display{
   display: none;
 }
-
-/* crawl-text-div{
-    color:yellow;
-    background:black;
-}
-crawl-text-div:after{
-    content:'';
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    background:linear-gradient(top,rgba(0,0,0,1),rgba(0,0,0,0) 100%);
-    background:linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0) 100%);
-    pointer-events:none;
-} */
 
 @keyframes autoscroll{
     to{
