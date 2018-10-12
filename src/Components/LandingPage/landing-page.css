@@ -6,17 +6,7 @@
 
 .right-section{
   display: grid;
-  grid-template-areas:
-  "header"
-  "buttons"
-  "buttons"
-  "cardcontainer"
-  "cardcontainer"
-  "cardcontainer"
-  "cardcontainer"
-  "cardcontainer"
-  "cardcontainer"
-  "cardcontainer";
+  grid-template-rows: .5fr .7fr 5fr;
 }
 
 .scroll-section{
@@ -27,13 +17,13 @@
 }
 
 .buttons-section{
-  grid-area: buttons;
+  grid-row: 2;
 }
 
 .header{
-  grid-area: header;
+  grid-row: 1;
 }
 
 .card-container{
-  grid-area: cardcontainer;
+  grid-row: 3;
 }
