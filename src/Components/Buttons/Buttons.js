@@ -1,5 +1,6 @@
 import React from 'react';
-import './buttons.css'
+import PropTypes from 'prop-types';
+import './buttons.css';
 
 const Buttons = ({displayCards}) => {
 
@@ -10,6 +11,10 @@ const Buttons = ({displayCards}) => {
     <button className="vehicles-button card-section-button">Vehicles</button>
     </section>
   );
+}
+
+Buttons.propTypes = {
+  displayCards: PropTypes.func.isRequired
 }
 
 export default Buttons;
