@@ -1,5 +1,37 @@
+
 body{
+  background-image: url('./maxresdefault.jpg');
+}
+
+.swapi-button-section{
+  display: flex;
+  flex-direction: column;
+}
+
+.main-div{
+  border: 8px ridge purple;
+  height: 100vh;
+  margin: 2em;
+}
+
+.swapi-intro-title{
+  font-family: 'Star Jedi', arial;
+  padding: .3em;
+  margin:auto;
+  color: yellow;
   background-color: black;
+  font-size: 7rem;
+  border: 5px groove blue;
+  margin-top: .3em;
+}
+
+.swapi-button{
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  margin: 1em auto;
+  height: 120px;
+  width: 120px;
+  background-color: yellow;
+  color: black;
 }
 
 .crawl-text-div{
@@ -10,11 +42,6 @@ body{
     right:0;
     transform-origin:50% 100%;
     transform:perspective(300px) rotateX(20deg);
-}
-
-.swapi-title{
-  position: relative;
-  bottom: 2000px;
 }
 
 .film-text{
@@ -29,33 +56,34 @@ body{
     text-align:center;
     font-family:sans-serif;
     font-size: 4rem;
-}
-.film-text{
     padding-top:3500px;
     animation:autoscroll 1000s linear;
 }
-.film-text-no-display{
+
+.no-display{
   display: none;
 }
-
-/* crawl-text-div{
-    color:yellow;
-    background:black;
-}
-crawl-text-div:after{
-    content:'';
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    background:linear-gradient(top,rgba(0,0,0,1),rgba(0,0,0,0) 100%);
-    background:linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0) 100%);
-    pointer-events:none;
-} */
 
 @keyframes autoscroll{
     to{
         margin-top:-50000px;
     }
+}
+
+@keyframes swapi-intro-title {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-0.75em);
+  }
+  20% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+  }
 }

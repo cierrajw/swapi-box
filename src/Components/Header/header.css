@@ -1,12 +1,9 @@
 .header-div{
-  background-color: green;
 }
 
 .header-section{
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  /* grid-template-areas:
-  ". title favorite"; */
 }
 
 .swapi-title{

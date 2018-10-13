@@ -38,7 +38,7 @@ class App extends Component {
 
   getFilm = (films) => {
     const filmScrolls = films.map((film, index) => {
-      return film.opening_crawl
+      return film.opening_crawl;
     })
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)]
     this.setState({filmText: randomScroll})
@@ -56,16 +56,21 @@ class App extends Component {
 
      if(redirect && !filmTextShown){
        return(
-         <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards}/>
+         <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards} filmText={this.state.filmText}/>
        )
      }else{
        return(
-         <div className={filmTextShown ? 'crawl-text-div' : 'film-text-no-display'}>
+         <main className="main-div">
+         <div className="swapi-button-section">
+         <h1 className="swapi-intro-title">SwapiBox</h1>
+         <button className="swapi-button">Explore!</button>
+         </div>
+         <div className="crawl-text-div">
            <section className="filmtext-content">
              <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
            </section>
          </div>
-
+         </main>
        )
     }
   }
