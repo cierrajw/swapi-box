@@ -7,7 +7,7 @@ export const fetchPeople = async () => {
      const name = character.name
      const species = await fetchSpecies(character.species)
      const homeworld = await fetchHomeWorld(character.homeworld)
-     const peopleCard = {name, ...species, ...homeworld}
+     const peopleCard = {name, ...species, ...homeworld, type: 'people'}
      console.log()
      return peopleCard
    })
@@ -48,7 +48,7 @@ export const fetchPlanets = async () => {
       const population = planet.population;
       const climate = planet.climate;
       const residents = await fetchResidents(planet.residents);
-      const planetCard = {name, terrain, population, climate, residents: residents}
+      const planetCard = {name, terrain, population, climate, residents: residents, type: 'planets'}
       console.log(planetCard)
     })
   } catch(error) {
