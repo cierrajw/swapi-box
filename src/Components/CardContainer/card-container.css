@@ -1,3 +1,7 @@
 .card-container{
   background-color: purple;
+  margin: 2em;
+  border-radius: 5em;
+  opacity: .6;
+  border: 1px solid gold;
 }

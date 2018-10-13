@@ -19,10 +19,18 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h2 />,
-        <h4 />,
-        <h4 />,
-        <h4 />,
-        <h4 />,
+        <h4>
+          Homeworld: 
+        </h4>,
+        <h4>
+          Species: 
+        </h4>,
+        <h4>
+          Language: 
+        </h4>,
+        <h4>
+          Population: 
+        </h4>,
       ],
       "className": "card",
     },
@@ -44,10 +52,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            "Homeworld: ",
+            undefined,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          "Homeworld: ",
+          undefined,
+        ],
         "type": "h4",
       },
       Object {
@@ -55,10 +69,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            "Species: ",
+            undefined,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          "Species: ",
+          undefined,
+        ],
         "type": "h4",
       },
       Object {
@@ -66,10 +86,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            "Language: ",
+            undefined,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          "Language: ",
+          undefined,
+        ],
         "type": "h4",
       },
       Object {
@@ -77,10 +103,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            "Population: ",
+            undefined,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          "Population: ",
+          undefined,
+        ],
         "type": "h4",
       },
     ],
@@ -94,10 +126,18 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h2 />,
-          <h4 />,
-          <h4 />,
-          <h4 />,
-          <h4 />,
+          <h4>
+            Homeworld: 
+          </h4>,
+          <h4>
+            Species: 
+          </h4>,
+          <h4>
+            Language: 
+          </h4>,
+          <h4>
+            Population: 
+          </h4>,
         ],
         "className": "card",
       },
@@ -119,10 +159,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              "Homeworld: ",
+              undefined,
+            ],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            "Homeworld: ",
+            undefined,
+          ],
           "type": "h4",
         },
         Object {
@@ -130,10 +176,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              "Species: ",
+              undefined,
+            ],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            "Species: ",
+            undefined,
+          ],
           "type": "h4",
         },
         Object {
@@ -141,10 +193,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              "Language: ",
+              undefined,
+            ],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            "Language: ",
+            undefined,
+          ],
           "type": "h4",
         },
         Object {
@@ -152,10 +210,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              "Population: ",
+              undefined,
+            ],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            "Population: ",
+            undefined,
+          ],
           "type": "h4",
         },
       ],

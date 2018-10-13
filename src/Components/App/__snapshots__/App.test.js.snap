@@ -17,81 +17,104 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <section
-        className="filmtext-content"
-      >
+      "children": Array [
         <div
-          className="film-text"
-          onClick={[Function]}
+          className="swapi-button-section"
         >
-          
-        </div>
-      </section>,
-      "className": "crawl-text-div",
+          <h1
+            className="swapi-intro-title"
+          >
+            SwapiBox
+          </h1>
+          <button
+            className="swapi-button"
+          >
+            Explore!
+          </button>
+        </div>,
+        <div
+          className="crawl-text-div"
+        >
+          <section
+            className="filmtext-content"
+          >
+            <div
+              className="film-text"
+              onClick={[Function]}
+            >
+              
+            </div>
+          </section>
+        </div>,
+      ],
+      "className": "main-div",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="film-text"
-          onClick={[Function]}
-        >
-          
-        </div>,
-        "className": "filmtext-content",
-      },
-      "ref": null,
-      "rendered": Object {
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "",
-          "className": "film-text",
-          "onClick": [Function],
+          "children": Array [
+            <h1
+              className="swapi-intro-title"
+            >
+              SwapiBox
+            </h1>,
+            <button
+              className="swapi-button"
+            >
+              Explore!
+            </button>,
+          ],
+          "className": "swapi-button-section",
         },
         "ref": null,
-        "rendered": "",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "SwapiBox",
+              "className": "swapi-intro-title",
+            },
+            "ref": null,
+            "rendered": "SwapiBox",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Explore!",
+              "className": "swapi-button",
+            },
+            "ref": null,
+            "rendered": "Explore!",
+            "type": "button",
+          },
+        ],
         "type": "div",
       },
-      "type": "section",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <section
-          className="filmtext-content"
-        >
-          <div
-            className="film-text"
-            onClick={[Function]}
-          >
-            
-          </div>
-        </section>,
-        "className": "crawl-text-div",
-      },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <div
-            className="film-text"
-            onClick={[Function]}
+          "children": <section
+            className="filmtext-content"
           >
-            
-          </div>,
-          "className": "filmtext-content",
+            <div
+              className="film-text"
+              onClick={[Function]}
+            >
+              
+            </div>
+          </section>,
+          "className": "crawl-text-div",
         },
         "ref": null,
         "rendered": Object {
@@ -99,17 +122,174 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "",
-            "className": "film-text",
-            "onClick": [Function],
+            "children": <div
+              className="film-text"
+              onClick={[Function]}
+            >
+              
+            </div>,
+            "className": "filmtext-content",
           },
           "ref": null,
-          "rendered": "",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "",
+              "className": "film-text",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "",
+            "type": "div",
+          },
+          "type": "section",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "main",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="swapi-button-section"
+          >
+            <h1
+              className="swapi-intro-title"
+            >
+              SwapiBox
+            </h1>
+            <button
+              className="swapi-button"
+            >
+              Explore!
+            </button>
+          </div>,
+          <div
+            className="crawl-text-div"
+          >
+            <section
+              className="filmtext-content"
+            >
+              <div
+                className="film-text"
+                onClick={[Function]}
+              >
+                
+              </div>
+            </section>
+          </div>,
+        ],
+        "className": "main-div",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1
+                className="swapi-intro-title"
+              >
+                SwapiBox
+              </h1>,
+              <button
+                className="swapi-button"
+              >
+                Explore!
+              </button>,
+            ],
+            "className": "swapi-button-section",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "SwapiBox",
+                "className": "swapi-intro-title",
+              },
+              "ref": null,
+              "rendered": "SwapiBox",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Explore!",
+                "className": "swapi-button",
+              },
+              "ref": null,
+              "rendered": "Explore!",
+              "type": "button",
+            },
+          ],
           "type": "div",
         },
-        "type": "section",
-      },
-      "type": "div",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <section
+              className="filmtext-content"
+            >
+              <div
+                className="film-text"
+                onClick={[Function]}
+              >
+                
+              </div>
+            </section>,
+            "className": "crawl-text-div",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="film-text"
+                onClick={[Function]}
+              >
+                
+              </div>,
+              "className": "filmtext-content",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+                "className": "film-text",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "div",
+            },
+            "type": "section",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "main",
     },
   ],
   Symbol(enzyme.__options__): Object {

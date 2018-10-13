@@ -56,7 +56,7 @@ class App extends Component {
 
      if(redirect && !filmTextShown){
        return(
-         <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards}/>
+         <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards} filmText={this.state.filmText}/>
        )
      }else{
        return(

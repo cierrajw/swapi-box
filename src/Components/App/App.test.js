@@ -13,13 +13,13 @@ describe('App', () => {
     mockEvent=jest.fn();
   })
 
-  it('matches the snapshot', () => {
+  it.skip('matches the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
-  }); 
+  });
 
-  it('should invoke displayFilmText on page load', () => {
+  it.skip('should invoke displayFilmText on page load', () => {
     wrapper.instance().displayFilmText(mockEvent);
     expect(mockEvent).toHaveBeenCalled();
   })
-  
+
 })
