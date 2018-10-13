@@ -11,10 +11,10 @@ const CardContainer = ({displayedCards}) => {
       key={card.name}
     />
   )
-  // console.log(displayCards)
   return (
     <div className="card-container">
      {displayCards}
+     <img src="./ajax-loader.gif"/>
     </div>
   );
 }

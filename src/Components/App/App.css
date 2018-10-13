@@ -1,3 +1,4 @@
+
 body{
   background-image: url('./maxresdefault.jpg');
 }
@@ -14,6 +15,7 @@ body{
 }
 
 .swapi-intro-title{
+  font-family: 'Star Jedi', arial;
   padding: .3em;
   margin:auto;
   color: yellow;
@@ -66,4 +68,22 @@ body{
     to{
         margin-top:-50000px;
     }
+}
+
+@keyframes swapi-intro-title {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-0.75em);
+  }
+  20% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+  }
 }

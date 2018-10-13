@@ -4,5 +4,30 @@
   background-color: yellow;
   width: 13rem;
   height: 20rem;
+  border-radius: 3em;
+  text-align: center;
   /* clip-path: polygon(50% 0, 66% 28%, 98% 35%, 79% 59%, 93% 100%, 49% 89%, 6% 100%, 20% 61%, 2% 35%, 33% 29%); */
 }
+
+
+.card {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* @keyframes card {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+} */

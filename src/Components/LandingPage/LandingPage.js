@@ -12,14 +12,17 @@ class LandingPage extends Component{
   }
 
   render(){
+
+    const { filmText, displayedCards, displayCards } = this.props;
+
     return(
       <div className="LandingPage">
         <main className="component-container">
-        <ScrollSection className="scroll-section"/>
+        <ScrollSection className="scroll-section" filmText={filmText}/>
         <section className="right-section">
           <Header className="header"/>
-          <CardContainer className="card-container" displayedCards={this.props.displayedCards}/>
-          <Buttons className="buttons-section" displayCards={this.props.displayCards}/>
+          <CardContainer className="card-container" displayedCards={displayedCards}/>
+          <Buttons className="buttons-section" displayCards={displayCards}/>
         </section>
         </main>
       </div>
