@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
-import { fetchPeople } from './helper.js'
+import { fetchPeople, fetchPlanets } from './helper.js';
 
 class App extends Component {
   constructor(){
@@ -10,7 +10,9 @@ class App extends Component {
 
     this.state = {
       filmText: '',
+      displayedCards: [],
       peopleCards: [],
+      planetCards: [],
       favoriteCards: [],
       redirect: false,
       filmTextShown: true,
@@ -19,11 +21,23 @@ class App extends Component {
 
   componentDidMount() {
     this.displayFilmText()
+    fetchPlanets()
   }
 
   displayPeopleCards = async() => {
     const peopleData = await fetchPeople();
-    this.setState({peopleCards: peopleData});
+    this.setState({
+      peopleCards: peopleData,
+      displayedCards: peopleData
+    });
+  }
+
+  displayPlanetCards = async() => {
+    const planetData = await fetchPlanets();
+    this.setState({
+      planetCards: planetData,
+      displayedCards: planetData
+    })
   }
 
   displayFilmText = () => {
@@ -56,7 +70,7 @@ class App extends Component {
 
      if(redirect && !filmTextShown){
        return(
-         <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards}/>
+         <LandingPage displayedCards={this.state.displayedCards} displayCards={this.displayPeopleCards}/>
        )
      }else{
        return(
