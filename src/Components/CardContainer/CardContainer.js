@@ -1,6 +1,7 @@
 import React from 'react';
-import Card from '../Card/Card'
-import './card-container.css'
+import Card from '../Card/Card';
+import './card-container.css';
+import PropTypes from 'prop-types';
 
 const CardContainer = ({displayedCards}) => {
 
@@ -11,12 +12,17 @@ const CardContainer = ({displayedCards}) => {
       key={card.name}
     />
   )
+
   return (
     <div className="card-container">
      {displayCards}
      <img src="./ajax-loader.gif"/>
     </div>
   );
+}
+
+CardContainer.propTypes = {
+  displayedCards: PropTypes.array
 }
 
 export default CardContainer;

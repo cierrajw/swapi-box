@@ -6,18 +6,19 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <CardContainer
     displayedCards={
       Array [
-        Object {
+
+         {
           "homeworld": "lalla",
           "language": "Anglish",
           "population": 2000,
           "species": "human",
         },
-        Object {
+        {
           "homeworld": "planet earth",
           "language": "bblahblah",
           "population": 400,
           "species": "droid",
-        },
+        }
       ]
     }
   />,
@@ -56,6 +57,7 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
+
         "props": Object {
           "homeworld": "lalla",
           "language": "Anglish",
@@ -111,6 +113,7 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
+
           "props": Object {
             "homeworld": "lalla",
             "language": "Anglish",
