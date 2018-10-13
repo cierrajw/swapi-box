@@ -8,7 +8,6 @@ export const fetchPeople = async () => {
      const species = await fetchSpecies(character.species)
      const homeworld = await fetchHomeWorld(character.homeworld)
      const peopleCard = {name, ...species, ...homeworld, type: 'people'}
-     console.log()
      return peopleCard
    })
    return Promise.all(unresolvedCharacterPromises)
@@ -69,3 +68,4 @@ const fetchResidents = (residents) => {
     throw new Error(error.message)
   }
 }
+

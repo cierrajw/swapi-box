@@ -1,4 +1,23 @@
 .scroll-div{
-  background-color: blue;
   height: 100%;
+  background-color: black;
+  opacity: .6;
+  margin: 2em;
+}
+
+.scroll-text{
+  color: gold;
+  overflow:hidden;
+  font-size:30px;
+  text-align:center;
+  animation:autoscroll 1000s linear;
+}
+
+@keyframes autoscroll{
+  from{
+    margin-top: 1000px;
+  }
+    to{
+        margin-top:500px;
+    }
 }
