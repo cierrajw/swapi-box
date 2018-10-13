@@ -8,14 +8,24 @@ class Card extends Component{
   }
 
   render(){
-    const {name, homeworld, species, language, population} = this.props;
+    const { mame, homeworld, species, language, population } = this.props;
+    const { name, model, vehicle_class, passengers } = this.props;
+
     return(
       <div className="card">
+
         <h2>{name}</h2>
         <h4>Homeworld: {homeworld}</h4>
         <h4>Species: {species}</h4>
         <h4>Language: {language}</h4>
         <h4>Population: {population}</h4>
+
+        <section>
+          <h2>Vehicle name: {name}</h2>
+          <h4>Model: {model}</h4>
+          <h4>Class: {vehicle_class}</h4>
+          <h4># of Passengers: {passengers}</h4>
+        </section>
       </div>
     )
   }

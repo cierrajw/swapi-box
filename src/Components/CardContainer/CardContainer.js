@@ -2,19 +2,29 @@ import React from 'react';
 import Card from '../Card/Card'
 import './card-container.css'
 
-const CardContainer = ({displayedCards}) => {
+const CardContainer = ({displayPeopleCards, displayVehicleCards}) => {
 
-  console.log(displayedCards)
-  const displayCards = displayedCards.map(card =>
+  const displayedPeopleCards = displayPeopleCards.map(card =>
     <Card
       {...card}
       key={card.name}
     />
   )
+
+  const displayedVehicleCards = displayVehicleCards.map(card=>{
+    return <Card
+      {...card}
+      key={card.name}
+    />
+  })
+
   return (
     <div className="card-container">
-     {displayCards}
-     <img src="./ajax-loader.gif"/>
+
+     <section>{displayedPeopleCards}</section>
+
+     <section>{displayedVehicleCards}</section>
+
     </div>
   );
 }

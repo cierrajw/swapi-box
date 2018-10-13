@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
-import { fetchPeople } from './helper.js'
+import { fetchPeople, fetchVehicles } from './helper.js'
 
 class App extends Component {
   constructor(){
@@ -11,6 +11,8 @@ class App extends Component {
     this.state = {
       filmText: '',
       peopleCards: [],
+      planetsCards: [],
+      vehiclesCards: [],
       favoriteCards: [],
       redirect: false,
       filmTextShown: true,
@@ -21,9 +23,21 @@ class App extends Component {
     this.displayFilmText()
   }
 
-  displayPeopleCards = async() => {
+  getPeopleCards = async () =>{
+
     const peopleData = await fetchPeople();
-    this.setState({peopleCards: peopleData});
+
+    this.setState({
+      peopleCards: peopleData,
+    })
+  }
+
+  getVehicleCards = async () => {
+    const vehicleData = await fetchVehicles();
+
+    this.setState({
+      vehiclesCards: vehicleData
+    })
   }
 
   displayFilmText = () => {
@@ -32,7 +46,6 @@ class App extends Component {
         .then(response => response.json())
         .then(starWarsData => this.getFilm(starWarsData.results))
     } catch(error) {
-      console.log(error)
     }
   }
 
@@ -47,16 +60,20 @@ class App extends Component {
   setRedirect = () =>{
     this.setState({
       redirect: true,
-      filmTextShown: false
     })
   }
 
   render() {
-    const { redirect, filmTextShown } = this.state;
+    const { redirect, filmTextShown, peopleCards, vehiclesCards} = this.state;
 
-     if(redirect && !filmTextShown){
+     if(redirect){
        return(
-         <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards} filmText={this.state.filmText}/>
+         <LandingPage
+         displayPeopleCards={peopleCards}
+         displayVehicleCards={vehiclesCards}
+         getVehicleCards={this.getVehicleCards}
+         getPeopleCards={this.getPeopleCards}
+         filmText={this.state.filmText}/>
        )
      }else{
        return(

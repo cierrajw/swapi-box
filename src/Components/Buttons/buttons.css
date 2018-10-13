@@ -13,3 +13,9 @@
   background-color: #17212B;
   color: yellow;
 }
+
+.button-selected{
+  height: 50px;
+  width: 150px;
+  background-color: blue;
+}
