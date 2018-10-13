@@ -42,17 +42,30 @@ export const fetchPlanets = async () => {
     const url = 'https://swapi.co/api/planets';
     const response = await fetch(url);
     const planetData = await response.json();
-    const unresolvedPlanetPromises = planetData.results.map(planet => {
+    const unresolvedPlanetPromises = planetData.results.map(async planet => {
       const name = planet.name;
       const terrain = planet.terrain;
       const population = planet.population;
       const climate = planet.climate;
-      const residents = await fetch(planet.residents);
-      const planetCard = {name, terrain, population, climate}
+      const residents = await fetchResidents(planet.residents);
+      const planetCard = {name, terrain, population, climate, residents: residents}
+      console.log(planetCard)
     })
   } catch(error) {
     throw new Error(error.message)
   }
 }
 
-
+const fetchResidents = (residents) => {
+  try {
+    const unresolvedResidentPromises = residents.map(async resident => {
+      const response = await fetch(resident);
+      const residentData = await response.json();
+      const residentName = residentData.name;
+      return residentName
+    })
+    return Promise.all(unresolvedResidentPromises)
+  } catch(error) {
+    throw new Error(error.message)
+  }
+}
