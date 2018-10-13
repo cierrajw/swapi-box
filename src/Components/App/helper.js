@@ -36,3 +36,23 @@ export const fetchHomeWorld = async (url) => {
    throw new Error(error.message);
  }
 }
+
+export const fetchPlanets = async () => {
+  try {
+    const url = 'https://swapi.co/api/planets';
+    const response = await fetch(url);
+    const planetData = await response.json();
+    const unresolvedPlanetPromises = planetData.results.map(planet => {
+      const name = planet.name;
+      const terrain = planet.terrain;
+      const population = planet.population;
+      const climate = planet.climate;
+      const residents = await fetch(planet.residents);
+      const planetCard = {name, terrain, population, climate}
+    })
+  } catch(error) {
+    throw new Error(error.message)
+  }
+}
+
+
