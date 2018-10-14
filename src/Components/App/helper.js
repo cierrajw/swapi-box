@@ -4,10 +4,10 @@ export const fetchPeople = async () => {
    const response = await fetch(url);
    const data = await response.json();
    const unresolvedCharacterPromises = data.results.map(async character => {
-     const name = character.name
+     const person_name = character.name
      const species = await fetchSpecies(character.species)
      const homeworld = await fetchHomeWorld(character.homeworld)
-     const peopleCard = {name, ...species, ...homeworld, type: 'people'}
+     const peopleCard = {person_name, ...species, ...homeworld, type: 'people'}
      return peopleCard
    })
    return Promise.all(unresolvedCharacterPromises)
@@ -20,7 +20,7 @@ export const fetchSpecies = async(url) => {
  try {
    const response = await fetch(url);
    const speciesData = await response.json();
-   return {species: speciesData.name, language: speciesData.language}
+   return {species: speciesData.name, language: speciesData.language, type: 'species'}
  } catch(error) {
    throw new Error(error.message)
  }
@@ -34,6 +34,26 @@ export const fetchHomeWorld = async (url) => {
  } catch(error) {
    throw new Error(error.message);
  }
+}
+
+export const fetchVehicles = async () =>{
+  try{
+    const url = "https://swapi.co/api/vehicles/";
+    const response = await fetch(url);
+    const data = await response.json();
+
+  const unresolvedVehiclePromises = data.results.map(async vehicle =>{
+    const vehicle_name = vehicle.name;
+    const model = vehicle.model;
+    const vehicle_class = vehicle.vehicle_class;
+    const passengers = vehicle.passengers;
+    const vehicleCard = {vehicle_name, model, vehicle_class, passengers, type: 'vehicles'}
+    return vehicleCard;
+  })
+    return Promise.all(unresolvedVehiclePromises);
+  }catch(error){
+    throw new Error(error.message)
+  }
 }
 
 export const fetchPlanets = async () => {
@@ -68,4 +88,3 @@ const fetchResidents = (residents) => {
     throw new Error(error.message)
   }
 }
-

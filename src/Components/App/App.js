@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
-import { fetchPeople, fetchPlanets } from './helper.js';
+import { fetchPeople, fetchVehicles } from './helper.js'
 
 class App extends Component {
   constructor(){
@@ -10,9 +10,10 @@ class App extends Component {
 
     this.state = {
       filmText: '',
-      displayedCards: [],
       peopleCards: [],
-      planetCards: [],
+      planetsCards: [],
+      vehiclesCards: [],
+      items: [],
       favoriteCards: [],
       redirect: false,
       filmTextShown: true,
@@ -21,22 +22,24 @@ class App extends Component {
 
   componentDidMount() {
     this.displayFilmText()
-    fetchPlanets()
   }
 
-  displayPeopleCards = async() => {
+  getPeopleCards = async () =>{
+
     const peopleData = await fetchPeople();
+
     this.setState({
       peopleCards: peopleData,
-      displayedCards: peopleData
-    });
+      items: peopleData
+    })
   }
 
-  displayPlanetCards = async() => {
-    const planetData = await fetchPlanets();
+  getVehicleCards = async () => {
+    const vehicleData = await fetchVehicles();
+
     this.setState({
-      planetCards: planetData,
-      displayedCards: planetData
+      vehiclesCards: vehicleData,
+      items: vehicleData
     })
   }
 
@@ -46,7 +49,6 @@ class App extends Component {
         .then(response => response.json())
         .then(starWarsData => this.getFilm(starWarsData.results))
     } catch(error) {
-      console.log(error)
     }
   }
 
@@ -61,16 +63,21 @@ class App extends Component {
   setRedirect = () =>{
     this.setState({
       redirect: true,
-      filmTextShown: false
     })
   }
 
   render() {
-    const { redirect, filmTextShown } = this.state;
+    const { redirect, filmTextShown, peopleCards, vehiclesCards} = this.state;
 
-     if(redirect && !filmTextShown){
+     if(redirect){
        return(
-         <LandingPage displayedCards={this.state.peopleCards} displayCards={this.displayPeopleCards} filmText={this.state.filmText}/>
+         <LandingPage
+         displayPeopleCards={peopleCards}
+         displayVehicleCards={vehiclesCards}
+         getVehicleCards={this.getVehicleCards}
+         getPeopleCards={this.getPeopleCards}
+         filmText={this.state.filmText}
+         items={this.state.items}/>
        )
      }else{
        return(

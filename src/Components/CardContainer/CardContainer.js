@@ -3,10 +3,11 @@ import Card from '../Card/Card';
 import './card-container.css';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({displayedCards}) => {
+const CardContainer = ({items}) => {
 
-  console.log(displayedCards)
-  const displayCards = displayedCards.map(card =>
+  console.log(items);
+
+  const displayCards = items.map(card =>
     <Card
       {...card}
       key={card.name}
@@ -15,8 +16,9 @@ const CardContainer = ({displayedCards}) => {
 
   return (
     <div className="card-container">
-     {displayCards}
-     <img src="./ajax-loader.gif"/>
+
+     <section>{displayCards}</section>
+
     </div>
   );
 }
