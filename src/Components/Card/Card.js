@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { shallow, mount } from 'enzyme';
 import PropTypes from 'prop-types';
-import './card.css'
+import './card.css';
 
 class Card extends Component{
   constructor(){
@@ -21,7 +21,7 @@ class Card extends Component{
     if(this.props.type === 'people'){
       return(
         <div className="card">
-          <h2>Name: {person_name}</h2>
+          <section className="favorite-name"><h2>{person_name}</h2><div className="star-favorite">.</div></section>
           <h4>Homeworld: {homeworld}</h4>
           <h4>Species: {species}</h4>
           <h4>Language: {language}</h4>
@@ -31,7 +31,7 @@ class Card extends Component{
     }else if(this.props.type === 'vehicles'){
       return (
           <div className="card">
-            <h2>Vehicle name: {vehicle_name}</h2>
+            <section className="favorite-name"><h2 className="favorite-name">Vehicle name: {vehicle_name}</h2><div className="star-favorite">.</div></section>
             <h4>Model: {model}</h4>
             <h4>Class: {vehicle_class}</h4>
             <h4># of Passengers: {passengers}</h4>
@@ -43,7 +43,7 @@ class Card extends Component{
         })
         return(
           <div className="card">
-            <h2>Planet: {planet_name}</h2>
+            <section className="favorite-name"><h2 className="favorite-name">Planet: {planet_name}</h2><div className="star-favorite">.</div></section>
             <h4>Terrain: {terrain}</h4>
             <h4>Population: {planet_population}</h4>
             <h4>Climate: {climate}</h4>

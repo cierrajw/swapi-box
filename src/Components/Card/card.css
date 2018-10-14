@@ -4,11 +4,17 @@
   background-color: yellow;
   width: 13rem;
   height: 20rem;
-  border-radius: 3em;
+  border-radius: 2em;
   text-align: center;
-  /* clip-path: polygon(50% 0, 66% 28%, 98% 35%, 79% 59%, 93% 100%, 49% 89%, 6% 100%, 20% 61%, 2% 35%, 33% 29%); */
 }
 
+.star-favorite{
+  color: gold;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: gold;
+  height: 40px;
+  width: 40px;
+}
 
 .card {
 	opacity: 1;
@@ -16,6 +22,14 @@
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 2s;
+}
+
+.favorite-name{
+  border-radius: 2em 2em 0 0;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 @keyframes fadeInOpacity {
@@ -26,8 +40,3 @@
 		opacity: 1;
 	}
 }
-
-/* @keyframes card {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-} */
