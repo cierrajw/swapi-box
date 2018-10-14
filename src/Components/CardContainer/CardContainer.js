@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 
 const CardContainer = ({items}) => {
 
-  console.log(items);
-
   const displayCards = items.map(card =>
+
     <Card
       {...card}
       key={card.name}

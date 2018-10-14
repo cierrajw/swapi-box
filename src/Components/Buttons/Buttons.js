@@ -20,6 +20,17 @@ class Buttons extends Component {
       planetButtonClicked: false,
       vehiclesButtonClicked: false
     })
+  }
+
+  handlePlanetClicked = () =>{
+
+    this.props.getPlanetCards();
+
+    this.setState({
+      peopleButtonClicked: false,
+      planetButtonClicked: true,
+      vehiclesButtonClicked: false
+    })
 
   }
 
@@ -44,9 +55,9 @@ class Buttons extends Component {
 
     return(
       <section className="buttons-section">
-      <button className={isPeopleClicked} onClick={this.handlePeopleClicked} name="people-button">People</button>
-      <button className={isPlanetClicked} onClick={this.handleButtonClicked} name="planets-button">Planets</button>
-      <button className={isVehiclesClicked} onClick={this.handleVehicleClicked} name="vehicles-button">Vehicles</button>
+      <button className={isPeopleClicked} onClick={this.handlePeopleClicked}>People</button>
+      <button className={isPlanetClicked} onClick={this.handlePlanetClicked}>Planets</button>
+      <button className={isVehiclesClicked} onClick={this.handleVehicleClicked}>Vehicles</button>
       </section>
     );
   }

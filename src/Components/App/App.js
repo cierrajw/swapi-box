@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
-import { fetchPeople, fetchVehicles } from './helper.js'
+import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js'
 
 class App extends Component {
   constructor(){
@@ -31,6 +31,17 @@ class App extends Component {
     this.setState({
       peopleCards: peopleData,
       items: peopleData
+    })
+  }
+
+  getPlanetCards = async () =>{
+    const planetData = await fetchPlanets();
+
+    console.log(planetData)
+
+    this.setState({
+      planetsCards: planetData,
+      items: planetData
     })
   }
 
@@ -72,10 +83,9 @@ class App extends Component {
      if(redirect){
        return(
          <LandingPage
-         displayPeopleCards={peopleCards}
-         displayVehicleCards={vehiclesCards}
          getVehicleCards={this.getVehicleCards}
          getPeopleCards={this.getPeopleCards}
+         getPlanetCards={this.getPlanetCards}
          filmText={this.state.filmText}
          items={this.state.items}/>
        )
