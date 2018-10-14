@@ -29,7 +29,6 @@ class App extends Component {
 
     if(!this.state.peopleCards.length) {
       peopleData = await fetchPeople();
-      console.log('fetch')
       localStorage.setItem('people', JSON.stringify(peopleData))
       this.setState({
         peopleCards: peopleData,
@@ -42,22 +41,38 @@ class App extends Component {
   }
 
   getPlanetCards = async () =>{
-    const planetData = await fetchPlanets();
+    let planetData;
 
-    this.setState({
-      planetsCards: planetData,
-      items: planetData
-    })
+    if(!this.state.planetsCards.length) {
+      planetData = await fetchPlanets();
+      localStorage.setItem('planets', JSON.stringify(planetData))
+      this.setState({
+        planetsCards: planetData,
+        items: planetData
+      })
+    }
+    
+    const planetStorage = localStorage.getItem('planets');
+    this.setState({ items: JSON.parse(planetStorage) });
   }
 
   getVehicleCards = async () => {
-    const vehicleData = await fetchVehicles();
+    let vehicleData;
 
-    this.setState({
-      vehiclesCards: vehicleData,
-      items: vehicleData
-    })
+    if(!this.state.vehiclesCards.length) {
+      vehicleData = await fetchPeople();
+      localStorage.setItem('vehicles', JSON.stringify(vehicleData))
+      this.setState({
+        vehiclesCards: vehicleData,
+        items: vehicleData
+      })
+    }
+    
+    const vehicleStorage = localStorage.getItem('vehicles');
+    this.setState({ items: JSON.parse(vehicleStorage) })
   }
+
+  
 
   displayFilmText = () => {
     try {
