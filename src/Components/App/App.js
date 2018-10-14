@@ -16,9 +16,6 @@ class App extends Component {
       favoriteCards: [],
       redirect: false,
       filmTextShown: true,
-      peopleClicked: false,
-      planetsClicked: false,
-      vehiclesClicked: false,
     }
   }
 
@@ -32,17 +29,14 @@ class App extends Component {
 
     this.setState({
       peopleCards: peopleData,
-      peopleClicked: true
     })
   }
 
   getVehicleCards = async () => {
-
     const vehicleData = await fetchVehicles();
 
     this.setState({
-      vehiclesCards: vehicleData,
-      vehiclesClicked: true
+      vehiclesCards: vehicleData
     })
   }
 
@@ -70,7 +64,7 @@ class App extends Component {
   }
 
   render() {
-    const { redirect, filmTextShown, peopleCards, vehiclesCards, peopleClicked, planetsClicked, vehicleClicked} = this.state;
+    const { redirect, filmTextShown, peopleCards, vehiclesCards} = this.state;
 
      if(redirect){
        return(
@@ -79,9 +73,6 @@ class App extends Component {
          displayVehicleCards={vehiclesCards}
          getVehicleCards={this.getVehicleCards}
          getPeopleCards={this.getPeopleCards}
-         peopleClicked={peopleClicked}
-         planetsClicked={planetsClicked}
-         vehiclesClicked={vehicleClicked}
          filmText={this.state.filmText}/>
        )
      }else{

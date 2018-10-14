@@ -18,20 +18,15 @@ const CardContainer = ({displayPeopleCards, displayVehicleCards}) => {
     />
   })
 
-  if(){
-    return (
-      <div className="card-container">{displayedPeopleCards}</div>
-    )
-  }else if(){
-    return (
-      <div className="card-container">
+  return (
+    <div className="card-container">
 
-       <section>{displayedVehicleCards}</section>
+     <section>{displayedPeopleCards}</section>
 
-      </div>
-    );
-  }
+     <section>{displayedVehicleCards}</section>
 
+    </div>
+  );
 }
 
 export default CardContainer;
