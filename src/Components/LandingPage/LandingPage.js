@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import ScrollSection from '../ScrollSection/ScrollSection'
 import Buttons from '../Buttons/Buttons';
 import CardContainer from '../CardContainer/CardContainer';
+import Card from '../Card/Card';
 import './landing-page.css'
 
 class LandingPage extends Component{
@@ -30,7 +31,11 @@ class LandingPage extends Component{
 
           <Buttons className="buttons-section"
           getPeopleCards={getPeopleCards}
-          getVehicleCards={getVehicleCards}/>
+          getVehicleCards={getVehicleCards}
+          peopleClicked={this.props.peopleClicked}
+          vehiclesClicked={this.props.vehiclesClicked}/>
+
+          <Card peopleClicked={this.props.peopleClicked} vehiclesClicked={this.props.vehiclesClicked}/>
         </section>
 
         </main>
