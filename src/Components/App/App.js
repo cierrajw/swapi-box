@@ -43,24 +43,6 @@ class App extends Component {
     })
   }
 
-
-  // getPeopleCards = async () =>{
-  //
-  //   const peopleData = await fetchPeople();
-  //
-  //   this.setState({
-  //     peopleCards: peopleData,
-  //   })
-  // }
-  //
-  // getVehicleCards = async () => {
-  //   const vehicleData = await fetchVehicles();
-  //
-  //   this.setState({
-  //     vehiclesCards: vehicleData
-  //   })
-  // }
-
   displayFilmText = () => {
     try {
       fetch('https://swapi.co/api/films/')

@@ -1,6 +1,7 @@
 import React from 'react';
-import Card from '../Card/Card'
-import './card-container.css'
+import Card from '../Card/Card';
+import './card-container.css';
+import PropTypes from 'prop-types';
 
 const CardContainer = ({items}) => {
 
@@ -20,6 +21,10 @@ const CardContainer = ({items}) => {
 
     </div>
   );
+}
+
+CardContainer.propTypes = {
+  displayedCards: PropTypes.array
 }
 
 export default CardContainer;

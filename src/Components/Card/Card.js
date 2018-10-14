@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { shallow, mount } from 'enzyme';
+import PropTypes from 'prop-types';
 import './card.css'
 
 class Card extends Component{
@@ -34,6 +35,14 @@ class Card extends Component{
         );
       }
   }
+}
+
+Card.propTypes = {
+  name: PropTypes.string,
+  homeworld: PropTypes.string,
+  species: PropTypes.string,
+  language: PropTypes.string,
+  population: PropTypes.string
 }
 
 export default Card;
