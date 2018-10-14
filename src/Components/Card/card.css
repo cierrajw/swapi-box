@@ -2,7 +2,7 @@
   display: inline-block;
   margin: 1rem;
   background-color: yellow;
-  width: 13rem;
+  width: 16rem;
   height: 20rem;
   border-radius: 2em;
   text-align: center;
@@ -25,6 +25,7 @@
 }
 
 .favorite-name{
+  padding: .2em;
   border-radius: 2em 2em 0 0;
   background-color: red;
   display: flex;

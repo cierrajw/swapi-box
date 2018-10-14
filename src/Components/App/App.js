@@ -60,7 +60,7 @@ class App extends Component {
     let vehicleData;
 
     if(!this.state.vehiclesCards.length) {
-      vehicleData = await fetchPeople();
+      vehicleData = await fetchVehicles();
       localStorage.setItem('vehicles', JSON.stringify(vehicleData))
       this.setState({
         vehiclesCards: vehicleData,
