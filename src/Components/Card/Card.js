@@ -14,6 +14,10 @@ class Card extends Component{
 
     const { vehicle_name, model, vehicle_class, passengers } = this.props;
 
+    const { planet_name, terrain, planet_population, climate } = this.props;
+
+    const { residents } = this.props;
+
     if(this.props.type === 'people'){
       return(
         <div className="card">
@@ -33,6 +37,19 @@ class Card extends Component{
             <h4># of Passengers: {passengers}</h4>
           </div>
         );
+      }else if(this.props.type === 'planets'){
+        let residentResult = residents.map(resident=>{
+            return resident;
+        })
+        return(
+          <div className="card">
+            <h2>Planet: {planet_name}</h2>
+            <h4>Terrain: {terrain}</h4>
+            <h4>Population: {planet_population}</h4>
+            <h4>Climate: {climate}</h4>
+            <h4>Residents: {residentResult}</h4>
+          </div>
+        )
       }
   }
 }

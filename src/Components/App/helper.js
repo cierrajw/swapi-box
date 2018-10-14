@@ -62,14 +62,15 @@ export const fetchPlanets = async () => {
     const response = await fetch(url);
     const planetData = await response.json();
     const unresolvedPlanetPromises = planetData.results.map(async planet => {
-      const name = planet.name;
+      const planet_name = planet.name;
       const terrain = planet.terrain;
-      const population = planet.population;
+      const planet_population = planet.population;
       const climate = planet.climate;
       const residents = await fetchResidents(planet.residents);
-      const planetCard = {name, terrain, population, climate, residents: residents, type: 'planets'}
-      console.log(planetCard)
+      const planetCard = {planet_name, terrain, planet_population, climate, residents: residents, type: 'planets'}
+      return planetCard;
     })
+    return Promise.all(unresolvedPlanetPromises);
   } catch(error) {
     throw new Error(error.message)
   }
