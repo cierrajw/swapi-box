@@ -13,11 +13,16 @@ body{
   grid-template-rows: .5fr .7fr 5fr;
 }
 
+.scroll-text{
+  color: gold;
+}
+
 .scroll-section{
   background-color: blue;
   grid-column: 1;
   grid-row: 1/3;
   height: 100vh;
+  color: gold;
 }
 
 .buttons-section{

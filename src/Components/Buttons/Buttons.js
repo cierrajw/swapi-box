@@ -12,32 +12,26 @@ class Buttons extends Component {
     }
   }
 
-  handleButtonClicked = (event) => {
+  handlePeopleClicked = () =>{
+    this.props.getPeopleCards();
+
+    this.setState({
+      peopleButtonClicked: true,
+      planetButtonClicked: false,
+      vehiclesButtonClicked: false
+    })
+
+  }
+
+  handleVehicleClicked = () => {
 
     this.props.getVehicleCards();
 
-    const { name } = event.target;
-
-    if(name === "people-button"){
-      this.setState({
-        peopleButtonClicked: true,
-        planetButtonClicked: false,
-        vehiclesButtonClicked: false
-      })
-    }else if(name === "planets-button"){
-      this.setState({
-        planetButtonClicked: true,
-        peopleButtonClicked: false,
-        vehiclesButtonClicked: false
-      })
-
-    }else if(name === "vehicles-button"){
       this.setState({
         vehiclesButtonClicked: true,
         peopleButtonClicked: false,
         planetButtonClicked: false
       })
-    }
   }
 
   render(){
@@ -50,9 +44,9 @@ class Buttons extends Component {
 
     return(
       <section className="buttons-section">
-      <button className={isPeopleClicked} onClick={this.handleButtonClicked} name="people-button">People</button>
+      <button className={isPeopleClicked} onClick={this.handlePeopleClicked} name="people-button">People</button>
       <button className={isPlanetClicked} onClick={this.handleButtonClicked} name="planets-button">Planets</button>
-      <button className={isVehiclesClicked} onClick={this.handleButtonClicked} name="vehicles-button">Vehicles</button>
+      <button className={isVehiclesClicked} onClick={this.handleVehicleClicked} name="vehicles-button">Vehicles</button>
       </section>
     );
   }

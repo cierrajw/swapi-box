@@ -26,7 +26,8 @@ class LandingPage extends Component{
 
           <CardContainer className="card-container"
           displayPeopleCards={displayPeopleCards}
-          displayVehicleCards={displayVehicleCards}/>
+          displayVehicleCards={displayVehicleCards}
+          items={this.props.items}/>
 
           <Buttons className="buttons-section"
           getPeopleCards={getPeopleCards}

@@ -2,28 +2,21 @@ import React from 'react';
 import Card from '../Card/Card'
 import './card-container.css'
 
-const CardContainer = ({displayPeopleCards, displayVehicleCards}) => {
+const CardContainer = ({items}) => {
 
-  const displayedPeopleCards = displayPeopleCards.map(card =>
+  console.log(items);
+
+  const displayCards = items.map(card =>
     <Card
       {...card}
       key={card.name}
     />
   )
 
-  const displayedVehicleCards = displayVehicleCards.map(card=>{
-    return <Card
-      {...card}
-      key={card.name}
-    />
-  })
-
   return (
     <div className="card-container">
 
-     <section>{displayedPeopleCards}</section>
-
-     <section>{displayedVehicleCards}</section>
+     <section>{displayCards}</section>
 
     </div>
   );

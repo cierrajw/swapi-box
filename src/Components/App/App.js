@@ -13,6 +13,7 @@ class App extends Component {
       peopleCards: [],
       planetsCards: [],
       vehiclesCards: [],
+      items: [],
       favoriteCards: [],
       redirect: false,
       filmTextShown: true,
@@ -29,6 +30,7 @@ class App extends Component {
 
     this.setState({
       peopleCards: peopleData,
+      items: peopleData
     })
   }
 
@@ -36,9 +38,28 @@ class App extends Component {
     const vehicleData = await fetchVehicles();
 
     this.setState({
-      vehiclesCards: vehicleData
+      vehiclesCards: vehicleData,
+      items: vehicleData
     })
   }
+
+
+  // getPeopleCards = async () =>{
+  //
+  //   const peopleData = await fetchPeople();
+  //
+  //   this.setState({
+  //     peopleCards: peopleData,
+  //   })
+  // }
+  //
+  // getVehicleCards = async () => {
+  //   const vehicleData = await fetchVehicles();
+  //
+  //   this.setState({
+  //     vehiclesCards: vehicleData
+  //   })
+  // }
 
   displayFilmText = () => {
     try {
@@ -73,7 +94,8 @@ class App extends Component {
          displayVehicleCards={vehiclesCards}
          getVehicleCards={this.getVehicleCards}
          getPeopleCards={this.getPeopleCards}
-         filmText={this.state.filmText}/>
+         filmText={this.state.filmText}
+         items={this.state.items}/>
        )
      }else{
        return(
