@@ -13,10 +13,6 @@ body{
   grid-template-rows: .5fr .7fr 5fr;
 }
 
-.scroll-text{
-  color: gold;
-}
-
 .scroll-section{
   background-color: blue;
   grid-column: 1;
@@ -25,14 +21,18 @@ body{
   color: gold;
 }
 
-.buttons-section{
-  grid-row: 2;
+.scroll-text{
+    color: gold;
+    overflow-y: visible;
+    font-size:30px;
+    text-align:center;
+    font-family:sans-serif;
+    font-size: 2rem;
+    animation: autoscroll 1000s linear;
 }
 
-.header{
-  grid-row: 1;
-}
-
-.card-container{
-  grid-row: 3;
-}
+/* @keyframes autoscroll{
+    to{
+        margin-top:-50000px;
+    }
+} */

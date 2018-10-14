@@ -51,7 +51,7 @@ class App extends Component {
         items: planetData
       })
     }
-    
+
     const planetStorage = localStorage.getItem('planets');
     this.setState({ items: JSON.parse(planetStorage) });
   }
@@ -67,12 +67,12 @@ class App extends Component {
         items: vehicleData
       })
     }
-    
+
     const vehicleStorage = localStorage.getItem('vehicles');
     this.setState({ items: JSON.parse(vehicleStorage) })
   }
 
-  
+
 
   displayFilmText = () => {
     try {
