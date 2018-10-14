@@ -7,7 +7,7 @@ export const fetchPeople = async () => {
      const name = character.name
      const species = await fetchSpecies(character.species)
      const homeworld = await fetchHomeWorld(character.homeworld)
-     const peopleCard = {name, ...species, ...homeworld}
+     const peopleCard = {name, ...species, ...homeworld, type: 'people'}
      return peopleCard
    })
    return Promise.all(unresolvedCharacterPromises)
@@ -35,3 +35,37 @@ export const fetchHomeWorld = async (url) => {
    throw new Error(error.message);
  }
 }
+
+export const fetchPlanets = async () => {
+  try {
+    const url = 'https://swapi.co/api/planets';
+    const response = await fetch(url);
+    const planetData = await response.json();
+    const unresolvedPlanetPromises = planetData.results.map(async planet => {
+      const name = planet.name;
+      const terrain = planet.terrain;
+      const population = planet.population;
+      const climate = planet.climate;
+      const residents = await fetchResidents(planet.residents);
+      const planetCard = {name, terrain, population, climate, residents: residents, type: 'planets'}
+      console.log(planetCard)
+    })
+  } catch(error) {
+    throw new Error(error.message)
+  }
+}
+
+const fetchResidents = (residents) => {
+  try {
+    const unresolvedResidentPromises = residents.map(async resident => {
+      const response = await fetch(resident);
+      const residentData = await response.json();
+      const residentName = residentData.name;
+      return residentName
+    })
+    return Promise.all(unresolvedResidentPromises)
+  } catch(error) {
+    throw new Error(error.message)
+  }
+}
+
