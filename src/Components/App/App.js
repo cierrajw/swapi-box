@@ -25,19 +25,24 @@ class App extends Component {
   }
 
   getPeopleCards = async () =>{
+    let peopleData;
 
-    const peopleData = await fetchPeople();
+    if(!this.state.peopleCards.length) {
+      peopleData = await fetchPeople();
+      console.log('fetch')
+      localStorage.setItem('people', JSON.stringify(peopleData))
+      this.setState({
+        peopleCards: peopleData,
+        items: peopleData
+      })
+    }
 
-    this.setState({
-      peopleCards: peopleData,
-      items: peopleData
-    })
+    const peopleStorage = localStorage.getItem('people');
+    this.setState({ items: JSON.parse(peopleStorage) })
   }
 
   getPlanetCards = async () =>{
     const planetData = await fetchPlanets();
-
-    console.log(planetData)
 
     this.setState({
       planetsCards: planetData,
