@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ReactDOM from 'react-dom';
 import CardContainer from './CardContainer.js';
 
 describe('Card Container', () => {
@@ -9,19 +8,19 @@ describe('Card Container', () => {
 
   beforeEach(()=>{
     displayCards = [
-        {
-          homeworld: 'lalla',
-          species: 'human',
-          language: 'Anglish',
-          population: 2000
-        },
-        {
-          homeworld: 'planet earth',
-          species: 'droid',
-          language: 'bblahblah',
-          population: 400
-        }
-    ]
+      {
+        homeworld: 'lalla',
+        species: 'human',
+        language: 'Anglish',
+        population: 2000
+      },
+      {
+        homeworld: 'planet earth',
+        species: 'droid',
+        language: 'bblahblah',
+        population: 400
+      }
+    ];
   });
 
   it('should match the snapshot', async () => {

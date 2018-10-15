@@ -1,8 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow} from 'enzyme';
 import App from './App';
-
-
 
 describe('App', () => {
   let wrapper;
@@ -41,7 +39,6 @@ describe('App', () => {
     wrapper.instance().displayFilms();
     wrapper.setState({filmText: 'Star Wars movie text'});
     expect(wrapper.state('filmText')).toEqual(expected);
-
   });
 
   it('should update state when setRedistrict is invoked', () => {
@@ -50,6 +47,6 @@ describe('App', () => {
     wrapper.instance().setRedirect();
     wrapper.setState({redirect: true});
     expect(wrapper.state('redirect')).toEqual(expected);
-  })
+  });
 
-})
+});
