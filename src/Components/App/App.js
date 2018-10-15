@@ -29,11 +29,11 @@ class App extends Component {
 
     if(!this.state.peopleCards.length) {
       peopleData = await fetchPeople();
-      localStorage.setItem('people', JSON.stringify(peopleData))
+      localStorage.setItem('people', JSON.stringify(peopleData));
       this.setState({
         peopleCards: peopleData,
         items: peopleData
-      })
+      });
     }
 
     const peopleStorage = localStorage.getItem('people');
@@ -65,11 +65,11 @@ class App extends Component {
       this.setState({
         vehiclesCards: vehicleData,
         items: vehicleData
-      })
+      });
     }
 
     const vehicleStorage = localStorage.getItem('vehicles');
-    this.setState({ items: JSON.parse(vehicleStorage) })
+    this.setState({ items: JSON.parse(vehicleStorage) });
   }
 
 
@@ -80,49 +80,53 @@ class App extends Component {
         .then(response => response.json())
         .then(starWarsData => this.getFilm(starWarsData.results))
     } catch(error) {
+      throw new Error(error.message)
     }
   }
 
   getFilm = (films) => {
     const filmScrolls = films.map((film, index) => {
       return film.opening_crawl;
-    })
-    const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)]
-    this.setState({filmText: randomScroll})
+    });
+    const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)];
+    this.setState({filmText: randomScroll});
   }
 
   setRedirect = () =>{
     this.setState({
       redirect: true,
-    })
+    });
   }
 
   render() {
     const { redirect, filmTextShown, peopleCards, vehiclesCards} = this.state;
 
-     if(redirect){
-       return(
-         <LandingPage
-         getVehicleCards={this.getVehicleCards}
-         getPeopleCards={this.getPeopleCards}
-         getPlanetCards={this.getPlanetCards}
-         filmText={this.state.filmText}
-         items={this.state.items}/>
-       )
-     }else{
-       return(
-         <main className="main-div">
-         <div className="swapi-button-section">
-         <h1 className="swapi-intro-title">SwapiBox</h1>
-         <button className="swapi-button">Explore!</button>
-         </div>
-         <div className="crawl-text-div">
-           <section className="filmtext-content">
-             <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
-           </section>
-         </div>
-         </main>
-       )
+    if(redirect){
+      return (
+        <LandingPage
+          getVehicleCards={this.getVehicleCards}
+          getPeopleCards={this.getPeopleCards}
+          getPlanetCards={this.getPlanetCards}
+          filmText={this.state.filmText}
+          items={this.state.items}
+        />
+      )
+     
+     } else {
+
+      return (
+        <main className="main-div">
+          <div className="swapi-button-section">
+            <h1 className="swapi-intro-title">swapi-box</h1>
+            <button className="swapi-button">Explore!</button>
+          </div>
+          <div className="crawl-text-div">
+            <section className="filmtext-content">
+              <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
+            </section>
+          </div>
+       </main>
+      )
     }
   }
 }
