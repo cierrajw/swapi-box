@@ -1,3 +1,8 @@
+@font-face {
+  font-family: starWars;
+  src: url(../../assets/fonts/Starjhol.ttf)
+}
+
 body{
   background-image: url('maxresdefault.jpg');
   background-repeat: no-repeat;
@@ -19,12 +24,12 @@ body{
 }
 
 .swapi-intro-title{
-  font-family: 'Star Jedi', arial;
-  padding: .3em;
+  font-family: starWars;
+  padding: .4rem;
+  letter-spacing: .4rem;
   margin:auto;
-  color: yellow;
-  font-size: 7rem;
-  margin-top: .3em;
+  color: #F2B705;
+  font-size: 5.5rem;
 }
 
 .swapi-button{
@@ -32,7 +37,8 @@ body{
   margin: 1em auto;
   height: 120px;
   width: 120px;
-  background-color: yellow;
+  background-color: #F2B705;
+  /*background-color: yellow;*/
   color: black;
 }
 
@@ -47,7 +53,8 @@ body{
 }
 
 .film-text{
-    color: yellow;
+    color: #F2B705;
+    /*color: yellow;*/
     position:absolute;
     top:-3500px;
     bottom:0;
