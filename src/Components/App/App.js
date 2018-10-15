@@ -24,20 +24,28 @@ class App extends Component {
     this.displayFilmText()
   }
 
+
   addFavorites = (id) =>{
 
-
-
-    const favoritesCards = this.state.allCards.find(card=>{
+    const newFavoriteCard = this.state.allCards.find(card=>{
       return card.id === id;
     })
 
+    const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
+
     this.setState({
-      favoriteCards: [...this.state.favoriteCards, favoritesCards]
+      favoriteCards
     })
 
-    console.log(this.state.favoriteCards)
+  }
 
+  displayFavorites = () =>{
+
+    const newFavorites = this.state.favoriteCards;
+
+    this.setState({
+      allCards: newFavorites
+    })
   }
 
   getPeopleCards = async () =>{
@@ -125,7 +133,9 @@ class App extends Component {
           getPlanetCards={this.getPlanetCards}
           filmText={this.state.filmText}
           allCards={this.state.allCards}
+          favoriteCards={this.state.favoriteCards}
           addFavorites={(id)=>this.addFavorites(id)}
+          displayFavorites={this.displayFavorites}
         />
       )
 

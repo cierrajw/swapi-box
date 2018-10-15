@@ -4,10 +4,10 @@ export const fetchPeople = async () => {
    const response = await fetch(url);
    const data = await response.json();
    const unresolvedCharacterPromises = data.results.map(async character => {
-     const person_name = character.name
+     const name = character.name
      const species = await fetchSpecies(character.species)
      const homeworld = await fetchHomeWorld(character.homeworld)
-     const peopleCard = {person_name, ...species, ...homeworld, type: 'people', id: Date.now() * Math.random()}
+     const peopleCard = {name, ...species, ...homeworld, type: 'people', id: Date.now() * Math.random()}
      return peopleCard
    })
    return Promise.all(unresolvedCharacterPromises)
@@ -43,11 +43,11 @@ export const fetchVehicles = async () =>{
     const data = await response.json();
 
   const unresolvedVehiclePromises = data.results.map(async vehicle =>{
-    const vehicle_name = vehicle.name;
+    const name = vehicle.name;
     const model = vehicle.model;
     const vehicle_class = vehicle.vehicle_class;
     const passengers = vehicle.passengers;
-    const vehicleCard = {vehicle_name, model, vehicle_class, passengers, type: 'vehicles', id: Date.now() * Math.random()}
+    const vehicleCard = {name, model, vehicle_class, passengers, type: 'vehicles', id: Date.now() * Math.random()}
     return vehicleCard;
   })
     return Promise.all(unresolvedVehiclePromises);
@@ -62,12 +62,12 @@ export const fetchPlanets = async () => {
     const response = await fetch(url);
     const planetData = await response.json();
     const unresolvedPlanetPromises = planetData.results.map(async planet => {
-      const planet_name = planet.name;
+      const name = planet.name;
       const terrain = planet.terrain;
       const planet_population = planet.population;
       const climate = planet.climate;
       const residents = await fetchResidents(planet.residents);
-      const planetCard = {planet_name, terrain, planet_population, climate, residents: residents, type: 'planets', id: Date.now() * Math.random()}
+      const planetCard = {name, terrain, planet_population, climate, residents: residents, type: 'planets', id: Date.now() * Math.random()}
       return planetCard;
     })
     return Promise.all(unresolvedPlanetPromises);
