@@ -1,5 +1,8 @@
 body{
-  background-image: url('./maxresdefault.jpg');
+  background-image: url('maxresdefault.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 
 .swapi-button-section{
@@ -8,9 +11,11 @@ body{
 }
 
 .main-div{
-  border: 8px ridge purple;
-  height: 100vh;
-  margin: 2em;
+  border: 1px dotted gold;
+  margin: 6em;
+  width: 70rem;
+  height: 40rem;
+  margin: 8rem auto;
 }
 
 .swapi-intro-title{
@@ -18,9 +23,7 @@ body{
   padding: .3em;
   margin:auto;
   color: yellow;
-  background-color: black;
   font-size: 7rem;
-  border: 5px groove blue;
   margin-top: .3em;
 }
 
