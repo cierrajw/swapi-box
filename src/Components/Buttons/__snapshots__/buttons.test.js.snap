@@ -21,18 +21,20 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <button
-          className="people-button card-section-button"
+          className="card-section-button"
           onClick={[Function]}
         >
           People
         </button>,
         <button
-          className="planets-button card-section-button"
+          className="card-section-button"
+          onClick={[Function]}
         >
           Planets
         </button>,
         <button
-          className="vehicles-button card-section-button"
+          className="card-section-button"
+          onClick={[Function]}
         >
           Vehicles
         </button>,
@@ -47,7 +49,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "People",
-          "className": "people-button card-section-button",
+          "className": "card-section-button",
           "onClick": [Function],
         },
         "ref": null,
@@ -60,7 +62,8 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Planets",
-          "className": "planets-button card-section-button",
+          "className": "card-section-button",
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "Planets",
@@ -72,7 +75,8 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Vehicles",
-          "className": "vehicles-button card-section-button",
+          "className": "card-section-button",
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "Vehicles",
@@ -89,18 +93,20 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <button
-            className="people-button card-section-button"
+            className="card-section-button"
             onClick={[Function]}
           >
             People
           </button>,
           <button
-            className="planets-button card-section-button"
+            className="card-section-button"
+            onClick={[Function]}
           >
             Planets
           </button>,
           <button
-            className="vehicles-button card-section-button"
+            className="card-section-button"
+            onClick={[Function]}
           >
             Vehicles
           </button>,
@@ -115,7 +121,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "People",
-            "className": "people-button card-section-button",
+            "className": "card-section-button",
             "onClick": [Function],
           },
           "ref": null,
@@ -128,7 +134,8 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Planets",
-            "className": "planets-button card-section-button",
+            "className": "card-section-button",
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "Planets",
@@ -140,7 +147,8 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Vehicles",
-            "className": "vehicles-button card-section-button",
+            "className": "card-section-button",
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "Vehicles",
