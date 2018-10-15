@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './header.css'
 
+
 class Header extends Component{
   constructor(){
     super();
@@ -14,17 +15,14 @@ class Header extends Component{
   render(){
     return (
       <div className="header-div">
-      <section className="header-section">
-      <h1 className="swapi-title">SWAPI BOX</h1>
-      <button className="favorites-button" onClick={()=>this.handleFavoriteClick()}>Favorites</button>
-      </section>
+        <section className="header-section">
+          <h1 className="swapi-title">SWAPI BOX</h1>
+          <button className="favorites-button" onClick={()=>this.handleFavoriteClick()}>Favorites</button>
+        </section>
       </div>
     );
   }
-
-
-
-
 }
+
 
 export default Header;
