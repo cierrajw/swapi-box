@@ -1,16 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './header.css'
 
-const Header = () => {
+class Header extends Component{
+  constructor(){
+    super();
+  }
 
-  return (
-    <div className="header-div">
-    <section className="header-section">
-    <h1 className="swapi-title">SWAPI BOX</h1>
-    <button className="favorites-button">Favorites</button>
-    </section>
-    </div>
-  );
+  handleFavoriteClick = () =>{
+    
+    this.props.displayFavorites();
+  }
+
+  render(){
+    return (
+      <div className="header-div">
+      <section className="header-section">
+      <h1 className="swapi-title">SWAPI BOX</h1>
+      <button className="favorites-button" onClick={()=>this.handleFavoriteClick()}>Favorites</button>
+      </section>
+      </div>
+    );
+  }
+
+
+
+
 }
 
 export default Header;

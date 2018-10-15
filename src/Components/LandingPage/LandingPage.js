@@ -22,10 +22,13 @@ class LandingPage extends Component{
         <ScrollSection className="scroll-section" filmText={filmText}/>
 
         <section className="right-section">
-          <Header className="header"/>
+
+          <Header className="header" displayFavorites={this.props.displayFavorites}/>
 
           <CardContainer className="card-container"
-          allCards={this.props.allCards} addFavorites={(id)=>this.props.addFavorites(id)}/>
+          allCards={this.props.allCards}
+          addFavorites={(id)=>this.props.addFavorites(id)}
+          favoriteCards={this.props.favoriteCards}/>
 
 
           <Buttons className="buttons-section"

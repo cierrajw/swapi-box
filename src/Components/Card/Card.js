@@ -14,13 +14,13 @@ class Card extends Component{
 
   render(){
 
-    const { person_name, homeworld, species, language, population, vehicle_name, model, vehicle_class, passengers, planet_name, terrain, planet_population, climate, residents, id} = this.props;
+    const { name, homeworld, species, language, population, model, vehicle_class, passengers, terrain, planet_population, climate, residents, id} = this.props;
 
     {console.log(id)}
     if(this.props.type === 'people'){
       return(
         <div className="card">
-          <section className="favorite-name"><h2>{person_name}</h2><div
+          <section className="favorite-name"><h2>{name}</h2><div
           className="star-favorite"
           onClick={()=>this.handleFavoriteClick(id)}>.</div></section>
 
@@ -30,10 +30,12 @@ class Card extends Component{
           <h4>Population: {population}</h4>
         </div>
       )
-    }else if(this.props.type === 'vehicles'){
+    }
+
+    if(this.props.type === 'vehicles'){
       return (
           <div className="card">
-            <section className="favorite-name"><h2 className="favorite-name">{vehicle_name}</h2><div
+            <section className="favorite-name"><h2 className="favorite-name">{name}</h2><div
             className="star-favorite"
             onClick={(id)=>this.handleFavoriteClick(id)}>.</div></section>
             <h4>Model: {model}</h4>
@@ -41,13 +43,15 @@ class Card extends Component{
             <h4># of Passengers: {passengers}</h4>
           </div>
         );
-      }else if(this.props.type === 'planets'){
+      }
+
+      if(this.props.type === 'planets'){
         let residentResult = residents.map(resident=>{
             return resident;
         })
         return(
           <div className="card">
-            <section className="favorite-name"><h2 className="favorite-name">{planet_name}</h2><div
+            <section className="favorite-name"><h2 className="favorite-name">{name}</h2><div
             className="star-favorite"
             onClick={(id)=>this.handleFavoriteClick(id)}>.</div></section>
             <h4>Terrain: {terrain}</h4>
