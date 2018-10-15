@@ -3,13 +3,14 @@ import Card from '../Card/Card';
 import './card-container.css';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({items}) => {
+const CardContainer = ({allCards, addFavorites}) => {
 
-  const displayCards = items.map(card =>
+  const displayCards = allCards.map(card =>
 
     <Card
       {...card}
       key={card.name}
+      addFavorites={(id)=>addFavorites(id)}
     />
   )
 

@@ -13,7 +13,7 @@ class App extends Component {
       peopleCards: [],
       planetsCards: [],
       vehiclesCards: [],
-      items: [],
+      allCards: [],
       favoriteCards: [],
       redirect: false,
       filmTextShown: true,
@@ -24,6 +24,22 @@ class App extends Component {
     this.displayFilmText()
   }
 
+  addFavorites = (id) =>{
+
+
+
+    const favoritesCards = this.state.allCards.find(card=>{
+      return card.id === id;
+    })
+
+    this.setState({
+      favoriteCards: [...this.state.favoriteCards, favoritesCards]
+    })
+
+    console.log(this.state.favoriteCards)
+
+  }
+
   getPeopleCards = async () =>{
     let peopleData;
 
@@ -32,12 +48,12 @@ class App extends Component {
       localStorage.setItem('people', JSON.stringify(peopleData));
       this.setState({
         peopleCards: peopleData,
-        items: peopleData
+        allCards: peopleData
       });
     }
 
     const peopleStorage = localStorage.getItem('people');
-    this.setState({ items: JSON.parse(peopleStorage) })
+    this.setState({ allCards: JSON.parse(peopleStorage) })
   }
 
   getPlanetCards = async () =>{
@@ -48,12 +64,12 @@ class App extends Component {
       localStorage.setItem('planets', JSON.stringify(planetData))
       this.setState({
         planetsCards: planetData,
-        items: planetData
+        allCards: planetData
       })
     }
 
     const planetStorage = localStorage.getItem('planets');
-    this.setState({ items: JSON.parse(planetStorage) });
+    this.setState({ allCards: JSON.parse(planetStorage) });
   }
 
   getVehicleCards = async () => {
@@ -64,12 +80,12 @@ class App extends Component {
       localStorage.setItem('vehicles', JSON.stringify(vehicleData))
       this.setState({
         vehiclesCards: vehicleData,
-        items: vehicleData
+        allCards: vehicleData
       });
     }
 
     const vehicleStorage = localStorage.getItem('vehicles');
-    this.setState({ items: JSON.parse(vehicleStorage) });
+    this.setState({ allCards: JSON.parse(vehicleStorage) });
   }
 
 
@@ -108,10 +124,11 @@ class App extends Component {
           getPeopleCards={this.getPeopleCards}
           getPlanetCards={this.getPlanetCards}
           filmText={this.state.filmText}
-          items={this.state.items}
+          allCards={this.state.allCards}
+          addFavorites={(id)=>this.addFavorites(id)}
         />
       )
-     
+
      } else {
 
       return (
