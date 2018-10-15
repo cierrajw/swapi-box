@@ -7,7 +7,7 @@ export const fetchPeople = async () => {
      const person_name = character.name
      const species = await fetchSpecies(character.species)
      const homeworld = await fetchHomeWorld(character.homeworld)
-     const peopleCard = {person_name, ...species, ...homeworld, type: 'people'}
+     const peopleCard = {person_name, ...species, ...homeworld, type: 'people', id: Date.now() * Math.random()}
      return peopleCard
    })
    return Promise.all(unresolvedCharacterPromises)
@@ -47,7 +47,7 @@ export const fetchVehicles = async () =>{
     const model = vehicle.model;
     const vehicle_class = vehicle.vehicle_class;
     const passengers = vehicle.passengers;
-    const vehicleCard = {vehicle_name, model, vehicle_class, passengers, type: 'vehicles'}
+    const vehicleCard = {vehicle_name, model, vehicle_class, passengers, type: 'vehicles', id: Date.now() * Math.random()}
     return vehicleCard;
   })
     return Promise.all(unresolvedVehiclePromises);
@@ -67,7 +67,7 @@ export const fetchPlanets = async () => {
       const planet_population = planet.population;
       const climate = planet.climate;
       const residents = await fetchResidents(planet.residents);
-      const planetCard = {planet_name, terrain, planet_population, climate, residents: residents, type: 'planets'}
+      const planetCard = {planet_name, terrain, planet_population, climate, residents: residents, type: 'planets', id: Date.now() * Math.random()}
       return planetCard;
     })
     return Promise.all(unresolvedPlanetPromises);

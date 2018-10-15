@@ -8,20 +8,22 @@ class Card extends Component{
     super();
   }
 
+  handleFavoriteClick = (id) =>{
+    this.props.addFavorites(id);
+  }
+
   render(){
 
-    const { person_name, homeworld, species, language, population } = this.props;
+    const { person_name, homeworld, species, language, population, vehicle_name, model, vehicle_class, passengers, planet_name, terrain, planet_population, climate, residents, id} = this.props;
 
-    const { vehicle_name, model, vehicle_class, passengers } = this.props;
-
-    const { planet_name, terrain, planet_population, climate } = this.props;
-
-    const { residents } = this.props;
-
+    {console.log(id)}
     if(this.props.type === 'people'){
       return(
         <div className="card">
-          <section className="favorite-name"><h2>{person_name}</h2><div className="star-favorite">.</div></section>
+          <section className="favorite-name"><h2>{person_name}</h2><div
+          className="star-favorite"
+          onClick={()=>this.handleFavoriteClick(id)}>.</div></section>
+
           <h4>Homeworld: {homeworld}</h4>
           <h4>Species: {species}</h4>
           <h4>Language: {language}</h4>
@@ -31,7 +33,9 @@ class Card extends Component{
     }else if(this.props.type === 'vehicles'){
       return (
           <div className="card">
-            <section className="favorite-name"><h2 className="favorite-name">Vehicle name: {vehicle_name}</h2><div className="star-favorite">.</div></section>
+            <section className="favorite-name"><h2 className="favorite-name">{vehicle_name}</h2><div
+            className="star-favorite"
+            onClick={(id)=>this.handleFavoriteClick(id)}>.</div></section>
             <h4>Model: {model}</h4>
             <h4>Class: {vehicle_class}</h4>
             <h4># of Passengers: {passengers}</h4>
@@ -43,7 +47,9 @@ class Card extends Component{
         })
         return(
           <div className="card">
-            <section className="favorite-name"><h2 className="favorite-name">Planet: {planet_name}</h2><div className="star-favorite">.</div></section>
+            <section className="favorite-name"><h2 className="favorite-name">{planet_name}</h2><div
+            className="star-favorite"
+            onClick={(id)=>this.handleFavoriteClick(id)}>.</div></section>
             <h4>Terrain: {terrain}</h4>
             <h4>Population: {planet_population}</h4>
             <h4>Climate: {climate}</h4>
