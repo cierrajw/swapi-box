@@ -13,8 +13,7 @@ body{
   grid-template-rows: .5fr .7fr 5fr;
 }
 
-.scroll-section{
-  background-color: blue;
+.scroll-div{
   grid-column: 1;
   grid-row: 1/3;
   height: 100vh;

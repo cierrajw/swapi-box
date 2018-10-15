@@ -51,7 +51,7 @@ class App extends Component {
         items: planetData
       })
     }
-    
+
     const planetStorage = localStorage.getItem('planets');
     this.setState({ items: JSON.parse(planetStorage) });
   }
@@ -60,19 +60,19 @@ class App extends Component {
     let vehicleData;
 
     if(!this.state.vehiclesCards.length) {
-      vehicleData = await fetchPeople();
+      vehicleData = await fetchVehicles();
       localStorage.setItem('vehicles', JSON.stringify(vehicleData))
       this.setState({
         vehiclesCards: vehicleData,
         items: vehicleData
       })
     }
-    
+
     const vehicleStorage = localStorage.getItem('vehicles');
     this.setState({ items: JSON.parse(vehicleStorage) })
   }
 
-  
+
 
   displayFilmText = () => {
     try {

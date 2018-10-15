@@ -3,6 +3,8 @@
 
 .header-section{
   display: grid;
+  background-color: #304360;
+  opacity: .6;
   grid-template-columns: 1.2fr 1fr;
 }
 
