@@ -16,13 +16,14 @@ class App extends Component {
       allCards: [],
       favoriteCards: [],
       redirect: false,
-      filmTextShown: true,
+      filmTextShown: true
     }
   }
 
   componentDidMount() {
     this.displayFilmText()
   }
+
 
 
   addFavorites = (id) =>{
@@ -95,8 +96,6 @@ class App extends Component {
     const vehicleStorage = localStorage.getItem('vehicles');
     this.setState({ allCards: JSON.parse(vehicleStorage) });
   }
-
-
 
   displayFilmText = () => {
     try {
