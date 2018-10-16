@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
-import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js'
+import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
 
 class App extends Component {
   constructor(){
@@ -21,16 +21,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.displayFilmText()
+    this.displayFilmText();
   }
-
-
 
   addFavorites = (id) =>{
 
     const newFavoriteCard = this.state.allCards.find(card=>{
       return card.id === id;
     })
+
+    console.log(newFavoriteCard)
 
     const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
 

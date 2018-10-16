@@ -14,7 +14,7 @@ class LandingPage extends Component{
 
   render(){
 
-    const { filmText, getPeopleCards, getVehicleCards, getPlanetCards} = this.props;
+    const { filmText, getPeopleCards, getVehicleCards, getPlanetCards, addFavorites, favoriteCards} = this.props;
 
     return (
       <div className="LandingPage">
@@ -24,12 +24,12 @@ class LandingPage extends Component{
 
         <section className="right-section">
 
-          <Header className="header" displayFavorites={this.props.displayFavorites}/>
+          <Header className="header" displayFavorites={this.props.displayFavorites} favoriteCards={favoriteCards}/>
 
           <CardContainer 
             className="card-container"
             allCards={this.props.allCards}
-            addFavorites={(id)=>this.props.addFavorites(id)}/>
+            addFavorites={this.props.addFavorites} />
 
             <Buttons 
               className="buttons-section"

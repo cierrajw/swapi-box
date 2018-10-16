@@ -6,19 +6,19 @@ import PropTypes from 'prop-types';
 const CardContainer = ({allCards, addFavorites}) => {
 
   const displayCards = allCards.map(card =>
-
+    
     <Card
       {...card}
-      key={card.name}
-      addFavorites={(id)=>addFavorites(id)}
+      key={Math.random()*Date.now()}
+      addFavorites={addFavorites}
     />
   )
 
   return (
     <div className="card-container">
-
-     <section>{displayCards}</section>
-
+      <section>
+        {displayCards}
+      </section>
     </div>
   );
 }
