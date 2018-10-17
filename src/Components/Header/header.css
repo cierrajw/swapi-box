@@ -19,6 +19,9 @@
 }
 
 .favorites-button{
+  background-color: #106282;
+  font-size: .8em;
+  color: white;
   text-align: center;
   grid-column: 2;
   height: 30px;
