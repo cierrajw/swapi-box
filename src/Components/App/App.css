@@ -7,7 +7,6 @@ body{
   background-image: url('maxresdefault.jpg');
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
 .swapi-button-section{
@@ -16,7 +15,8 @@ body{
 }
 
 .main-div{
-  border: 1px dotted gold;
+  border: 1px groove gold;
+  border-radius: 5px;
   margin: 6em;
   width: 70rem;
   height: 40rem;

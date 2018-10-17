@@ -1,11 +1,14 @@
-.header-div{
+@font-face {
+  font-family: starWars;
+  src: url(../../assets/fonts/Starjhol.ttf)
 }
 
 .header-section{
   display: grid;
-  background-color: #304360;
+  background-color: black;
   opacity: .6;
   grid-template-columns: 1.2fr 1fr;
+  color: gold;
 }
 
 .swapi-title{

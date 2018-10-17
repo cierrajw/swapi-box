@@ -7,11 +7,13 @@ const CardContainer = ({allCards, addFavorites}) => {
 
   const displayCards = allCards.map(card =>
 
+
     <Card
       {...card}
       key={card.name}
       addFavorites={(id)=>addFavorites(id)}
     />
+
   )
 
   return (

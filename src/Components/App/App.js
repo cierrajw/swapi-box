@@ -27,16 +27,18 @@ class App extends Component {
 
   addFavorites = (id) =>{
 
+
     const newFavoriteCard = this.state.allCards.find(card=>{
       return card.id === id;
     })
 
     const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
 
-    this.setState({
-      favoriteCards
-    })
-
+    if(!this.state.favoriteCards.includes(newFavoriteCard)){
+      this.setState({
+        favoriteCards
+      })
+    }
   }
 
   displayFavorites = () =>{

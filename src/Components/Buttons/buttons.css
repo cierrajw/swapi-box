@@ -10,12 +10,22 @@
 .card-section-button{
   height: 50px;
   width: 150px;
-  background-color: #17212B;
-  color: yellow;
+  background-color: black;
+  color: gold;
+  border-radius: 5px;
+  font-size: 1.5em;
 }
+
+.card-section-button:hover{
+  background-color: gold;
+  color: black;
+}
+
 
 .button-selected{
   height: 50px;
   width: 150px;
-  background-color: blue;
+  background-color: gold;
+  color: black;
+  font-size: 1.5em;
 }
