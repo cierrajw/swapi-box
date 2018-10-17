@@ -41,14 +41,14 @@ class LandingPage extends Component{
 }
 
 LandingPage.propTypes = {
-  filmText: PropTypes.string.isRequired,
-  getPeopleCards: PropTypes.func.isRequired,
-  getVehicleCards: PropTypes.func.isRequired,
-  getPlanetCards: PropTypes.func.isRequired,
-  addFavorites: PropTypes.func.isRequired,
-  favoriteCards: PropTypes.array.isRequired,
-  displayFavorites: PropTypes.func.isRequired,
-  allCards: PropTypes.array.isRequired
+  filmText: PropTypes.string,
+  getPeopleCards: PropTypes.func,
+  getVehicleCards: PropTypes.func,
+  getPlanetCards: PropTypes.func,
+  addFavorites: PropTypes.func,
+  favoriteCards: PropTypes.array,
+  displayFavorites: PropTypes.func,
+  allCards: PropTypes.array
 };
 
 export default LandingPage;

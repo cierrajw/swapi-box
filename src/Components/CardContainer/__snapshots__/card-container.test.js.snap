@@ -6,19 +6,18 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <CardContainer
     displayedCards={
       Array [
-
-         {
+        Object {
           "homeworld": "lalla",
           "language": "Anglish",
           "population": 2000,
           "species": "human",
         },
-        {
+        Object {
           "homeworld": "planet earth",
           "language": "bblahblah",
           "population": 400,
           "species": "droid",
-        }
+        },
       ]
     }
   />,
@@ -35,54 +34,21 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <Card
-          homeworld="lalla"
-          language="Anglish"
-          population={2000}
-          species="human"
-        />,
-        <Card
-          homeworld="planet earth"
-          language="bblahblah"
-          population={400}
-          species="droid"
-        />,
-      ],
+      "children": <section />,
       "className": "card-container",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-
-        "props": Object {
-          "homeworld": "lalla",
-          "language": "Anglish",
-          "population": 2000,
-          "species": "human",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [],
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "homeworld": "planet earth",
-          "language": "bblahblah",
-          "population": 400,
-          "species": "droid",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
+      "ref": null,
+      "rendered": Array [],
+      "type": "section",
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -91,54 +57,21 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <Card
-            homeworld="lalla"
-            language="Anglish"
-            population={2000}
-            species="human"
-          />,
-          <Card
-            homeworld="planet earth"
-            language="bblahblah"
-            population={400}
-            species="droid"
-          />,
-        ],
+        "children": <section />,
         "className": "card-container",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-
-          "props": Object {
-            "homeworld": "lalla",
-            "language": "Anglish",
-            "population": 2000,
-            "species": "human",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [],
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "homeworld": "planet earth",
-            "language": "bblahblah",
-            "population": 400,
-            "species": "droid",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
+        "ref": null,
+        "rendered": Array [],
+        "type": "section",
+      },
       "type": "div",
     },
   ],

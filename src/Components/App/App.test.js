@@ -11,32 +11,42 @@ describe('App', () => {
     mockEvent=jest.fn();
   });
 
-  it.skip('matches the snapshot', () => {
+  it('matches the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should invoke displayFilmText on page load', () => {
-    wrapper.instance().displayFilmText();
-    expect(mockEvent).toHaveBeenCalled();
+  it('should invoke displayFilmText on page load', async() => {
+    const spy = jest.spyOn(wrapper.instance(), 'displayFilmText');
+    wrapper.instance().componentDidMount();
+    expect(spy).toHaveBeenCalled();
+    spy.mockClear();
+
   });
 
-  it('should update state when displayPeopleCards is invoked', () => {
-    const initialState = [];
+  it('should update state when getPeopleCards is invoked', () => {
+    expect(wrapper.state('peopleCards')).toEqual([]);
     const expected = [{name: 'Luke Skywalker', species: 'human'}];
-    wrapper.instance().displayPeopleCards();
+    wrapper.instance().getPeopleCards();
+    wrapper.setState({peopleCards: expected})
     expect(wrapper.state('peopleCards')).toEqual(expected);
   });
 
-  it('should call fetch with correct parameters in displayFilmText', () => {
-    const url = 'https://swapi.co/api/films/';
-    wrapper.instance().displayFilmText();
-    expect(window.fetch).toHaveBeenCalledWith(url); 
+  it('should call fetch with correct parameters in displayFilmText', async() => {
+    let mockUrl = 'https://swapi.co/api/films';
+    let mockFilmText = [{text: 'film text'}];
+    window.fetch = jest.fn().mockImplementation(()=>{
+      return Promise.resolve({
+        json: () => Promise.resolve(mockFilmText)
+      });
+    });
+    await wrapper.instance().displayFilmText();
+    expect(window.fetch).toHaveBeenCalledWith(mockUrl);
   });
 
   it('should update state when displayFilms is invoked', () => {
-    const initialState = '';
+    expect(wrapper.state('filmText')).toEqual('');
     const expected='Star Wars movie text';
-    wrapper.instance().displayFilms();
+    wrapper.instance().displayFilmText();
     wrapper.setState({filmText: 'Star Wars movie text'});
     expect(wrapper.state('filmText')).toEqual(expected);
   });
