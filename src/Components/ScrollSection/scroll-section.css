@@ -1,6 +1,4 @@
-body{
-  background-color: #7789a5;
-}
+
 
 .component-container{
   display: grid;
@@ -14,8 +12,7 @@ body{
 }
 
 .scroll-div{
-  background-color: #304360;
-  opacity: .6;
+  background-color: black;  opacity: .6;
   margin: 2em;
   grid-column: 1;
   grid-row: 1/3;

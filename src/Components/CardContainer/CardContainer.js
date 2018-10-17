@@ -6,13 +6,14 @@ import PropTypes from 'prop-types';
 const CardContainer = ({allCards, addFavorites}) => {
 
   const displayCards = allCards.map(card =>
-    
+
     <Card
       {...card}
       key={Math.random()*Date.now()}
       addFavorites={addFavorites}
     />
   );
+
 
   return (
     <div className="card-container">

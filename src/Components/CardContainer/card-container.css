@@ -1,5 +1,6 @@
 .card-container{
-  background-color: #304360;
+  /* background-color: #304360; */
+  background-color: black;
   margin: 2em;
   opacity: .6;
   border: 1px solid gold;
