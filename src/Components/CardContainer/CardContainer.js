@@ -12,7 +12,7 @@ const CardContainer = ({allCards, addFavorites}) => {
       key={Math.random()*Date.now()}
       addFavorites={addFavorites}
     />
-  )
+  );
 
   return (
     <div className="card-container">
@@ -21,10 +21,11 @@ const CardContainer = ({allCards, addFavorites}) => {
       </section>
     </div>
   );
-}
+};
 
 CardContainer.propTypes = {
-  displayedCards: PropTypes.array
-}
+  displayedCards: PropTypes.array,
+  addFavorites: PropTypes.func.isRequired
+};
 
 export default CardContainer;

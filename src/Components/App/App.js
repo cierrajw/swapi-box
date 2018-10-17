@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CardContainer from '../CardContainer/CardContainer';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
@@ -17,7 +16,7 @@ class App extends Component {
       favoriteCards: [],
       redirect: false,
       filmTextShown: true
-    }
+    };
   }
 
   componentDidMount() {
@@ -28,15 +27,13 @@ class App extends Component {
 
     const newFavoriteCard = this.state.allCards.find(card=>{
       return card.id === id;
-    })
-
-    console.log(newFavoriteCard)
+    });
 
     const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
 
     this.setState({
       favoriteCards
-    })
+    });
 
   }
 
@@ -46,13 +43,13 @@ class App extends Component {
 
     this.setState({
       allCards: newFavorites
-    })
+    });
   }
 
   getPeopleCards = async () =>{
     let peopleData;
 
-    if(!this.state.peopleCards.length) {
+    if (!this.state.peopleCards.length) {
       peopleData = await fetchPeople();
       localStorage.setItem('people', JSON.stringify(peopleData));
       this.setState({
@@ -62,19 +59,19 @@ class App extends Component {
     }
 
     const peopleStorage = localStorage.getItem('people');
-    this.setState({ allCards: JSON.parse(peopleStorage) })
+    this.setState({ allCards: JSON.parse(peopleStorage) });
   }
 
   getPlanetCards = async () =>{
     let planetData;
 
-    if(!this.state.planetsCards.length) {
+    if (!this.state.planetsCards.length) {
       planetData = await fetchPlanets();
-      localStorage.setItem('planets', JSON.stringify(planetData))
+      localStorage.setItem('planets', JSON.stringify(planetData));
       this.setState({
         planetsCards: planetData,
         allCards: planetData
-      })
+      });
     }
 
     const planetStorage = localStorage.getItem('planets');
@@ -84,9 +81,9 @@ class App extends Component {
   getVehicleCards = async () => {
     let vehicleData;
 
-    if(!this.state.vehiclesCards.length) {
+    if (!this.state.vehiclesCards.length) {
       vehicleData = await fetchVehicles();
-      localStorage.setItem('vehicles', JSON.stringify(vehicleData))
+      localStorage.setItem('vehicles', JSON.stringify(vehicleData));
       this.setState({
         vehiclesCards: vehicleData,
         allCards: vehicleData
@@ -101,14 +98,14 @@ class App extends Component {
     try {
       fetch('https://swapi.co/api/films/')
         .then(response => response.json())
-        .then(starWarsData => this.getFilm(starWarsData.results))
-    } catch(error) {
-      throw new Error(error.message)
+        .then(starWarsData => this.getFilm(starWarsData.results));
+    } catch (error) {
+      throw new Error(error.message);
     }
   }
 
   getFilm = (films) => {
-    const filmScrolls = films.map((film, index) => {
+    const filmScrolls = films.map(film => {
       return film.opening_crawl;
     });
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)];
@@ -117,14 +114,14 @@ class App extends Component {
 
   setRedirect = () =>{
     this.setState({
-      redirect: true,
+      redirect: true
     });
   }
 
   render() {
-    const { redirect, filmTextShown, peopleCards, vehiclesCards} = this.state;
+    const { redirect} = this.state;
 
-    if(redirect){
+    if (redirect){
       return (
         <LandingPage
           getVehicleCards={this.getVehicleCards}
@@ -136,9 +133,9 @@ class App extends Component {
           addFavorites={(id)=>this.addFavorites(id)}
           displayFavorites={this.displayFavorites}
         />
-      )
+      );
 
-     } else {
+    } else {
 
       return (
         <main className="main-div">
@@ -151,8 +148,8 @@ class App extends Component {
               <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
             </section>
           </div>
-       </main>
-      )
+        </main>
+      );
     }
   }
 }
