@@ -15,6 +15,7 @@
   grid-column: 1;
   display: flex;
   justify-self: flex-end;
+  font-size: 3em;
 }
 
 .favorites-button{
