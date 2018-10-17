@@ -18,7 +18,7 @@ class Card extends Component{
       return(
 
         <div className="card">
-          <section 
+          <section
             className="favorite-name"><h2>{name}</h2>
             <div
               className="star-favorite"
@@ -40,7 +40,7 @@ class Card extends Component{
             className="star-favorite"
             onClick={()=>this.handleFavoriteClick(id)}>.</div></section>
             <h4>Model: {model}</h4>
-            <h4>Class: {vehicle_class}</h4>
+            <h4>Class: {vehicleClass}</h4>
             <h4># of Passengers: {passengers}</h4>
           </div>
         );
@@ -54,7 +54,7 @@ class Card extends Component{
             className="star-favorite"
             onClick={()=>this.handleFavoriteClick(id)}>.</div></section>
             <h4>Terrain: {terrain}</h4>
-            <h4>Population: {planet_population}</h4>
+            <h4>Population: {planetPopulation}</h4>
             <h4>Climate: {climate}</h4>
             <h4>Residents: {residentResult}</h4>
           </div>

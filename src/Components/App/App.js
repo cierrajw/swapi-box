@@ -143,7 +143,7 @@ class App extends Component {
         <main className="main-div">
           <div className="swapi-button-section">
             <h1 className="swapi-intro-title">swapi-box</h1>
-            <button className="swapi-button">Explore!</button>
+            <button className="intro-swapi-button">Explore!</button>
           </div>
           <div className="crawl-text-div">
             <section className="filmtext-content">

@@ -1,8 +1,7 @@
 .card-container{
-  /* background-color: #304360; */
   background-color: black;
   margin: 2em;
   opacity: .6;
-  border: 1px solid gold;
+  border: 3px groove gold;
   border-radius: 1.5em;
 }

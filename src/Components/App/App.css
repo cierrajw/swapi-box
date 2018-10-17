@@ -15,7 +15,7 @@ body{
 }
 
 .main-div{
-  border: 1px groove gold;
+  border: 5px groove #106282;
   border-radius: 5px;
   margin: 6em;
   width: 70rem;
@@ -32,7 +32,9 @@ body{
   font-size: 5.5rem;
 }
 
-.swapi-button{
+.intro-swapi-button{
+  border: 2px solid #106282;
+  background-color: red;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   margin: 1em auto;
   height: 120px;

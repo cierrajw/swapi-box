@@ -1,11 +1,12 @@
 .card{
   display: inline-block;
-  margin: 1rem;
-  background-color: yellow;
+  margin: 2rem;
+  background-color: #2F4B65;
   width: 16rem;
   height: 20rem;
   border-radius: 2em;
   text-align: center;
+  border: 2px groove gold;
 }
 
 .star-favorite{
@@ -25,9 +26,9 @@
 }
 
 .favorite-name{
+  background-color: #106282;
   padding: .2em;
   border-radius: 2em 2em 0 0;
-  background-color: red;
   display: flex;
   align-items: center;
   justify-content: flex-end;

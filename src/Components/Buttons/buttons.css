@@ -8,6 +8,8 @@
 }
 
 .card-section-button{
+  border: 1px solid #106282;
+  border: 2px solid #106282;
   height: 50px;
   width: 150px;
   background-color: black;
@@ -17,16 +19,19 @@
 }
 
 .card-section-button:hover{
+  border: 1px solid #106282;
+  border: 2px solid #106282;
   background-color: gold;
-  color: black;
+  color: #122148;
 }
 
 
 .button-selected{
+  border: 2px solid #106282;
   height: 50px;
   width: 150px;
   background-color: gold;
-  color: black;
+  color: #122148;
   font-size: 1.5em;
   border-radius: 5px;
 }

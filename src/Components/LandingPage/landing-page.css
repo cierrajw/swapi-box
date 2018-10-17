@@ -1,11 +1,15 @@
 body{
   background-color: black;
+  border: 3px groove gold;
+  margin: 1em;
+  border-radius: 10px;
+  height: 100%;
 }
 
 .component-container{
   display: grid;
   grid-template-columns: 1.5fr 4fr;
-  height: 100vh;
+  height: 100%;
 }
 
 .right-section{
