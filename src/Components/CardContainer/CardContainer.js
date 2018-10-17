@@ -3,7 +3,7 @@ import Card from '../Card/Card';
 import './card-container.css';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({allCards, addFavorites}) => {
+const CardContainer = ({allCards = [], addFavorites}) => {
 
   const displayCards = allCards.map(card =>
 
@@ -26,7 +26,7 @@ const CardContainer = ({allCards, addFavorites}) => {
 
 CardContainer.propTypes = {
   displayedCards: PropTypes.array,
-  addFavorites: PropTypes.func.isRequired
+  addFavorites: PropTypes.func
 };
 
 export default CardContainer;

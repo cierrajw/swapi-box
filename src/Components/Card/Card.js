@@ -12,7 +12,7 @@ class Card extends Component{
   }
 
   render(){
-    const { name, homeworld, species, language, population, model, vehicleClass, passengers, terrain, planetPopulation, climate, residents, id} = this.props;
+    const { name, homeworld, species, language, population, model, vehicleClass, passengers, terrain, planetPopulation, climate, residents, id, favorite} = this.props;
 
     switch (this.props.type){
       
@@ -95,7 +95,8 @@ Card.propTypes = {
   residents: PropTypes.array,
   id: PropTypes.number,
   type: PropTypes.string,
-  addFavorites: PropTypes.func.isRequired
+  addFavorites: PropTypes.func, 
+  favorite: PropTypes.bool
 };
 
 export default Card;

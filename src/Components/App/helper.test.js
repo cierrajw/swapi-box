@@ -6,9 +6,11 @@ describe('Helper', () => {
 
   let mockName;
   let mockPeople;
+  let mockUrl
 
   beforeEach(()=>{
-    mockPeople = [{ "name": "Luke Skywalker" }];
+    mockUrl = 'https://swapi.co/api/people/';
+    mockPeople = {results: [{ "name": "Luke Skywalker" }] };
     window.fetch = jest.fn().mockImplementation(()=>{
       return Promise.resolve({
         json: () => Promise.resolve(mockPeople)
@@ -19,10 +21,17 @@ describe('Helper', () => {
 
   describe('fetchPeople', () => {
     
-    it.skip('should fetch with correct params', async () => {
+    it('should fetch with correct params', async () => {
       const expected = 'https://swapi.co/api/people/';
-      await helper.fetchPeople(expected); 
+      await helper.fetchPeople(); 
       expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should return an object if response is ok', async () => {
+      const url = 'https://swapi.co/api/people/'; 
+      const expected = mockPeople;
+      const result = await helper.fetchPeople(url);
+      expect(result).toEqual(expected);
     });
 
   });
@@ -36,8 +45,8 @@ describe('Helper', () => {
     });
 
     it('should return an object if fetch is successful', async () => {
-      // let mockObj = {species: 'human', language: 'anglish'}
-      let mockObj = {language: 'anglish'};
+      let mockObj = {language: 'anglish', type: 'species'};
+      let mockFetch = jest.fn();
       window.fetch = jest.fn().mockImplementation(()=>{
         return Promise.resolve({
           json: () => Promise.resolve(mockObj)

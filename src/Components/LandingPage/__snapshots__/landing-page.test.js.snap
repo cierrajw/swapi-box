@@ -102,9 +102,11 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "class",
               "props": Object {
                 "className": "header",
+                "displayFavorites": undefined,
+                "favoriteCards": undefined,
               },
               "ref": null,
               "rendered": null,
@@ -115,8 +117,9 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "addFavorites": undefined,
+                "allCards": undefined,
                 "className": "card-container",
-                "items": undefined,
               },
               "ref": null,
               "rendered": null,
@@ -235,9 +238,11 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "class",
                 "props": Object {
                   "className": "header",
+                  "displayFavorites": undefined,
+                  "favoriteCards": undefined,
                 },
                 "ref": null,
                 "rendered": null,
@@ -248,8 +253,9 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
+                  "addFavorites": undefined,
+                  "allCards": undefined,
                   "className": "card-container",
-                  "items": undefined,
                 },
                 "ref": null,
                 "rendered": null,

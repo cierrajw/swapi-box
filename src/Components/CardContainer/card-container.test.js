@@ -24,11 +24,8 @@ describe('Card Container', () => {
   });
 
   it('should match the snapshot', async () => {
-
     const wrapper = shallow(<CardContainer displayedCards={displayCards}/>);
-
     expect(wrapper).toMatchSnapshot();
-
   });
 
 });

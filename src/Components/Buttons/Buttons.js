@@ -63,9 +63,9 @@ class Buttons extends Component {
 }
 
 Buttons.propTypes = {
-  getPeopleCards: PropTypes.func.isRequired,
-  getPlanetCards: PropTypes.func.isRequired,
-  getVehicleCards: PropTypes.func.isRequired
+  getPeopleCards: PropTypes.func,
+  getPlanetCards: PropTypes.func,
+  getVehicleCards: PropTypes.func
 };
 
 export default Buttons;
