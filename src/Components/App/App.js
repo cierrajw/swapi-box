@@ -23,29 +23,47 @@ class App extends Component {
     this.displayFilmText();
   }
 
+  
   addFavorites = (id) =>{
-
 
     const newFavoriteCard = this.state.allCards.find(card=>{
       return card.id === id;
     });
 
-    const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
+    newFavoriteCard.favorite = !newFavoriteCard.favorite;
 
-    if(!this.state.favoriteCards.includes(newFavoriteCard)){
+    localStorage.setItem(newFavoriteCard.name, JSON.stringify(newFavoriteCard))
+    this.handleFavorites(newFavoriteCard);
+  }
+
+  handleFavorites = (newFavoriteCard) => {
+    let duplicate = false
+    this.state.favoriteCards.forEach(fave => {
+      if(fave.name === newFavoriteCard.name) {
+        return duplicate = true
+      }
+    })
+
+    if (duplicate === true) return
+
+    if(newFavoriteCard.favorite) {
+
+      const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
+
       this.setState({
         favoriteCards
-      })
+      });
     }
   }
 
-  displayFavorites = () =>{
+  displayFavorites = () => {
 
     const newFavorites = this.state.favoriteCards;
 
     this.setState({
       allCards: newFavorites
     });
+
   }
 
   getPeopleCards = async () =>{
@@ -96,11 +114,12 @@ class App extends Component {
     this.setState({ allCards: JSON.parse(vehicleStorage) });
   }
 
-  displayFilmText = () => {
+  displayFilmText = async() => {
     try {
-      fetch('https://swapi.co/api/films/')
-        .then(response => response.json())
-        .then(starWarsData => this.getFilm(starWarsData.results));
+      const response = await fetch('https://swapi.co/api/films/');
+      const data = await response.json();
+      const filmTextResult = await this.getFilm(data.results);
+      return filmTextResult
     } catch (error) {
       throw new Error(error.message);
     }
