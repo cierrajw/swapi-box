@@ -14,52 +14,69 @@ class Card extends Component{
   render(){
     const { name, homeworld, species, language, population, model, vehicleClass, passengers, terrain, planetPopulation, climate, residents, id} = this.props;
 
-    if(this.props.type === 'people'){
-      return(
-
-        <div className="card">
-          <section
-            className="favorite-name"><h2>{name}</h2>
-            <div
-              className="star-favorite"
-              onClick={()=>this.handleFavoriteClick(id)}
-            >.
-            </div>
-          </section>
-
-          <h4>Homeworld: {homeworld}</h4>
-          <h4>Species: {species}</h4>
-          <h4>Language: {language}</h4>
-          <h4>Population: {population}</h4>
-        </div>
-      )
-    }else if(this.props.type === 'vehicles'){
-      return (
+    switch (this.props.type){
+      
+      case 'people':
+        return (
           <div className="card">
-            <section className="favorite-name"><h2 className="favorite-name">{name}</h2><div
-            className="star-favorite"
-            onClick={()=>this.handleFavoriteClick(id)}>.</div></section>
+            <section 
+              className="favorite-name"><h2>{name}</h2>
+              <div
+                className="star-favorite"
+                onClick={()=>this.handleFavoriteClick(id)}
+              >.
+              </div>
+            </section>
+
+            <h4>Homeworld: {homeworld}</h4>
+            <h4>Species: {species}</h4>
+            <h4>Language: {language}</h4>
+            <h4>Population: {population}</h4>
+          </div>
+        );
+    
+      case 'vehicles':
+        return (
+          <div className="card">
+            <section className="favorite-name">
+              <h2 className="favorite-name">{name}</h2>
+              <div
+                className="star-favorite"
+                onClick={()=>this.handleFavoriteClick(id)}
+              >.
+              </div>
+            </section>
             <h4>Model: {model}</h4>
             <h4>Class: {vehicleClass}</h4>
             <h4># of Passengers: {passengers}</h4>
           </div>
         );
-      }else if(this.props.type === 'planets'){
+
+      case 'planets':
         let residentResult = residents.map(resident=>{
-            return resident;
-        })
-        return(
+          return resident;
+        });
+
+        return (
           <div className="card">
-            <section className="favorite-name"><h2 className="favorite-name">{name}</h2><div
-            className="star-favorite"
-            onClick={()=>this.handleFavoriteClick(id)}>.</div></section>
+            <section className="favorite-name">
+              <h2 className="favorite-name">{name}</h2>
+              <div
+                className="star-favorite"
+                onClick={()=>this.handleFavoriteClick(id)}
+              >.
+              </div>
+            </section>
             <h4>Terrain: {terrain}</h4>
             <h4>Population: {planetPopulation}</h4>
             <h4>Climate: {climate}</h4>
             <h4>Residents: {residentResult}</h4>
           </div>
-        )
-      }
+        );
+
+      default: 
+        break;
+    }
   }
 }
 
