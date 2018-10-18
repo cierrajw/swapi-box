@@ -29,7 +29,15 @@ describe('Helper', () => {
 
     it('should return an object if response is ok', async () => {
       const url = 'https://swapi.co/api/people/'; 
-      const expected = mockPeople;
+      const expected = 
+        [{"favorite": false, 
+        "homeworld": undefined,  
+        "language": undefined, 
+        "name": "Luke Skywalker", 
+        "population": undefined, 
+        "species": undefined, 
+        "type": "people"
+      }]
       const result = await helper.fetchPeople(url);
       expect(result).toEqual(expected);
     });

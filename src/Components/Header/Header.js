@@ -13,7 +13,12 @@ class Header extends Component{
   }
 
   render(){
-    const favoriteNumber = this.props.favoriteCards.length;
+
+    let favoriteNumber;
+    if (this.props.favoriteCards !== undefined) {
+      const favoriteNumber = this.props.favoriteCards.length;
+    }
+
     return (
       <div className="header-div">
         <section className="header-section">
