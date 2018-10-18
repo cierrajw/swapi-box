@@ -32,27 +32,35 @@ class App extends Component {
 
     newFavoriteCard.favorite = !newFavoriteCard.favorite;
 
-    localStorage.setItem(newFavoriteCard.name, JSON.stringify(newFavoriteCard))
+    // if(newFavoriteCard.favorite) {
+    //   localStorage.setItem(newFavoriteCard.name, JSON.stringify(newFavoriteCard))
+    // }
+
     this.handleFavorites(newFavoriteCard);
   }
 
   handleFavorites = (newFavoriteCard) => {
+    if (!newFavoriteCard.favorite) {
+      const unfavorites = this.state.favoriteCards.filter(card => card.name !== newFavoriteCard.name)
+      this.setState({ 
+        favoriteCards: unfavorites
+      })
+    }
+
     let duplicate = false
     this.state.favoriteCards.forEach(fave => {
       if(fave.name === newFavoriteCard.name) {
         return duplicate = true
       }
     })
-
     if (duplicate === true) return
 
     if(newFavoriteCard.favorite) {
-
       const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
-
-      this.setState({
-        favoriteCards
-      });
+        this.setState({
+          favoriteCards
+        });
+      localStorage.setItem(newFavoriteCard.name, JSON.stringify(newFavoriteCard))
     }
   }
 
