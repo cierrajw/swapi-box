@@ -3,7 +3,22 @@
 exports[`Header should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Header />,
+  Symbol(enzyme.__unrendered__): <Header
+    favoriteCards={
+      Array [
+        Object {
+          "favorite": true,
+          "homeworld": "Tatooine",
+          "id": 908692779067.1481,
+          "language": "n/a",
+          "name": "C-3PO",
+          "population": "200000",
+          "species": "Droid",
+          "type": "people",
+        },
+      ]
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -27,8 +42,10 @@ ShallowWrapper {
         </h1>
         <button
           className="favorites-button"
+          onClick={[Function]}
         >
-          Favorites
+          Favorites 
+          <span />
         </button>
       </section>,
       "className": "header-div",
@@ -47,8 +64,10 @@ ShallowWrapper {
           </h1>,
           <button
             className="favorites-button"
+            onClick={[Function]}
           >
-            Favorites
+            Favorites 
+            <span />
           </button>,
         ],
         "className": "header-section",
@@ -72,11 +91,28 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorites",
+            "children": Array [
+              "Favorites ",
+              <span />,
+            ],
             "className": "favorites-button",
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorites",
+          "rendered": Array [
+            "Favorites ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "span",
+            },
+          ],
           "type": "button",
         },
       ],
@@ -100,8 +136,10 @@ ShallowWrapper {
           </h1>
           <button
             className="favorites-button"
+            onClick={[Function]}
           >
-            Favorites
+            Favorites 
+            <span />
           </button>
         </section>,
         "className": "header-div",
@@ -120,8 +158,10 @@ ShallowWrapper {
             </h1>,
             <button
               className="favorites-button"
+              onClick={[Function]}
             >
-              Favorites
+              Favorites 
+              <span />
             </button>,
           ],
           "className": "header-section",
@@ -145,11 +185,28 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Favorites",
+              "children": Array [
+                "Favorites ",
+                <span />,
+              ],
               "className": "favorites-button",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Favorites",
+            "rendered": Array [
+              "Favorites ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "span",
+              },
+            ],
             "type": "button",
           },
         ],
