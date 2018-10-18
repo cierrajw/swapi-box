@@ -4,9 +4,28 @@ import Card from './Card.js';
 
 describe('Card', () => {
 
+  let mockedHandleClick;
+  let mockAddFavorites;
+  let wrapper;
+  let props;
+
+  beforeEach(()=>{
+
+    mockedHandleClick = jest.fn();
+
+    wrapper = shallow(<Card addFavorites={mockedHandleClick}/>);
+  })
+
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Card />);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call addFavorites method from App', () => {
+
+    wrapper.instance().handleFavoriteClick();
+
+    expect(mockedHandleClick).toBeCalled();
+
   });
 
 });
