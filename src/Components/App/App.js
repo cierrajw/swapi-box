@@ -14,6 +14,7 @@ class App extends Component {
       vehiclesCards: [],
       allCards: [],
       favoriteCards: [],
+      unfavorites: [],
       redirect: false,
       filmTextShown: true
     };
@@ -23,53 +24,78 @@ class App extends Component {
     this.displayFilmText();
   }
 
-  
-  addFavorites = (id) =>{
-
-    const newFavoriteCard = this.state.allCards.find(card=>{
-      return card.id === id;
-    });
-
-    newFavoriteCard.favorite = !newFavoriteCard.favorite;
-
-    // if(newFavoriteCard.favorite) {
-    //   localStorage.setItem(newFavoriteCard.name, JSON.stringify(newFavoriteCard))
-    // }
-
-    this.handleFavorites(newFavoriteCard);
-  }
-
-  handleFavorites = (newFavoriteCard) => {
-    if (!newFavoriteCard.favorite) {
-      const unfavorites = this.state.favoriteCards.filter(card => card.name !== newFavoriteCard.name)
-      this.setState({ 
-        favoriteCards: unfavorites
-      })
-    }
-
-    let duplicate = false
-    this.state.favoriteCards.forEach(fave => {
-      if(fave.name === newFavoriteCard.name) {
-        return duplicate = true
+  // toggleFavorite
+  addFavorites = (id, type) =>{
+    const categoryCards = this.state[`${type}Cards`].map(card => {
+      if(card.id === id) {
+        return {...card, favorite: !card.favorite}
       }
+      return card
     })
-    if (duplicate === true) return
 
-    if(newFavoriteCard.favorite) {
-      const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
-        this.setState({
-          favoriteCards
-        });
-      localStorage.setItem(newFavoriteCard.name, JSON.stringify(newFavoriteCard))
-    }
+    const allCards = this.state.allCards.map(card => {
+      if(card.id === id) {
+        return {...card, favorite: !card.favorite}
+      }
+      return card;
+    })
+
+    this.setState({
+      allCards,
+      [`${type}Cards`]: categoryCards,
+    })
   }
+
+//   const allCards = this.state.allCards.map(card => {
+//     if(card.id === id) {
+//       const foundCard={...card, favorite: !card.favorite}
+//       const filteredCards = this.state.allCards.filter(card => card.favorite))
+//     }
+//     return card;
+//   })
+//
+//   this.setState({
+//     allCards,
+//     [`${type}Cards`]: categoryCards,
+//   })
+// }
+
+  // handleFavorites = (newFavoriteCard) => {
+  //   if (!newFavoriteCard.favorite) {
+  //     const unfavorites = this.state.favoriteCards.filter(card => card.name !== newFavoriteCard.name)
+  //     this.setState({
+  //       favoriteCards: unfavorites,
+  //       allCards: this.state.favoriteCards
+  //     })
+  //   } else {
+  //     const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
+  //       this.setState({
+  //         favoriteCards: favoriteCards,
+  //       });
+  //     localStorage.setItem(newFavoriteCard.name, JSON.stringify(newFavoriteCard))
+  //   }
+  //
+  //   let duplicate = false
+  //   this.state.favoriteCards.forEach(fave => {
+  //     if(fave.name === newFavoriteCard.name) {
+  //       return duplicate = true
+  //     }
+  //   })
+  //
+  //   if (duplicate === true) return
+  //
+  // }
 
   displayFavorites = () => {
 
-    const newFavorites = this.state.favoriteCards;
+    const favoritePeople = this.state.peopleCards.filter(person => person.favorite);
+    const favoritePlanets = this.state.planetsCards.filter(planet => planet.favorite);
+    const favoriteVehicles = this.state.vehiclesCards.filter(vehicle => vehicle.favorite);
+
+    const allFavorites = [...favoritePeople, ...favoritePlanets, ...favoriteVehicles];
 
     this.setState({
-      allCards: newFavorites
+      allCards: allFavorites
     });
 
   }
@@ -159,7 +185,7 @@ class App extends Component {
           filmText={this.state.filmText}
           allCards={this.state.allCards}
           favoriteCards={this.state.favoriteCards}
-          addFavorites={(id)=>this.addFavorites(id)}
+          addFavorites={this.addFavorites}
           displayFavorites={this.displayFavorites}
         />
       );

@@ -13,7 +13,7 @@ class LandingPage extends Component{
 
   render(){
 
-    const { filmText, getPeopleCards, getVehicleCards, getPlanetCards, addFavorites, favoriteCards} = this.props;
+    const { filmText, getPeopleCards, getVehicleCards, getPlanetCards, addFavorites, allCards} = this.props;
 
     return (
       <div className="LandingPage">
@@ -21,12 +21,12 @@ class LandingPage extends Component{
 
           <ScrollSection className="scroll-section" filmText={filmText}/>
           <section className="right-section">
-            <Header className="header" displayFavorites={this.props.displayFavorites} favoriteCards={favoriteCards}/>
-            <CardContainer 
+            <Header className="header" displayFavorites={this.props.displayFavorites} allCards={allCards}/>
+            <CardContainer
               className="card-container"
               allCards={this.props.allCards}
               addFavorites={this.props.addFavorites} />
-            <Buttons 
+            <Buttons
               className="buttons-section"
               getPeopleCards={getPeopleCards}
               getVehicleCards={getVehicleCards}

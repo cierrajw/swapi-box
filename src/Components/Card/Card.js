@@ -8,18 +8,18 @@ class Card extends Component{
   }
 
   handleFavoriteClick = (id) =>{
-    this.props.addFavorites(id);
+    this.props.addFavorites(id, this.props.type);
   }
 
   render(){
     const { name, homeworld, species, language, population, model, vehicleClass, passengers, terrain, planetPopulation, climate, residents, id, favorite} = this.props;
 
     switch (this.props.type){
-      
+
       case 'people':
         return (
           <div className="card">
-            <section 
+            <section
               className="favorite-name"><h2>{name}</h2>
               <div
                 className="star-favorite"
@@ -34,7 +34,7 @@ class Card extends Component{
             <h4>Population: {population}</h4>
           </div>
         );
-    
+
       case 'vehicles':
         return (
           <div className="card">
@@ -74,7 +74,7 @@ class Card extends Component{
           </div>
         );
 
-      default: 
+      default:
         break;
     }
   }
@@ -95,7 +95,7 @@ Card.propTypes = {
   residents: PropTypes.array,
   id: PropTypes.number,
   type: PropTypes.string,
-  addFavorites: PropTypes.func, 
+  addFavorites: PropTypes.func,
   favorite: PropTypes.bool
 };
 
