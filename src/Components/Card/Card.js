@@ -18,13 +18,15 @@ class Card extends Component{
 
       case 'people':
         return (
-          <div className="card">
+          <div 
+            className={favorite ? "card-favorite": "card"}
+            onClick={()=>this.handleFavoriteClick(id)}
+          >
             <section
               className="favorite-name"><h2>{name}</h2>
               <div
-                className="star-favorite"
-                onClick={()=>this.handleFavoriteClick(id)}
-              >.
+                className={favorite ? "star-favorite": "star"}
+              >
               </div>
             </section>
 
@@ -37,12 +39,14 @@ class Card extends Component{
 
       case 'vehicles':
         return (
-          <div className="card">
-            <section className="favorite-name">
-              <h2 className="favorite-name">{name}</h2>
+          <div 
+            className={favorite ? "card-favorite": "card"}
+            onClick={()=>this.handleFavoriteClick(id)}
+          >
+            <section
+              className="favorite-name"><h2>{name}</h2>
               <div
-                className="star-favorite"
-                onClick={()=>this.handleFavoriteClick(id)}
+                className={favorite ? "star-favorite": "star"}
               >.
               </div>
             </section>
@@ -58,12 +62,14 @@ class Card extends Component{
         });
 
         return (
-          <div className="card">
-            <section className="favorite-name">
-              <h2 className="favorite-name">{name}</h2>
+          <div 
+            className={favorite ? "card-favorite": "card"}
+            onClick={()=>this.handleFavoriteClick(id)}
+          >
+            <section
+              className="favorite-name"><h2>{name}</h2>
               <div
-                className="star-favorite"
-                onClick={()=>this.handleFavoriteClick(id)}
+                className={favorite ? "star-favorite": "star"}
               >.
               </div>
             </section>

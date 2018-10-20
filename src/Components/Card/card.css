@@ -1,4 +1,4 @@
-.card{
+.card {
   display: inline-block;
   margin: 2rem;
   background-color: #2F4B65;
@@ -9,7 +9,18 @@
   border: 2px groove gold;
 }
 
-.star-favorite{
+.card-favorite {
+  display: inline-block;
+  margin: 2rem;
+  background-color: #2F4B65;
+  width: 16rem;
+  height: 20rem;
+  border-radius: 2em;
+  text-align: center;
+  border: 2px groove red;
+}
+
+.star {
   color: gold;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   background-color: gold;
@@ -17,15 +28,15 @@
   width: 40px;
 }
 
-.card {
-	opacity: 1;
-/*	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 2s;*/
+.star-favorite {
+  color: red  ;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: red;
+  height: 40px;
+  width: 40px;
 }
 
-.favorite-name{
+.favorite-name {
   background-color: #106282;
   padding: .2em;
   border-radius: 2em 2em 0 0;
