@@ -98,3 +98,7 @@ body{
     transform: translateZ(-1000em);
   }
 }
+
+@media screen and (max-width: 1113px){
+  
+}

@@ -14,7 +14,8 @@ body{
 
 .right-section{
   display: grid;
-  grid-template-rows: .5fr .7fr 5fr;
+  /* grid-template-rows: .5fr .7fr 5fr; */
+  grid-template-rows: .1fr .1fr 5fr;
 }
 
 .scroll-div{
@@ -32,5 +33,85 @@ body{
 }
 
 .card-container{
+  display: flex;
+  justify-content: center;
   grid-row: 3;
+}
+
+/* @media screen and (min-width: 605px) and (max-width: 1113px){
+
+} */
+
+@media screen and (max-width: 1113px){
+  .scroll-div{
+    display: none;
+  }
+
+  .component-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-section{
+    grid-template-columns: 65% 35%;
+  }
+
+  .swapi-title{
+
+  }
+}
+
+@media screen and (max-width: 836px){
+
+  .buttons-section{
+    width: 500px;
+
+  }
+
+  .header{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .component-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-section{
+    grid-template-columns: 65% 35%;
+  }
+
+}
+
+@media screen and (max-width: 572px){
+
+  .header{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 553px){
+
+  .buttons-section{
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 455px){
+
+  .header-section{
+    display: flex;
+    flex-direction: column;
+  }
+  .swapi-title{
+    margin: 20px auto;
+  }
+
+  .favorites-button{
+    margin: auto;
+  }
 }
