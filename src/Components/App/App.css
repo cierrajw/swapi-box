@@ -99,6 +99,62 @@ body{
   }
 }
 
-@media screen and (max-width: 1113px){
-  
+@media screen and (max-width: 1200px){
+
+  .main-div{
+    width: 50rem;
+  }
+
+  body{
+    margin: 4rem;
+  }
+}
+
+@media screen and (max-width: 960px){
+
+  .main-div{
+    width: 40rem;
+  }
+
+  body{
+    margin: 6rem;
+  }
+}
+
+@media screen and (max-width: 874px){
+
+  .swapi-intro-title{
+    word-wrap: break-word;
+    margin-left: 1em;
+  }
+
+  .main-div{
+    width: 30rem;
+  }
+
+  body{
+    margin: 4rem;
+  }
+}
+
+@media screen and (max-width: 649px){
+
+  .swapi-intro-title{
+    word-wrap: break-word;
+    margin: 0 auto;
+    font-size: 2em;
+  }
+
+  .main-div{
+    width: 20rem;
+    margin: 1em auto;
+  }
+
+  .film-text{
+    font-size: 2em;
+  }
+
+  body{
+    margin: 5rem;
+  }
 }

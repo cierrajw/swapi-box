@@ -46,3 +46,15 @@
     width: 100px;
   }
 }
+
+@media screen and (max-width: 659px){
+
+  .card-section-button{
+    width: 100px;
+  }
+
+  .buttons-section{
+    display: flex;
+    flex-direction: column;
+  }
+}
