@@ -57,7 +57,7 @@ body{
   }
 }
 
-@media screen and (max-width: 985px){
+@media screen and (max-width: 1000px){
 
   .buttons-section{
     width: 70%;
