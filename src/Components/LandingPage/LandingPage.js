@@ -19,7 +19,7 @@ class LandingPage extends Component{
       <div className="LandingPage">
         <main className="component-container">
 
-          <ScrollSection className="scroll-section" filmText={filmText}/>
+          <ScrollSection className="scroll-section" filmText={filmText.opening_crawl}/>
           <section className="right-section">
             <Header className="header" displayFavorites={this.props.displayFavorites} allCards={allCards}/>
             <CardContainer

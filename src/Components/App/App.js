@@ -8,6 +8,7 @@ class App extends Component {
     super();
 
     this.state = {
+      filmTitle: '',
       filmText: '',
       peopleCards: [],
       planetsCards: [],
@@ -161,10 +162,13 @@ class App extends Component {
 
   getFilm = (films) => {
     const filmScrolls = films.map(film => {
-      return film.opening_crawl;
+      return film
     });
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)];
-    this.setState({filmText: randomScroll});
+    this.setState({
+      filmTitle: randomScroll.title + ':' + randomScroll.episode_id,
+      filmText: randomScroll.opening_crawl
+    });
   }
 
   setRedirect = () =>{
@@ -191,6 +195,8 @@ class App extends Component {
       );
 
     } else {
+      const filmText = this.state.filmText
+      const filmTitle = this.state.filmTitle;
 
       return (
         <main className="main-div">
@@ -200,7 +206,10 @@ class App extends Component {
           </div>
           <div className="crawl-text-div">
             <section className="filmtext-content">
-              <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
+              <div className='film-text' onClick={this.setRedirect}>
+                <h2>{filmTitle}</h2>
+                <p>{filmText}</p>
+              </div>
             </section>
           </div>
         </main>
