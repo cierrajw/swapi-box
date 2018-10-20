@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
+import rebelIcon from "../../assets/Images/rebel-alliance.png"
 
 class App extends Component {
   constructor(){
     super();
 
     this.state = {
-      filmTitle: '',
-      filmText: '',
+      film: {},
       peopleCards: [],
       planetsCards: [],
       vehiclesCards: [],
@@ -47,45 +47,7 @@ class App extends Component {
     })
   }
 
-//   const allCards = this.state.allCards.map(card => {
-//     if(card.id === id) {
-//       const foundCard={...card, favorite: !card.favorite}
-//       const filteredCards = this.state.allCards.filter(card => card.favorite))
-//     }
-//     return card;
-//   })
-//
-//   this.setState({
-//     allCards,
-//     [`${type}Cards`]: categoryCards,
-//   })
-// }
 
-  // handleFavorites = (newFavoriteCard) => {
-  //   if (!newFavoriteCard.favorite) {
-  //     const unfavorites = this.state.favoriteCards.filter(card => card.name !== newFavoriteCard.name)
-  //     this.setState({
-  //       favoriteCards: unfavorites,
-  //       allCards: this.state.favoriteCards
-  //     })
-  //   } else {
-  //     const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
-  //       this.setState({
-  //         favoriteCards: favoriteCards,
-  //       });
-  //     localStorage.setItem(newFavoriteCard.name, JSON.stringify(newFavoriteCard))
-  //   }
-  //
-  //   let duplicate = false
-  //   this.state.favoriteCards.forEach(fave => {
-  //     if(fave.name === newFavoriteCard.name) {
-  //       return duplicate = true
-  //     }
-  //   })
-  //
-  //   if (duplicate === true) return
-  //
-  // }
 
   displayFavorites = () => {
 
@@ -166,8 +128,7 @@ class App extends Component {
     });
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)];
     this.setState({
-      filmTitle: randomScroll.title + ':' + randomScroll.episode_id,
-      filmText: randomScroll.opening_crawl
+      film: {scroll: randomScroll.opening_crawl, date: randomScroll.release_date, title: randomScroll.title}
     });
   }
 
@@ -195,24 +156,28 @@ class App extends Component {
       );
 
     } else {
-      const filmText = this.state.filmText
-      const filmTitle = this.state.filmTitle;
-
+      const scroll = this.state.film.scroll
+      const title = this.state.film.title;
+      const date = this.state.film.date
+      
       return (
-        <main className="main-div">
-          <div className="swapi-button-section">
-            <h1 className="swapi-intro-title">swapi-box</h1>
-            <button className="intro-swapi-button">Explore!</button>
-          </div>
-          <div className="crawl-text-div">
-            <section className="filmtext-content">
-              <div className='film-text' onClick={this.setRedirect}>
-                <h2>{filmTitle}</h2>
-                <p>{filmText}</p>
-              </div>
-            </section>
-          </div>
-        </main>
+        <div className="intro-page">
+          <h1 className="swapi-intro-title">swapi-box</h1>
+          <button className="intro-swapi-button">
+            <img src={rebelIcon} width="80" height="80" />
+          </button>
+          <main className="main-div">
+            <div className="crawl-text-div">
+              <section className="filmtext-content">
+                <div className='film-text' onClick={this.setRedirect}>
+                  <p>{scroll}</p>
+                  <h2>{title}</h2>
+                  <h5>{date}</h5>
+                </div>
+              </section>
+            </div>
+          </main>
+        </div>
       );
     }
   }
