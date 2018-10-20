@@ -21,6 +21,7 @@
 }
 
 .scroll-text{
+    margin-top: 2em;
     color: gold;
     overflow-y: visible;
     font-size:30px;
@@ -29,9 +30,3 @@
     font-size: 2rem;
     animation: autoscroll 1000s linear;
 }
-
-/* @keyframes autoscroll{
-    to{
-        margin-top:-50000px;
-    }
-} */

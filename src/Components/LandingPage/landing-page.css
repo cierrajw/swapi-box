@@ -1,6 +1,6 @@
 body{
   background-color: black;
-  border: 3px groove gold;
+  border: 8px groove gold;
   margin: 1em;
   border-radius: 10px;
   height: 100%;
@@ -14,7 +14,6 @@ body{
 
 .right-section{
   display: grid;
-  /* grid-template-rows: .5fr .7fr 5fr; */
   grid-template-rows: .1fr .1fr 5fr;
 }
 
@@ -38,10 +37,6 @@ body{
   grid-row: 3;
 }
 
-/* @media screen and (min-width: 605px) and (max-width: 1113px){
-
-} */
-
 @media screen and (max-width: 1200px){
   .scroll-div{
     display: none;
@@ -62,10 +57,10 @@ body{
   }
 }
 
-@media screen and (max-width: 961px){
+@media screen and (max-width: 985px){
 
   .buttons-section{
-    width: 500px;
+    width: 70%;
   }
 
   .header{

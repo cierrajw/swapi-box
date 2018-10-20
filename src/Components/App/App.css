@@ -15,7 +15,7 @@ body{
 }
 
 .main-div{
-  border: 5px groove #106282;
+  border: 15px groove #106282;
   border-radius: 5px;
   margin: 6em;
   width: 70rem;
@@ -40,7 +40,6 @@ body{
   height: 120px;
   width: 120px;
   background-color: #F2B705;
-  /*background-color: yellow;*/
   color: black;
 }
 
@@ -56,7 +55,6 @@ body{
 
 .film-text{
     color: #F2B705;
-    /*color: yellow;*/
     position:absolute;
     top:-3500px;
     bottom:0;
@@ -99,7 +97,7 @@ body{
   }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1250px){
 
   .main-div{
     width: 50rem;
@@ -110,7 +108,7 @@ body{
   }
 }
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 1000px){
 
   .main-div{
     width: 40rem;
@@ -121,7 +119,7 @@ body{
   }
 }
 
-@media screen and (max-width: 874px){
+@media screen and (max-width: 890px){
 
   .swapi-intro-title{
     word-wrap: break-word;
@@ -137,7 +135,7 @@ body{
   }
 }
 
-@media screen and (max-width: 649px){
+@media screen and (max-width: 670px){
 
   .swapi-intro-title{
     word-wrap: break-word;
