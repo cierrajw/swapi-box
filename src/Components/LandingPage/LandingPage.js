@@ -14,12 +14,12 @@ class LandingPage extends Component{
   render(){
 
     const { filmText, getPeopleCards, getVehicleCards, getPlanetCards, addFavorites, allCards} = this.props;
+    // <ScrollSection className="scroll-section" filmText={filmText.scroll}/>
 
     return (
       <div className="LandingPage">
         <main className="component-container">
 
-          <ScrollSection className="scroll-section" filmText={filmText.opening_crawl}/>
           <section className="right-section">
             <Header className="header" displayFavorites={this.props.displayFavorites} allCards={allCards}/>
             <CardContainer
@@ -41,7 +41,7 @@ class LandingPage extends Component{
 }
 
 LandingPage.propTypes = {
-  filmText: PropTypes.string,
+  filmText: PropTypes.object,
   getPeopleCards: PropTypes.func,
   getVehicleCards: PropTypes.func,
   getPlanetCards: PropTypes.func,

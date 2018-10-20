@@ -14,8 +14,6 @@ class App extends Component {
       planetsCards: [],
       vehiclesCards: [],
       allCards: [],
-      favoriteCards: [],
-      unfavorites: [],
       redirect: false,
       filmTextShown: true
     };
@@ -147,7 +145,7 @@ class App extends Component {
           getVehicleCards={this.getVehicleCards}
           getPeopleCards={this.getPeopleCards}
           getPlanetCards={this.getPlanetCards}
-          filmText={this.state.filmText}
+          filmText={this.state.film}
           allCards={this.state.allCards}
           favoriteCards={this.state.favoriteCards}
           addFavorites={this.addFavorites}

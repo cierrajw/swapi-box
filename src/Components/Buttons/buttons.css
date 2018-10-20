@@ -2,35 +2,36 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 0 auto;
   width: 50rem;
   height: 15rem;
 }
 
+.icon {
+  padding: .4rem .5rem 0 0;
+}
+
 .card-section-button{
-  border: 1px solid #106282;
   border: 2px solid #106282;
+  padding: 0 0 0.3rem 0;
   height: 50px;
-  width: 150px;
+  width: 180px;
   background-color: black;
-  color: gold;
+  color: #F2B705;
   border-radius: 5px;
   font-size: 1.5em;
 }
 
-.card-section-button:hover{
-  border: 1px solid #106282;
+.card-section-button:hover {
   border: 2px solid #106282;
-  background-color: gold;
+  background-color: #F2B705;
   color: #122148;
 }
 
-
-.button-selected{
+.button-selected {
   width: 150px;
   border: 2px solid #106282;
   height: 50px;
-  background-color: gold;
+  background-color: #F2B705;
   color: #122148;
   font-size: 1.5em;
   border-radius: 5px;

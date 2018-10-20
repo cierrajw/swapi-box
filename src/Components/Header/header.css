@@ -7,26 +7,33 @@
   display: grid;
   background-color: black;
   opacity: .6;
-  grid-template-columns: 1.2fr 1fr;
-  color: gold;
+  color: #F2B705;
 }
 
 .swapi-title{
-  grid-column: 1;
-  display: flex;
-  justify-self: flex-end;
-  font-size: 3em;
+  font-family: starWars;
+  padding: .4rem;
+  letter-spacing: .8rem;
+  margin: 0;
+  color: #F2B705;
+  font-size: 5rem;
+  text-align: center;
 }
 
 .favorites-button{
+  border-radius: 5px;
+  padding: 0 0 0 2.2rem;
   background-color: #106282;
-  font-size: .8em;
+  font-size: 1rem;
   color: white;
   text-align: center;
-  grid-column: 2;
-  height: 30px;
-  width: 80px;
+  height: 50px;
+  width: 150px;
   display: flex;
   justify-self: flex-end;
   margin: 1em;
+}
+
+.num-fave {
+  padding-left: 0.4rem;
 }

@@ -58,7 +58,12 @@ class Card extends Component{
 
       case 'planets':
         let residentResult = residents.map(resident=>{
-          return resident;
+          if(residents.length > 1) {
+            return <h4 className="resident-list"> {resident}, </h4>
+          } else {
+            return <h4> {resident} </h4>
+          }
+          
         });
 
         return (
@@ -76,7 +81,9 @@ class Card extends Component{
             <h4>Terrain: {terrain}</h4>
             <h4>Population: {planetPopulation}</h4>
             <h4>Climate: {climate}</h4>
-            <h4>Residents: {residentResult}</h4>
+            <h4 className="residents">Residents:
+              {residentResult}
+            </h4>
           </div>
         );
 
