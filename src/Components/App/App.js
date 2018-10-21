@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import LandingPage from '../LandingPage/LandingPage';
-import './App.css';
+import IntroPage from '../IntroPage/IntroPage';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
 import rebelIcon from "../../assets/Images/rebel-alliance.png";
 import { BrowserRouter} from 'react-router-dom';
 import { Route, NavLink, Link } from 'react-router-dom';
+import './App.css'
 
 class App extends Component {
   constructor(){
@@ -152,46 +153,42 @@ class App extends Component {
     });
   }
 
+  openLandingPage = () =>{
+    this.state.homepage = false;
+  }
+
 
   render() {
     const scroll = this.state.film.scroll;
     const title = this.state.film.title;
     const date = this.state.film.date;
-    const { homepage } = this.state.homepage;
 
-    if(homepage){
+    if(this.state.homepage){
       return(
         <div>
-          <Route exact path='/' render={()=>{
-            return(
-              <div>
-                <div className="intro-page">
-                  <h1 className="swapi-intro-title">swapi-box</h1>
-                  <NavLink to='/landingpage' className='nav'><button className="intro-swapi-button">
-                    <img src={rebelIcon} width="80" height="80"/>
-                    </button></NavLink>
-                      <main className="main-div">
-                        <div className="crawl-text-div">
-                        <section className="filmtext-content">
-                        <div className='film-text'>
-                        <p>{scroll}</p>
-                        <h2>{title}</h2>
-                        <h5>{date}</h5>
-                        </div>
-                        </section>
-                        </div>
-                      </main>
-                </div>
-              </div>
-            )
-          }}
-          />
+          <div className="intro-page">
+            <h1 className="swapi-intro-title">swapi-box</h1>
+            <NavLink to='/landingpage' className='nav' onClick={this.openLandingPage}><button className="intro-swapi-button">
+              <img src={rebelIcon} width="80" height="80"/>
+              </button></NavLink>
+                <main className="main-div">
+                  <div className="crawl-text-div">
+                  <section className="filmtext-content">
+                  <div className='film-text'>
+                  <p>{scroll}</p>
+                  <h2>{title}</h2>
+                  <h5>{date}</h5>
+                  </div>
+                  </section>
+                  </div>
+                </main>
+          </div>
         </div>
       )
-    }else if(!homepage){
+    }else if(!this.state.homepage){
       return(
         <div>
-        <Route path='/landingpage' render={()=>{
+        <Route exact path='/landingpage' render={()=>{
           return(
             <LandingPage
             getVehicleCards={this.getVehicleCards}
@@ -212,6 +209,5 @@ class App extends Component {
     }
   }
 }
-
 
 export default App;
