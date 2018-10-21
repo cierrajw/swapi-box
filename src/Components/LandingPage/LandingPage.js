@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Buttons from '../Buttons/Buttons';
 import CardContainer from '../CardContainer/CardContainer';
@@ -12,8 +13,10 @@ class LandingPage extends Component{
 
   render(){
 
+
     const { getPeopleCards, getVehicleCards, getPlanetCards, toggleFavorite, allCards, displayFavorites } = this.props;
 
+    console.log(allCards)
     return (
       <div className="LandingPage">
         <main className="component-container">
@@ -22,7 +25,7 @@ class LandingPage extends Component{
             <CardContainer
               className="card-container"
               allCards={allCards}
-              toggleFavorite={toggleFavorite} 
+              toggleFavorite={toggleFavorite}
             />
             <Buttons
               className="buttons-section"

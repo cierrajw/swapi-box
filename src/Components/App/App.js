@@ -151,8 +151,8 @@ class App extends Component {
     });
   }
 
-  openLandingPage = () =>{
-    this.setState({ homepage: false }) 
+  openLandingPage = () => {
+    this.setState({ homepage: false })
   }
 
 
@@ -204,6 +204,26 @@ class App extends Component {
             )
           }}
           />
+
+    }else if(!this.state.homepage){
+      return(
+        <div>
+        <Route exact path='/landingpage' render={()=>{
+          return(
+            <LandingPage
+            getVehicleCards={this.getVehicleCards}
+            getPeopleCards={this.getPeopleCards}
+            getPlanetCards={this.getPlanetCards}
+            filmText={this.state.film}
+            allCards={this.state.allCards}
+            favoriteCards={this.state.favoriteCards}
+            toggleFavorite={this.toggleFavorite}
+            displayFavorites={this.displayFavorites}
+            favorites={this.state.favorites}
+            />
+          )
+        }}
+        />
         </div>
       )
     }
