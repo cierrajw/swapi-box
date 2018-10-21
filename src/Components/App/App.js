@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
+import rebelIcon from "../../assets/Images/rebel-alliance.png";
 
 class App extends Component {
   constructor(){
     super();
 
     this.state = {
-      filmText: '',
+      film: {},
       peopleCards: [],
       planetsCards: [],
       vehiclesCards: [],
       allCards: [],
-      favoriteCards: [],
-      unfavorites: [],
-      redirect: false,
-      filmTextShown: true
+      favorites: [],
+      type: '',
+      redirect: false
     };
   }
 
@@ -24,67 +24,36 @@ class App extends Component {
     this.displayFilmText();
   }
 
-  // toggleFavorite
-  addFavorites = (id, type) =>{
+  toggleFavorite = (id, type) =>{
     const categoryCards = this.state[`${type}Cards`].map(card => {
-      if(card.id === id) {
-        return {...card, favorite: !card.favorite}
-      }
-      return card
-    })
-
-    const allCards = this.state.allCards.map(card => {
-      if(card.id === id) {
-        return {...card, favorite: !card.favorite}
+      if (card.id === id) {
+        return {...card, favorite: !card.favorite};
+        // const filteredCards = this.state[`${type}Cards`].filter(card => return card)
+        // localStorage.setItem(`${type}`, JSON.stringify(filteredCard));  
       }
       return card;
-    })
+    });
+
+    const allCards = this.state.allCards.map(card => {
+      if (card.id === id) {
+        return {...card, favorite: !card.favorite};
+
+      }
+      return card;
+    });
+
+    // const filteredCards = this.state.allCards.filter(card => {
+    //   return card.favorite
+    // })
 
     this.setState({
       allCards,
-      [`${type}Cards`]: categoryCards,
-    })
+      // favorites: filteredCards,
+      [`${type}Cards`]: categoryCards
+    });
   }
 
-//   const allCards = this.state.allCards.map(card => {
-//     if(card.id === id) {
-//       const foundCard={...card, favorite: !card.favorite}
-//       const filteredCards = this.state.allCards.filter(card => card.favorite))
-//     }
-//     return card;
-//   })
-//
-//   this.setState({
-//     allCards,
-//     [`${type}Cards`]: categoryCards,
-//   })
-// }
 
-  // handleFavorites = (newFavoriteCard) => {
-  //   if (!newFavoriteCard.favorite) {
-  //     const unfavorites = this.state.favoriteCards.filter(card => card.name !== newFavoriteCard.name)
-  //     this.setState({
-  //       favoriteCards: unfavorites,
-  //       allCards: this.state.favoriteCards
-  //     })
-  //   } else {
-  //     const favoriteCards = [newFavoriteCard, ...this.state.favoriteCards];
-  //       this.setState({
-  //         favoriteCards: favoriteCards,
-  //       });
-  //     localStorage.setItem(newFavoriteCard.name, JSON.stringify(newFavoriteCard))
-  //   }
-  //
-  //   let duplicate = false
-  //   this.state.favoriteCards.forEach(fave => {
-  //     if(fave.name === newFavoriteCard.name) {
-  //       return duplicate = true
-  //     }
-  //   })
-  //
-  //   if (duplicate === true) return
-  //
-  // }
 
   displayFavorites = () => {
 
@@ -95,8 +64,15 @@ class App extends Component {
     const allFavorites = [...favoritePeople, ...favoritePlanets, ...favoriteVehicles];
 
     this.setState({
-      allCards: allFavorites
+      allCards: allFavorites,
+      favorites: allFavorites
     });
+
+    // if(!this.state.allcards) {
+    //   this.setState({
+    //     allCards: [{ name: "YOU HAVE NO FAVORITES"}]
+    //   });
+    // }
 
   }
 
@@ -113,7 +89,9 @@ class App extends Component {
     }
 
     const peopleStorage = localStorage.getItem('people');
+    // this.setState({ allCards: JSON.parse(peopleStorage) });
     this.setState({ allCards: JSON.parse(peopleStorage) });
+
   }
 
   getPlanetCards = async () =>{
@@ -153,18 +131,22 @@ class App extends Component {
       const response = await fetch('https://swapi.co/api/films/');
       const data = await response.json();
       const filmTextResult = await this.getFilm(data.results);
-      return filmTextResult
+      return filmTextResult;
     } catch (error) {
       throw new Error(error.message);
     }
   }
 
   getFilm = (films) => {
-    const filmScrolls = films.map(film => {
-      return film.opening_crawl;
+    const filmScrolls =films.map( film => {
+      return film;
     });
+
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)];
-    this.setState({filmText: randomScroll});
+    const film = {scroll: randomScroll.opening_crawl, date: randomScroll.release_date, title: randomScroll.title};
+    this.setState({
+      film 
+    });
   }
 
   setRedirect = () =>{
@@ -182,28 +164,38 @@ class App extends Component {
           getVehicleCards={this.getVehicleCards}
           getPeopleCards={this.getPeopleCards}
           getPlanetCards={this.getPlanetCards}
-          filmText={this.state.filmText}
+          filmText={this.state.film}
           allCards={this.state.allCards}
           favoriteCards={this.state.favoriteCards}
-          addFavorites={this.addFavorites}
+          toggleFavorite={this.toggleFavorite}
           displayFavorites={this.displayFavorites}
+          favorites={this.state.favorites}
         />
       );
 
     } else {
-
+      const scroll = this.state.film.scroll;
+      const title = this.state.film.title;
+      const date = this.state.film.date;
+      
       return (
-        <main className="main-div">
-          <div className="swapi-button-section">
-            <h1 className="swapi-intro-title">swapi-box</h1>
-            <button className="intro-swapi-button">Explore!</button>
-          </div>
-          <div className="crawl-text-div">
-            <section className="filmtext-content">
-              <div className='film-text' onClick={this.setRedirect}>{this.state.filmText}</div>
-            </section>
-          </div>
-        </main>
+        <div className="intro-page">
+          <h1 className="swapi-intro-title">swapi-box</h1>
+          <button className="intro-swapi-button">
+            <img src={rebelIcon} width="80" height="80" />
+          </button>
+          <main className="main-div">
+            <div className="crawl-text-div">
+              <section className="filmtext-content">
+                <div className='film-text' onClick={this.setRedirect}>
+                  <p>{scroll}</p>
+                  <h2>{title}</h2>
+                  <h5>{date}</h5>
+                </div>
+              </section>
+            </div>
+          </main>
+        </div>
       );
     }
   }

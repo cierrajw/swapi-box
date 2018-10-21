@@ -1,31 +1,52 @@
-.card{
+.card-favorite {
   display: inline-block;
-  margin: 2rem;
+  margin: 1.7rem;
+  padding: 0.3rem;
   background-color: #2F4B65;
-  width: 16rem;
-  height: 20rem;
+  width: 14.5rem;
+  height: 24rem;
   border-radius: 2em;
   text-align: center;
-  border: 2px groove gold;
+  border: 3.5px groove #F2B705;
+  color: #F2B705;
 }
 
-.star-favorite{
-  color: gold;
+.card {
+  display: inline-block;
+  margin: 1.5rem;
+  padding: 0.3rem;
+  background-color: #2F4B65;
+  width: 14.5rem;
+  height: 24rem;
+  border-radius: 2em;
+  text-align: center;
+  border: 2px groove #73000A;
+  color: #F2B705
+}
+
+.resident-list {
+  font-size: .7rem;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.star-favorite {
+  color: #F2B705;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  background-color: gold;
+  background-color: #F2B705;
   height: 40px;
   width: 40px;
 }
 
-.card {
-	opacity: 1;
-/*	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 2s;*/
+.star {
+  color: #73000A;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: #73000A;
+  height: 40px;
+  width: 40px;
 }
 
-.favorite-name{
+.favorite-name {
   background-color: #106282;
   padding: .2em;
   border-radius: 2em 2em 0 0;

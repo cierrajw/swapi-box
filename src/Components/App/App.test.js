@@ -27,7 +27,7 @@ describe('App', () => {
     expect(wrapper.state('peopleCards')).toEqual([]);
     const expected = [{name: 'Luke Skywalker', species: 'human'}];
     wrapper.instance().getPeopleCards();
-    wrapper.setState({peopleCards: expected})
+    wrapper.setState({peopleCards: expected});
     expect(wrapper.state('peopleCards')).toEqual(expected);
   });
 

@@ -20,7 +20,7 @@ export const fetchSpecies = async(url) => {
   try {
     const response = await fetch(url);
     const speciesData = await response.json();
-    return {species: speciesData.name, language: speciesData.language, type: 'species'};
+    return {species: speciesData.name, language: speciesData.language};
   } catch (error) {
     throw new Error(error.message);
   }

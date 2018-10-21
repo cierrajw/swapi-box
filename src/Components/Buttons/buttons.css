@@ -2,35 +2,70 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 0 auto;
-  width: 50rem;
-  height: 15rem;
+  width: 60rem;
+  height: 12rem;
+}
+
+.icon {
+  padding: .4rem .5rem 0 0;
 }
 
 .card-section-button{
-  border: 1px solid #106282;
   border: 2px solid #106282;
-  height: 50px;
-  width: 150px;
+  padding: 0 0 0.3rem 0;
+  height: 4.1rem;
+  width: 14rem;
   background-color: black;
-  color: gold;
+  color: #F2B705;
   border-radius: 5px;
   font-size: 1.5em;
 }
 
-.card-section-button:hover{
-  border: 1px solid #106282;
+.card-section-button:hover {
   border: 2px solid #106282;
-  background-color: gold;
+  background-color: #F2B705;
   color: #122148;
+  height: 4.1rem;
+  width: 14rem;
 }
 
+.star {
+  color: #73000A;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: #73000A;
+  height: 40px;
+  width: 40px;
+}
 
-.button-selected{
-  width: 150px;
+.favorites-button{
   border: 2px solid #106282;
-  height: 50px;
-  background-color: gold;
+  border-radius: 5px;
+  background-color: black;
+  color: #F2B705;
+  font-size: 1.5em;
+  height: 4.1rem;
+  width: 14rem;
+  margin: 1em;
+  margin: 0;
+}
+
+.favorites-button:hover {
+  border: 2px solid #106282;
+  background-color: #F2B705;
+  color: #122148;
+  height: 4.1rem;
+  width: 14rem;
+}
+
+.num-fave {
+  padding-left: 0.4rem;
+}
+
+.button-selected {
+  height: 4.1rem;
+  width: 14rem;
+  border: 2px solid #106282;
+  background-color: #F2B705;
   color: #122148;
   font-size: 1.5em;
   border-radius: 5px;
