@@ -3,14 +3,13 @@ import Card from '../Card/Card';
 import './card-container.css';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({allCards = [], addFavorites}) => {
+const CardContainer = ({allCards = [], toggleFavorite}) => {
 
   const displayCards = allCards.map(card =>
-
     <Card
       {...card}
       key={Math.random()*Date.now()}
-      addFavorites={addFavorites}
+      toggleFavorite={toggleFavorite}
     />
   );
 
@@ -26,7 +25,7 @@ const CardContainer = ({allCards = [], addFavorites}) => {
 
 CardContainer.propTypes = {
   displayedCards: PropTypes.array,
-  addFavorites: PropTypes.func
+  toggleFavorite: PropTypes.func
 };
 
 export default CardContainer;

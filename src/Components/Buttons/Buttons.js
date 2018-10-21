@@ -50,7 +50,15 @@ class Buttons extends Component {
     });
   }
 
+  handleFavoriteClick = () =>{
+    this.props.displayFavorites();
+  }
+
   render(){
+
+    const numFavorites = this.props.allCards.filter(card=>{
+      return card.favorite;
+    })
 
     const { peopleButtonClicked, planetButtonClicked, vehiclesButtonClicked } = this.state;
     const isPeopleClicked = peopleButtonClicked ? "button-selected": "card-section-button";
@@ -62,6 +70,7 @@ class Buttons extends Component {
         <button className={isPeopleClicked} onClick={this.handlePeopleClicked}><img src={person} height="25" width="25" className="icon" />People</button>
         <button className={isPlanetClicked} onClick={this.handlePlanetClicked}><img src={planet} height="25" width="25" className="icon" />Planets</button>
         <button className={isVehiclesClicked} onClick={this.handleVehicleClicked}><img src={vehicle} height="25" width="25" className="icon" />Vehicles</button>
+        <button className="favorites-button" onClick={()=>this.handleFavoriteClick()}>Favorites: <span className="num-fave">{numFavorites.length}</span></button>
       </section>
     );
   }
@@ -70,7 +79,8 @@ class Buttons extends Component {
 Buttons.propTypes = {
   getPeopleCards: PropTypes.func,
   getPlanetCards: PropTypes.func,
-  getVehicleCards: PropTypes.func
+  getVehicleCards: PropTypes.func,
+  favoriteCards: PropTypes.array
 };
 
 export default Buttons;

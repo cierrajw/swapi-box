@@ -14,8 +14,8 @@ class App extends Component {
       planetsCards: [],
       vehiclesCards: [],
       allCards: [],
+      type: '',
       redirect: false,
-      filmTextShown: true
     };
   }
 
@@ -23,8 +23,7 @@ class App extends Component {
     this.displayFilmText();
   }
 
-  // toggleFavorite
-  addFavorites = (id, type) =>{
+  toggleFavorite = (id, type) =>{
     const categoryCards = this.state[`${type}Cards`].map(card => {
       if(card.id === id) {
         return {...card, favorite: !card.favorite}
@@ -41,7 +40,7 @@ class App extends Component {
 
     this.setState({
       allCards,
-      [`${type}Cards`]: categoryCards,
+      [`${type}Cards`]: allCards
     })
   }
 
@@ -125,8 +124,9 @@ class App extends Component {
       return film
     });
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)];
+    const film = {scroll: randomScroll.opening_crawl, date: randomScroll.release_date, title: randomScroll.title}
     this.setState({
-      film: {scroll: randomScroll.opening_crawl, date: randomScroll.release_date, title: randomScroll.title}
+      film 
     });
   }
 
@@ -148,7 +148,7 @@ class App extends Component {
           filmText={this.state.film}
           allCards={this.state.allCards}
           favoriteCards={this.state.favoriteCards}
-          addFavorites={this.addFavorites}
+          toggleFavorite={this.toggleFavorite}
           displayFavorites={this.displayFavorites}
         />
       );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import ScrollSection from '../ScrollSection/ScrollSection';
+// import ScrollSection from '../ScrollSection/ScrollSection';
 import Buttons from '../Buttons/Buttons';
 import CardContainer from '../CardContainer/CardContainer';
 import './landing-page.css';
@@ -13,7 +13,7 @@ class LandingPage extends Component{
 
   render(){
 
-    const { filmText, getPeopleCards, getVehicleCards, getPlanetCards, addFavorites, allCards} = this.props;
+    const { filmText, getPeopleCards, getVehicleCards, getPlanetCards, toggleFavorite, allCards} = this.props;
     // <ScrollSection className="scroll-section" filmText={filmText.scroll}/>
 
     return (
@@ -25,12 +25,14 @@ class LandingPage extends Component{
             <CardContainer
               className="card-container"
               allCards={this.props.allCards}
-              addFavorites={this.props.addFavorites} />
+              toggleFavorite={this.props.toggleFavorite} />
             <Buttons
               className="buttons-section"
               getPeopleCards={getPeopleCards}
               getVehicleCards={getVehicleCards}
               getPlanetCards={getPlanetCards}
+              allCards={this.props.allCards}
+              displayFavorites={this.props.displayFavorites}
             />
           </section>
 
@@ -45,7 +47,7 @@ LandingPage.propTypes = {
   getPeopleCards: PropTypes.func,
   getVehicleCards: PropTypes.func,
   getPlanetCards: PropTypes.func,
-  addFavorites: PropTypes.func,
+  toggleFavorite: PropTypes.func,
   favoriteCards: PropTypes.array,
   displayFavorites: PropTypes.func,
   allCards: PropTypes.array

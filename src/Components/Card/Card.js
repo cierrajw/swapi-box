@@ -7,20 +7,20 @@ class Card extends Component{
     super();
   }
 
-  handleFavoriteClick = (id) =>{
-    this.props.addFavorites(id, this.props.type);
+  handleFavoriteClick = (id, type) =>{
+    this.props.toggleFavorite(id, type);
   }
 
   render(){
-    const { name, homeworld, species, language, population, model, vehicleClass, passengers, terrain, planetPopulation, climate, residents, id, favorite} = this.props;
+    const { name, homeworld, species, language, population, model, vehicleClass, passengers, terrain, planetPopulation, climate, residents, id, favorite, type} = this.props;
 
-    switch (this.props.type){
+    switch (type){
 
       case 'people':
         return (
           <div 
             className={favorite ? "card-favorite": "card"}
-            onClick={()=>this.handleFavoriteClick(id)}
+            onClick={()=>this.handleFavoriteClick(id, type)}
           >
             <section
               className="favorite-name"><h2>{name}</h2>
@@ -41,7 +41,7 @@ class Card extends Component{
         return (
           <div 
             className={favorite ? "card-favorite": "card"}
-            onClick={()=>this.handleFavoriteClick(id)}
+            onClick={()=>this.handleFavoriteClick(id, type)}
           >
             <section
               className="favorite-name"><h2>{name}</h2>
@@ -69,7 +69,7 @@ class Card extends Component{
         return (
           <div 
             className={favorite ? "card-favorite": "card"}
-            onClick={()=>this.handleFavoriteClick(id)}
+            onClick={()=>this.handleFavoriteClick(id, type)}
           >
             <section
               className="favorite-name"><h2>{name}</h2>
