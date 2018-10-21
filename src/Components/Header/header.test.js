@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import Header from './Header.js';
 
 describe('Header', () => {
@@ -15,7 +14,8 @@ describe('Header', () => {
       population: "200000",
       species: "Droid",
       type: "people"
-    }]
+    }];
+    
     const wrapper = shallow(<Header favoriteCards = {mockFavoriteCards} />);
     expect(wrapper).toMatchSnapshot();
   });

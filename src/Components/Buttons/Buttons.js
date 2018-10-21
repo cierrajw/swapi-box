@@ -12,7 +12,8 @@ class Buttons extends Component {
     super();
 
     this.state={
-      currentButtonClicked: ''
+      currentButtonClicked: '',
+      numFavorites: ''
     };
   }
 
@@ -40,12 +41,15 @@ class Buttons extends Component {
 
   handleFavoriteClick = () =>{
     this.props.displayFavorites();
+    this.setState({
+      currentButtonClicked: 'favorites'
+    });
   }
 
   render(){
-
+    
     const numFavorites = this.props.allCards.filter(card=>{
-      return card.favorite;
+      return card.favorite; 
     })
 
     const isPeopleClicked = this.state.currentButtonClicked === 'people' ? "button-selected": "card-section-button";
@@ -69,7 +73,7 @@ Buttons.propTypes = {
   getPlanetCards: PropTypes.func,
   getVehicleCards: PropTypes.func,
   displayFavorites: PropTypes.func,
-  favoriteCards: PropTypes.array
+  allCards: PropTypes.array
 };
 
 export default Buttons;

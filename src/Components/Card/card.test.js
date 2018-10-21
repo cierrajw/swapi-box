@@ -14,7 +14,7 @@ describe('Card', () => {
     mockedHandleClick = jest.fn();
 
     wrapper = shallow(<Card addFavorites={mockedHandleClick}/>);
-  })
+  });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();

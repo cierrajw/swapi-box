@@ -33,6 +33,7 @@ class LandingPage extends Component{
               getPlanetCards={getPlanetCards}
               allCards={this.props.allCards}
               displayFavorites={this.props.displayFavorites}
+              favorites={this.props.favorites}
             />
           </section>
 

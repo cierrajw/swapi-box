@@ -14,6 +14,13 @@ class Card extends Component{
   render(){
     const { name, homeworld, species, language, population, model, vehicleClass, passengers, terrain, planetPopulation, climate, residents, id, favorite, type} = this.props;
 
+    let residentResult = residents.map(resident => {
+      if (residents.length > 1) {
+        return <h4 className="resident-list"> {resident}, </h4>;
+      } else {
+        return <h4> {resident} </h4>;
+      } 
+    });
     switch (type){
 
       case 'people':
@@ -57,15 +64,6 @@ class Card extends Component{
         );
 
       case 'planets':
-        let residentResult = residents.map(resident=>{
-          if(residents.length > 1) {
-            return <h4 className="resident-list"> {resident}, </h4>
-          } else {
-            return <h4> {resident} </h4>
-          }
-          
-        });
-
         return (
           <div 
             className={favorite ? "card-favorite": "card"}
@@ -108,7 +106,7 @@ Card.propTypes = {
   residents: PropTypes.array,
   id: PropTypes.number,
   type: PropTypes.string,
-  addFavorites: PropTypes.func,
+  toggleFavorite: PropTypes.func,
   favorite: PropTypes.bool
 };
 

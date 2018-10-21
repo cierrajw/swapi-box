@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
-import rebelIcon from "../../assets/Images/rebel-alliance.png"
+import rebelIcon from "../../assets/Images/rebel-alliance.png";
 
 class App extends Component {
   constructor(){
@@ -14,8 +14,9 @@ class App extends Component {
       planetsCards: [],
       vehiclesCards: [],
       allCards: [],
+      favorites: [],
       type: '',
-      redirect: false,
+      redirect: false
     };
   }
 
@@ -25,23 +26,23 @@ class App extends Component {
 
   toggleFavorite = (id, type) =>{
     const categoryCards = this.state[`${type}Cards`].map(card => {
-      if(card.id === id) {
-        return {...card, favorite: !card.favorite}
-      }
-      return card
-    })
-
-    const allCards = this.state.allCards.map(card => {
-      if(card.id === id) {
-        return {...card, favorite: !card.favorite}
+      if (card.id === id) {
+        return {...card, favorite: !card.favorite};
       }
       return card;
-    })
+    });
+
+    const allCards = this.state.allCards.map(card => {
+      if (card.id === id) {
+        return {...card, favorite: !card.favorite};
+      }
+      return card;
+    });
 
     this.setState({
       allCards,
       [`${type}Cards`]: allCards
-    })
+    });
   }
 
 
@@ -55,7 +56,8 @@ class App extends Component {
     const allFavorites = [...favoritePeople, ...favoritePlanets, ...favoriteVehicles];
 
     this.setState({
-      allCards: allFavorites
+      allCards: allFavorites,
+      favorites: allFavorites
     });
 
   }
@@ -73,7 +75,9 @@ class App extends Component {
     }
 
     const peopleStorage = localStorage.getItem('people');
+    // this.setState({ allCards: JSON.parse(peopleStorage) });
     this.setState({ allCards: JSON.parse(peopleStorage) });
+
   }
 
   getPlanetCards = async () =>{
@@ -113,18 +117,19 @@ class App extends Component {
       const response = await fetch('https://swapi.co/api/films/');
       const data = await response.json();
       const filmTextResult = await this.getFilm(data.results);
-      return filmTextResult
+      return filmTextResult;
     } catch (error) {
       throw new Error(error.message);
     }
   }
 
   getFilm = (films) => {
-    const filmScrolls = films.map(film => {
-      return film
+    const filmScrolls =films.map( film => {
+      return film;
     });
+
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)];
-    const film = {scroll: randomScroll.opening_crawl, date: randomScroll.release_date, title: randomScroll.title}
+    const film = {scroll: randomScroll.opening_crawl, date: randomScroll.release_date, title: randomScroll.title};
     this.setState({
       film 
     });
@@ -150,13 +155,14 @@ class App extends Component {
           favoriteCards={this.state.favoriteCards}
           toggleFavorite={this.toggleFavorite}
           displayFavorites={this.displayFavorites}
+          favorites={this.state.favorites}
         />
       );
 
     } else {
-      const scroll = this.state.film.scroll
+      const scroll = this.state.film.scroll;
       const title = this.state.film.title;
-      const date = this.state.film.date
+      const date = this.state.film.date;
       
       return (
         <div className="intro-page">
