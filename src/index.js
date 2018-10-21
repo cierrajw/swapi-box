@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './Components/App/App';
-import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <BrowserRouter>
     <App />
-  </BrowserRouter>, 
+  </BrowserRouter>,
   document.getElementById('root'));
 
 const router = (
@@ -18,4 +17,3 @@ const router = (
 )
 
 ReactDOM.render(router, document.getElementById('root'));
-

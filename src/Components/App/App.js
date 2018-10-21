@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import LandingPage from '../LandingPage/LandingPage';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
 import rebelIcon from "../../assets/Images/rebel-alliance.png";
-import { Route, NavLink } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
+import { Route, NavLink, Link } from 'react-router-dom';
 import './App.css'
 
 class App extends Component {
@@ -140,7 +141,7 @@ class App extends Component {
   }
 
   getFilm = (films) => {
-    const filmScrolls =films.map(film => {
+    const filmScrolls =films.map( film => {
       return film;
     });
 
@@ -151,8 +152,10 @@ class App extends Component {
     });
   }
 
-  openLandingPage = () => {
-    this.setState({ homepage: false })
+  openLandingPage = () =>{
+    this.setState({
+      homepage: true
+    })
   }
 
 
@@ -161,48 +164,28 @@ class App extends Component {
     const title = this.state.film.title;
     const date = this.state.film.date;
 
-    if (this.state.homepage){
-      return (
+    if(this.state.homepage){
+      return(
         <div>
           <div className="intro-page">
             <h1 className="swapi-intro-title">swapi-box</h1>
             <NavLink to='/landingpage' className='nav' onClick={this.openLandingPage}><button className="intro-swapi-button">
-              <img className="rebel-icon"src={rebelIcon} width="80" height="80" alt="" />
+              <img src={rebelIcon} width="80" height="80"/>
               </button></NavLink>
                 <main className="main-div">
                   <div className="crawl-text-div">
                   <section className="filmtext-content">
                   <div className='film-text'>
-                    <p>{scroll}</p>
-                    <h2>{title}</h2>
-                    <h5>{date}</h5>
+                  <p>{scroll}</p>
+                  <h2>{title}</h2>
+                  <h5>{date}</h5>
                   </div>
-                </section>
-              </div>
-            </main>
+                  </section>
+                  </div>
+                </main>
           </div>
         </div>
       )
-    }else if (!this.state.homepage){
-      return(
-        <div>
-          <Route exact path='/landingpage' render={()=>{
-            return (
-              <LandingPage
-                getVehicleCards={this.getVehicleCards}
-                getPeopleCards={this.getPeopleCards}
-                getPlanetCards={this.getPlanetCards}
-                filmText={this.state.film}
-                allCards={this.state.allCards}
-                favoriteCards={this.state.favoriteCards}
-                toggleFavorite={this.toggleFavorite}
-                displayFavorites={this.displayFavorites}
-                favorites={this.state.favorites}
-              />
-            )
-          }}
-          />
-
     }else if(!this.state.homepage){
       return(
         <div>
