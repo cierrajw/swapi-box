@@ -166,14 +166,12 @@ class App extends Component {
         <div>
           <div className="intro-page">
             <h1 className="swapi-intro-title">swapi-box</h1>
-            <NavLink to='/landingpage' className='nav' onClick={this.openLandingPage}>
-              <button className="intro-swapi-button">
-                <img src={rebelIcon} width="80" height="80" alt="" />
-              </button>
-            </NavLink>
-            <main className="main-div">
-              <div className="crawl-text-div">
-                <section className="filmtext-content">
+            <NavLink to='/landingpage' className='nav' onClick={this.openLandingPage}><button className="intro-swapi-button">
+              <img className="rebel-icon"src={rebelIcon} width="80" height="80" alt="" />
+              </button></NavLink>
+                <main className="main-div">
+                  <div className="crawl-text-div">
+                  <section className="filmtext-content">
                   <div className='film-text'>
                     <p>{scroll}</p>
                     <h2>{title}</h2>

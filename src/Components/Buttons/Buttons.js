@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import person from "../../assets/Images/person.png";
 import planet from "../../assets/Images/planet.png";
 import vehicle from "../../assets/Images/vehicle.png";
+import { BrowserRouter} from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
+
 
 class Buttons extends Component {
   constructor(){
@@ -45,9 +48,9 @@ class Buttons extends Component {
   }
 
   render(){
-    
+
     const numFavorites = this.props.allCards.filter(card=>{
-      return card.favorite; 
+      return card.favorite;
     });
 
     const isPeopleClicked = this.state.currentButtonClicked === 'people' ? "button-selected": "card-section-button";
