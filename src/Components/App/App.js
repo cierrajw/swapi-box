@@ -3,6 +3,8 @@ import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
 import rebelIcon from "../../assets/Images/rebel-alliance.png";
+import { BrowserRouter} from 'react-router-dom';
+import { Route, NavLink, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor(){
@@ -29,7 +31,7 @@ class App extends Component {
       if (card.id === id) {
         return {...card, favorite: !card.favorite};
         // const filteredCards = this.state[`${type}Cards`].filter(card => return card)
-        // localStorage.setItem(`${type}`, JSON.stringify(filteredCard));  
+        // localStorage.setItem(`${type}`, JSON.stringify(filteredCard));
       }
       return card;
     });
@@ -145,45 +147,24 @@ class App extends Component {
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)];
     const film = {scroll: randomScroll.opening_crawl, date: randomScroll.release_date, title: randomScroll.title};
     this.setState({
-      film 
+      film
     });
   }
 
-  setRedirect = () =>{
-    this.setState({
-      redirect: true
-    });
-  }
 
   render() {
-    const { redirect} = this.state;
+    const scroll = this.state.film.scroll;
+    const title = this.state.film.title;
+    const date = this.state.film.date;
 
-    if (redirect){
       return (
-        <LandingPage
-          getVehicleCards={this.getVehicleCards}
-          getPeopleCards={this.getPeopleCards}
-          getPlanetCards={this.getPlanetCards}
-          filmText={this.state.film}
-          allCards={this.state.allCards}
-          favoriteCards={this.state.favoriteCards}
-          toggleFavorite={this.toggleFavorite}
-          displayFavorites={this.displayFavorites}
-          favorites={this.state.favorites}
-        />
-      );
+        <div>
 
-    } else {
-      const scroll = this.state.film.scroll;
-      const title = this.state.film.title;
-      const date = this.state.film.date;
-      
-      return (
         <div className="intro-page">
           <h1 className="swapi-intro-title">swapi-box</h1>
-          <button className="intro-swapi-button">
+          <Link to='/landingpage' className='nav'><button className="intro-swapi-button">
             <img src={rebelIcon} width="80" height="80" />
-          </button>
+          </button></Link>
           <main className="main-div">
             <div className="crawl-text-div">
               <section className="filmtext-content">
@@ -196,8 +177,29 @@ class App extends Component {
             </div>
           </main>
         </div>
-      );
-    }
+
+      <Route exact path='/landingpage' render={()=>{
+
+
+        return <LandingPage
+        getVehicleCards={this.getVehicleCards}
+        getPeopleCards={this.getPeopleCards}
+        getPlanetCards={this.getPlanetCards}
+        filmText={this.state.film}
+        allCards={this.state.allCards}
+        favoriteCards={this.state.favoriteCards}
+        toggleFavorite={this.toggleFavorite}
+        displayFavorites={this.displayFavorites}
+        favorites={this.state.favorites}
+        />
+      }}
+      />
+
+      <Route exact path='/landingpage' component={LandingPage}/>
+
+      </div>
+    );
+
   }
 }
 
