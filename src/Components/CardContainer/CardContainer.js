@@ -17,7 +17,7 @@ const CardContainer = ({allCards = [], toggleFavorite}) => {
 
   return (
     <div className="card-container">
-      <section>
+      <section className="card-section">
         {displayCards}
       </section>
     </div>

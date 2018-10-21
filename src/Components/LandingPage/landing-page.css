@@ -3,6 +3,7 @@ body{
   border: 3px groove #F2B705;
   margin: 1em;
   border-radius: 10px;
+  margin: auto;
   /*height: 100%;*/
 }
 
@@ -13,7 +14,7 @@ body{
 
 .right-section{
   display: grid;
-  /*grid-template-rows: .5fr .5fr 5fr; */
+  grid-template-rows: .5fr .5fr 5fr;
   grid-template-rows: .1fr .1fr 5fr;
 }
 
@@ -31,80 +32,133 @@ body{
   grid-row: 3;
 }
 
+.card-section{
+  text-align: center;
+}
+
 /* @media screen and (min-width: 605px) and (max-width: 1113px){
 
 } */
 
-@media screen and (max-width: 1113px){
-  .scroll-div{
-    display: none;
-  }
+@media screen and (max-width: 1040px){
 
   .component-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-
-  .header-section{
-    grid-template-columns: 65% 35%;
+  .card-section-button{
+    width: 130px;
   }
 
-  .swapi-title{
-
-  }
-}
-
-@media screen and (max-width: 836px){
-
-  .buttons-section{
-    width: 500px;
-
-  }
-
-  .header{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .component-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .header-section{
-    grid-template-columns: 65% 35%;
-  }
-
-}
-
-@media screen and (max-width: 572px){
-
-  .header{
-    /*grid-template-columns: 1fr;*/
-    grid-template-rows: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 553px){
-
-  .buttons-section{
-    width: 400px;
-  }
-}
-
-@media screen and (max-width: 455px){
-
-  .header-section{
-    display: flex;
-    flex-direction: column;
-  }
-  .swapi-title{
-    margin: 20px auto;
+  .button-selected{
+    width: 130px;
   }
 
   .favorites-button{
-    margin: auto;
+    width: 130px;
   }
+}
+
+@media screen and (max-width: 1040px){
+  .buttons-section{
+    width: 40rem;
+  }
+}
+
+@media screen and (max-width: 679px){
+
+  .card-section-button{
+    width: 110px;
+    font-size: 1em;
+  }
+
+  .swapi-title{
+    font-size: 3.5em;
+    margin: 1em auto;
+  }
+
+  .button-selected{
+    font-size: 1em;
+    width: 110px;
+  }
+
+  .favorites-button{
+    font-size: 1em;
+    width: 110px;
+  }
+
+  .buttons-section{
+
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 527px){
+
+  .buttons-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18rem;
+  margin: 1em auto;
+  }
+
+  .swapi-title{
+    font-size: 2.5em;
+    margin: 1em auto;
+  }
+
+  .card-section-button{
+    width: 200px;
+    font-size: 2em;
+  }
+
+  .button-selected{
+    font-size: 2em;
+    width: 200px;
+  }
+
+  .favorites-button{
+    font-size: 1em;
+    width: 200px;
+    font-size: 2em;
+  }
+
+  .header-section{
+    margin: 1em auto;
+  }
+}
+
+@media screen and (max-width: 465px){
+  .swapi-title{
+    font-size: 2em;
+    margin: 1em auto;
+  }
+
+  .header-section{
+    width: 100%;
+  }
+
+  .buttons-section{
+    width: 90%;
+  }
+
+}
+
+@media screen and (max-width: 464px){
+  .swapi-title{
+    font-size: 2em;
+    margin: 1em auto;
+  }
+
+  .card-section-button{
+    width: 200px;
+    font-size: 2em;
+  }
+
+  .buttons-section{
+    width: 200px;
+  }
+
 }

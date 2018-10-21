@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LandingPage from '../LandingPage/LandingPage';
-import IntroPage from '../IntroPage/IntroPage';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
 import rebelIcon from "../../assets/Images/rebel-alliance.png";
 import { BrowserRouter} from 'react-router-dom';
@@ -169,7 +168,7 @@ class App extends Component {
           <div className="intro-page">
             <h1 className="swapi-intro-title">swapi-box</h1>
             <NavLink to='/landingpage' className='nav' onClick={this.openLandingPage}><button className="intro-swapi-button">
-              <img src={rebelIcon} width="80" height="80"/>
+              <img className="rebel-icon"src={rebelIcon} width="80" height="80"/>
               </button></NavLink>
                 <main className="main-div">
                   <div className="crawl-text-div">

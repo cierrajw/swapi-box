@@ -7,16 +7,14 @@ body{
   background-image: url('../../assets/Images/maxresdefault.jpg');
   background-repeat: no-repeat;
   background-position: center;
+  margin: auto;
 }
 
-/*.swapi-button-section{
+.rebel-icon{
   display: flex;
-  flex-direction: column;
-}*/
-
-/*.intro-page {
-  margin: 0 auto;
-}*/
+  justify-content: center;
+  text-align: center;
+}
 
 .intro-page {
   margin: 0 auto;
@@ -44,15 +42,8 @@ body{
 
 .intro-swapi-button{
   border: none;
+  margin: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 47%;
-/*  background-color: #73000A;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);*/
-  /*margin: 0 auto;*/
-  /*background-color: #F2B705;*/
-  /*color: black;*/
   background-color: black;
 }
 
@@ -109,6 +100,8 @@ body{
   }
 }
 
-@media screen and (max-width: 1113px){
-
+@media screen and (max-width: 500px){
+  .swapi-intro-title{
+    font-size: 3em;
+  }
 }
