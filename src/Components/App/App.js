@@ -11,6 +11,7 @@ class App extends Component {
     super();
 
     this.state = {
+      homepage: true,
       film: {},
       peopleCards: [],
       planetsCards: [],
@@ -156,52 +157,61 @@ class App extends Component {
     const scroll = this.state.film.scroll;
     const title = this.state.film.title;
     const date = this.state.film.date;
+    const { homepage } = this.state.homepage;
 
-      return (
+    if(homepage){
+      return(
         <div>
-
-        <Route exact path='/' render={(props)=>{
-          return(
-            <div>
-              <div className="intro-page">
-                <h1 className="swapi-intro-title">swapi-box</h1>
-                <NavLink to='/landingpage' className='nav'><button className="intro-swapi-button">
-                  <img src={rebelIcon} width="80" height="80" />
-                  </button></NavLink>
-                <main className="main-div">
-                <div className="crawl-text-div">
-                <section className="filmtext-content">
-                <div className='film-text'>
-                <p>{scroll}</p>
-                <h2>{title}</h2>
-                <h5>{date}</h5>
+          <Route exact path='/' render={()=>{
+            return(
+              <div>
+                <div className="intro-page">
+                  <h1 className="swapi-intro-title">swapi-box</h1>
+                  <NavLink to='/landingpage' className='nav'><button className="intro-swapi-button">
+                    <img src={rebelIcon} width="80" height="80"/>
+                    </button></NavLink>
+                      <main className="main-div">
+                        <div className="crawl-text-div">
+                        <section className="filmtext-content">
+                        <div className='film-text'>
+                        <p>{scroll}</p>
+                        <h2>{title}</h2>
+                        <h5>{date}</h5>
+                        </div>
+                        </section>
+                        </div>
+                      </main>
                 </div>
-                </section>
-                </div>
-                </main>
               </div>
-
-              <Route path='/landingpage' render={()=>{
-                return(<LandingPage
-                getVehicleCards={this.getVehicleCards}
-                getPeopleCards={this.getPeopleCards}
-                getPlanetCards={this.getPlanetCards}
-                filmText={this.state.film}
-                allCards={this.state.allCards}
-                favoriteCards={this.state.favoriteCards}
-                toggleFavorite={this.toggleFavorite}
-                displayFavorites={this.displayFavorites}
-                favorites={this.state.favorites}
-                />)
-              }}
-              />
-          </div>
+            )
+          }}
+          />
+        </div>
+      )
+    }else if(!homepage){
+      return(
+        <div>
+        <Route path='/landingpage' render={()=>{
+          return(
+            <LandingPage
+            getVehicleCards={this.getVehicleCards}
+            getPeopleCards={this.getPeopleCards}
+            getPlanetCards={this.getPlanetCards}
+            filmText={this.state.film}
+            allCards={this.state.allCards}
+            favoriteCards={this.state.favoriteCards}
+            toggleFavorite={this.toggleFavorite}
+            displayFavorites={this.displayFavorites}
+            favorites={this.state.favorites}
+            />
           )
-        }}/>
-
-      </div>
-    );
+        }}
+        />
+        </div>
+      )
+    }
   }
 }
+
 
 export default App;
