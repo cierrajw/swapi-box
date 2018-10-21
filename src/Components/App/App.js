@@ -154,7 +154,7 @@ class App extends Component {
 
   openLandingPage = () =>{
     this.setState({
-      homepage: true
+      homepage: false
     })
   }
 
