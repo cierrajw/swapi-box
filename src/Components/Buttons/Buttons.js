@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import person from "../../assets/Images/person.png";
 import planet from "../../assets/Images/planet.png";
 import vehicle from "../../assets/Images/vehicle.png";
+import {NavLink} from 'react-router-dom';
 
 
 
@@ -59,10 +60,18 @@ class Buttons extends Component {
 
     return (
       <section className="buttons-section">
-        <button className={isPeopleClicked} onClick={this.handlePeopleClicked}><img src={person} height="25" width="25" className="icon" />People</button>
-        <button className={isPlanetClicked} onClick={this.handlePlanetClicked}><img src={planet} height="25" width="25" className="icon" />Planets</button>
-        <button className={isVehiclesClicked} onClick={this.handleVehicleClicked}><img src={vehicle} height="25" width="25" className="icon" />Vehicles</button>
-        <button className={isFavoritesClicked} onClick={this.handleFavoriteClick}>Favorites: <span className="num-fave">{numFavorites.length}</span></button>
+        <NavLink to='/people' className='nav'>
+          <button className={isPeopleClicked} onClick={this.handlePeopleClicked}><img src={person} height="25" width="25" className="icon" />People</button>
+        </NavLink>
+        <NavLink to='/planets' className='nav'>
+          <button className={isPlanetClicked} onClick={this.handlePlanetClicked}><img src={planet} height="25" width="25" className="icon" />Planets</button>
+        </NavLink>
+        <NavLink to='/vehicles' className='nav'>
+          <button className={isVehiclesClicked} onClick={this.handleVehicleClicked}><img src={vehicle} height="25" width="25" className="icon" />Vehicles</button>
+        </NavLink>  
+        <NavLink to='/favorites' className='nav'>
+          <button className={isFavoritesClicked} onClick={this.handleFavoriteClick}>Favorites: <span className="num-fave">{numFavorites.length}</span></button>
+        </NavLink>
       </section>
     );
   }
