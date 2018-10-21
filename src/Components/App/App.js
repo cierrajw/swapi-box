@@ -160,46 +160,47 @@ class App extends Component {
       return (
         <div>
 
-        <div className="intro-page">
-          <h1 className="swapi-intro-title">swapi-box</h1>
-          <Link to='/landingpage' className='nav'><button className="intro-swapi-button">
-            <img src={rebelIcon} width="80" height="80" />
-          </button></Link>
-          <main className="main-div">
-            <div className="crawl-text-div">
-              <section className="filmtext-content">
-                <div className='film-text' onClick={this.setRedirect}>
-                  <p>{scroll}</p>
-                  <h2>{title}</h2>
-                  <h5>{date}</h5>
+        <Route exact path='/' render={(props)=>{
+          return(
+            <div>
+              <div className="intro-page">
+                <h1 className="swapi-intro-title">swapi-box</h1>
+                <NavLink to='/landingpage' className='nav'><button className="intro-swapi-button">
+                  <img src={rebelIcon} width="80" height="80" />
+                  </button></NavLink>
+                <main className="main-div">
+                <div className="crawl-text-div">
+                <section className="filmtext-content">
+                <div className='film-text'>
+                <p>{scroll}</p>
+                <h2>{title}</h2>
+                <h5>{date}</h5>
                 </div>
-              </section>
-            </div>
-          </main>
-        </div>
+                </section>
+                </div>
+                </main>
+              </div>
 
-      <Route exact path='/landingpage' render={()=>{
-
-
-        return <LandingPage
-        getVehicleCards={this.getVehicleCards}
-        getPeopleCards={this.getPeopleCards}
-        getPlanetCards={this.getPlanetCards}
-        filmText={this.state.film}
-        allCards={this.state.allCards}
-        favoriteCards={this.state.favoriteCards}
-        toggleFavorite={this.toggleFavorite}
-        displayFavorites={this.displayFavorites}
-        favorites={this.state.favorites}
-        />
-      }}
-      />
-
-      <Route exact path='/landingpage' component={LandingPage}/>
+              <Route path='/landingpage' render={()=>{
+                return(<LandingPage
+                getVehicleCards={this.getVehicleCards}
+                getPeopleCards={this.getPeopleCards}
+                getPlanetCards={this.getPlanetCards}
+                filmText={this.state.film}
+                allCards={this.state.allCards}
+                favoriteCards={this.state.favoriteCards}
+                toggleFavorite={this.toggleFavorite}
+                displayFavorites={this.displayFavorites}
+                favorites={this.state.favorites}
+                />)
+              }}
+              />
+          </div>
+          )
+        }}/>
 
       </div>
     );
-
   }
 }
 
