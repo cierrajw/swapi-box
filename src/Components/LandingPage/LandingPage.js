@@ -17,7 +17,6 @@ class LandingPage extends Component{
     return (
       <div className="LandingPage">
         <main className="component-container">
-
           <section className="right-section">
             <Header className="header" displayFavorites={this.props.displayFavorites} allCards={allCards}/>
             <CardContainer
@@ -34,7 +33,6 @@ class LandingPage extends Component{
               displayFavorites={displayFavorites}
             />
           </section>
-
         </main>
       </div>
     );

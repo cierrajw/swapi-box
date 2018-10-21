@@ -46,9 +46,9 @@ body{
     justify-content: center;
   }
 
-  .header-section{
+  /*.header-section{
     grid-template-columns: 65% 35%;
-  }
+  }*/
 
   .swapi-title{
 

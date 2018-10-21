@@ -17,21 +17,31 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
+      "children": <div
+        className="intro-page"
+      >
         <h1
           className="swapi-intro-title"
         >
           swapi-box
-        </h1>,
-        <button
-          className="intro-swapi-button"
+        </h1>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          className="nav"
+          onClick={[Function]}
+          to="/landingpage"
         >
-          <img
-            height="80"
-            src="rebel-alliance.png"
-            width="80"
-          />
-        </button>,
+          <button
+            className="intro-swapi-button"
+          >
+            <img
+              height="80"
+              src="rebel-alliance.png"
+              width="80"
+            />
+          </button>
+        </NavLink>
         <main
           className="main-div"
         >
@@ -43,7 +53,6 @@ ShallowWrapper {
             >
               <div
                 className="film-text"
-                onClick={[Function]}
               >
                 <p />
                 <h2 />
@@ -51,174 +60,11 @@ ShallowWrapper {
               </div>
             </section>
           </div>
-        </main>,
-      ],
-      "className": "intro-page",
+        </main>
+      </div>,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "swapi-box",
-          "className": "swapi-intro-title",
-        },
-        "ref": null,
-        "rendered": "swapi-box",
-        "type": "h1",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <img
-            height="80"
-            src="rebel-alliance.png"
-            width="80"
-          />,
-          "className": "intro-swapi-button",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "height": "80",
-            "src": "rebel-alliance.png",
-            "width": "80",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "img",
-        },
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="crawl-text-div"
-          >
-            <section
-              className="filmtext-content"
-            >
-              <div
-                className="film-text"
-                onClick={[Function]}
-              >
-                <p />
-                <h2 />
-                <h5 />
-              </div>
-            </section>
-          </div>,
-          "className": "main-div",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <section
-              className="filmtext-content"
-            >
-              <div
-                className="film-text"
-                onClick={[Function]}
-              >
-                <p />
-                <h2 />
-                <h5 />
-              </div>
-            </section>,
-            "className": "crawl-text-div",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="film-text"
-                onClick={[Function]}
-              >
-                <p />
-                <h2 />
-                <h5 />
-              </div>,
-              "className": "filmtext-content",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <p />,
-                  <h2 />,
-                  <h5 />,
-                ],
-                "className": "film-text",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": undefined,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "p",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": undefined,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "h2",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": undefined,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "h5",
-                },
-              ],
-              "type": "div",
-            },
-            "type": "section",
-          },
-          "type": "div",
-        },
-        "type": "main",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -229,15 +75,23 @@ ShallowWrapper {
           >
             swapi-box
           </h1>,
-          <button
-            className="intro-swapi-button"
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            className="nav"
+            onClick={[Function]}
+            to="/landingpage"
           >
-            <img
-              height="80"
-              src="rebel-alliance.png"
-              width="80"
-            />
-          </button>,
+            <button
+              className="intro-swapi-button"
+            >
+              <img
+                height="80"
+                src="rebel-alliance.png"
+                width="80"
+              />
+            </button>
+          </NavLink>,
           <main
             className="main-div"
           >
@@ -249,7 +103,6 @@ ShallowWrapper {
               >
                 <div
                   className="film-text"
-                  onClick={[Function]}
                 >
                   <p />
                   <h2 />
@@ -278,14 +131,22 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": <img
-              height="80"
-              src="rebel-alliance.png"
-              width="80"
-            />,
-            "className": "intro-swapi-button",
+            "activeClassName": "active",
+            "aria-current": "page",
+            "children": <button
+              className="intro-swapi-button"
+            >
+              <img
+                height="80"
+                src="rebel-alliance.png"
+                width="80"
+              />
+            </button>,
+            "className": "nav",
+            "onClick": [Function],
+            "to": "/landingpage",
           },
           "ref": null,
           "rendered": Object {
@@ -293,15 +154,30 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "height": "80",
-              "src": "rebel-alliance.png",
-              "width": "80",
+              "children": <img
+                height="80"
+                src="rebel-alliance.png"
+                width="80"
+              />,
+              "className": "intro-swapi-button",
             },
             "ref": null,
-            "rendered": null,
-            "type": "img",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "height": "80",
+                "src": "rebel-alliance.png",
+                "width": "80",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": "button",
           },
-          "type": "button",
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -316,7 +192,6 @@ ShallowWrapper {
               >
                 <div
                   className="film-text"
-                  onClick={[Function]}
                 >
                   <p />
                   <h2 />
@@ -337,7 +212,6 @@ ShallowWrapper {
               >
                 <div
                   className="film-text"
-                  onClick={[Function]}
                 >
                   <p />
                   <h2 />
@@ -354,7 +228,6 @@ ShallowWrapper {
               "props": Object {
                 "children": <div
                   className="film-text"
-                  onClick={[Function]}
                 >
                   <p />
                   <h2 />
@@ -374,7 +247,6 @@ ShallowWrapper {
                     <h5 />,
                   ],
                   "className": "film-text",
-                  "onClick": [Function],
                 },
                 "ref": null,
                 "rendered": Array [
@@ -421,6 +293,294 @@ ShallowWrapper {
           "type": "main",
         },
       ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="intro-page"
+        >
+          <h1
+            className="swapi-intro-title"
+          >
+            swapi-box
+          </h1>
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            className="nav"
+            onClick={[Function]}
+            to="/landingpage"
+          >
+            <button
+              className="intro-swapi-button"
+            >
+              <img
+                height="80"
+                src="rebel-alliance.png"
+                width="80"
+              />
+            </button>
+          </NavLink>
+          <main
+            className="main-div"
+          >
+            <div
+              className="crawl-text-div"
+            >
+              <section
+                className="filmtext-content"
+              >
+                <div
+                  className="film-text"
+                >
+                  <p />
+                  <h2 />
+                  <h5 />
+                </div>
+              </section>
+            </div>
+          </main>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h1
+              className="swapi-intro-title"
+            >
+              swapi-box
+            </h1>,
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="nav"
+              onClick={[Function]}
+              to="/landingpage"
+            >
+              <button
+                className="intro-swapi-button"
+              >
+                <img
+                  height="80"
+                  src="rebel-alliance.png"
+                  width="80"
+                />
+              </button>
+            </NavLink>,
+            <main
+              className="main-div"
+            >
+              <div
+                className="crawl-text-div"
+              >
+                <section
+                  className="filmtext-content"
+                >
+                  <div
+                    className="film-text"
+                  >
+                    <p />
+                    <h2 />
+                    <h5 />
+                  </div>
+                </section>
+              </div>
+            </main>,
+          ],
+          "className": "intro-page",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "swapi-box",
+              "className": "swapi-intro-title",
+            },
+            "ref": null,
+            "rendered": "swapi-box",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "children": <button
+                className="intro-swapi-button"
+              >
+                <img
+                  height="80"
+                  src="rebel-alliance.png"
+                  width="80"
+                />
+              </button>,
+              "className": "nav",
+              "onClick": [Function],
+              "to": "/landingpage",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  height="80"
+                  src="rebel-alliance.png"
+                  width="80"
+                />,
+                "className": "intro-swapi-button",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "height": "80",
+                  "src": "rebel-alliance.png",
+                  "width": "80",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "button",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="crawl-text-div"
+              >
+                <section
+                  className="filmtext-content"
+                >
+                  <div
+                    className="film-text"
+                  >
+                    <p />
+                    <h2 />
+                    <h5 />
+                  </div>
+                </section>
+              </div>,
+              "className": "main-div",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <section
+                  className="filmtext-content"
+                >
+                  <div
+                    className="film-text"
+                  >
+                    <p />
+                    <h2 />
+                    <h5 />
+                  </div>
+                </section>,
+                "className": "crawl-text-div",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="film-text"
+                  >
+                    <p />
+                    <h2 />
+                    <h5 />
+                  </div>,
+                  "className": "filmtext-content",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p />,
+                      <h2 />,
+                      <h5 />,
+                    ],
+                    "className": "film-text",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "h2",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "h5",
+                    },
+                  ],
+                  "type": "div",
+                },
+                "type": "section",
+              },
+              "type": "div",
+            },
+            "type": "main",
+          },
+        ],
+        "type": "div",
+      },
       "type": "div",
     },
   ],
