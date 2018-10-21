@@ -20,13 +20,6 @@ describe('Header', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call handleFavoritesClick when button is clicked', () => {
-    const favoriteCards = [];
-    const mockHandleFavorites = jest.fn();
-    const displayFavoritesMock = jest.fn();
-    const wrapper = shallow(<Header favoriteCards = {favoriteCards} displayFavorites={displayFavoritesMock} />);
-    wrapper.find('button').simulate('click');
-    expect(displayFavoritesMock).toHaveBeenCalled();
-  });
+
 
 });

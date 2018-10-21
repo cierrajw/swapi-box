@@ -47,6 +47,7 @@ body{
     flex-direction: column;
     justify-content: center;
   }
+  
   .card-section-button{
     width: 130px;
   }
