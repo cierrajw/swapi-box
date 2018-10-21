@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 const CardContainer = ({allCards = [], toggleFavorite}) => {
 
+
   const displayCards = allCards.map(card =>
     <Card
       {...card}

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import LandingPage from '../LandingPage/LandingPage';
-import './App.css';
+import IntroPage from '../IntroPage/IntroPage';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
 import rebelIcon from "../../assets/Images/rebel-alliance.png";
+import { BrowserRouter} from 'react-router-dom';
+import { Route, NavLink, Link } from 'react-router-dom';
+import './App.css'
 
 class App extends Component {
   constructor(){
     super();
 
     this.state = {
+      homepage: true,
       film: {},
       peopleCards: [],
       planetsCards: [],
@@ -29,7 +33,7 @@ class App extends Component {
       if (card.id === id) {
         return {...card, favorite: !card.favorite};
         // const filteredCards = this.state[`${type}Cards`].filter(card => return card)
-        // localStorage.setItem(`${type}`, JSON.stringify(filteredCard));  
+        // localStorage.setItem(`${type}`, JSON.stringify(filteredCard));
       }
       return card;
     });
@@ -145,58 +149,63 @@ class App extends Component {
     const randomScroll = filmScrolls[Math.floor(Math.random() * filmScrolls.length + 1)];
     const film = {scroll: randomScroll.opening_crawl, date: randomScroll.release_date, title: randomScroll.title};
     this.setState({
-      film 
+      film
     });
   }
 
-  setRedirect = () =>{
-    this.setState({
-      redirect: true
-    });
+  openLandingPage = () =>{
+    this.state.homepage = false;
   }
+
 
   render() {
-    const { redirect} = this.state;
+    const scroll = this.state.film.scroll;
+    const title = this.state.film.title;
+    const date = this.state.film.date;
 
-    if (redirect){
-      return (
-        <LandingPage
-          getVehicleCards={this.getVehicleCards}
-          getPeopleCards={this.getPeopleCards}
-          getPlanetCards={this.getPlanetCards}
-          filmText={this.state.film}
-          allCards={this.state.allCards}
-          favoriteCards={this.state.favoriteCards}
-          toggleFavorite={this.toggleFavorite}
-          displayFavorites={this.displayFavorites}
-          favorites={this.state.favorites}
-        />
-      );
-
-    } else {
-      const scroll = this.state.film.scroll;
-      const title = this.state.film.title;
-      const date = this.state.film.date;
-      
-      return (
-        <div className="intro-page">
-          <h1 className="swapi-intro-title">swapi-box</h1>
-          <button className="intro-swapi-button">
-            <img src={rebelIcon} width="80" height="80" />
-          </button>
-          <main className="main-div">
-            <div className="crawl-text-div">
-              <section className="filmtext-content">
-                <div className='film-text' onClick={this.setRedirect}>
+    if(this.state.homepage){
+      return(
+        <div>
+          <div className="intro-page">
+            <h1 className="swapi-intro-title">swapi-box</h1>
+            <NavLink to='/landingpage' className='nav' onClick={this.openLandingPage}><button className="intro-swapi-button">
+              <img src={rebelIcon} width="80" height="80"/>
+              </button></NavLink>
+                <main className="main-div">
+                  <div className="crawl-text-div">
+                  <section className="filmtext-content">
+                  <div className='film-text'>
                   <p>{scroll}</p>
                   <h2>{title}</h2>
                   <h5>{date}</h5>
-                </div>
-              </section>
-            </div>
-          </main>
+                  </div>
+                  </section>
+                  </div>
+                </main>
+          </div>
         </div>
-      );
+      )
+    }else if(!this.state.homepage){
+      return(
+        <div>
+        <Route exact path='/landingpage' render={()=>{
+          return(
+            <LandingPage
+            getVehicleCards={this.getVehicleCards}
+            getPeopleCards={this.getPeopleCards}
+            getPlanetCards={this.getPlanetCards}
+            filmText={this.state.film}
+            allCards={this.state.allCards}
+            favoriteCards={this.state.favoriteCards}
+            toggleFavorite={this.toggleFavorite}
+            displayFavorites={this.displayFavorites}
+            favorites={this.state.favorites}
+            />
+          )
+        }}
+        />
+        </div>
+      )
     }
   }
 }
