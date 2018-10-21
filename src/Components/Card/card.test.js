@@ -11,16 +11,16 @@ describe('Card', () => {
 
     mockedHandleClick = jest.fn();
 
-    wrapper = shallow(<Card addFavorites={mockedHandleClick}/>);
+    wrapper = shallow(<Card toggleFavorite={mockedHandleClick}/>);
   });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call addFavorites method from App', () => {
+  it('should call toggleFavorite method from App', () => {
 
-    wrapper.instance().handleFavoriteClick();
+    wrapper.instance().toggleFavorite();
 
     expect(mockedHandleClick).toBeCalled();
 

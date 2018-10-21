@@ -44,14 +44,25 @@ describe('App', () => {
   });
 
   it('should update state when displayFilms is invoked', () => {
-    expect(wrapper.state('filmText')).toEqual('');
-    const expected='Star Wars movie text';
+    expect(wrapper.state('film')).toEqual({});
+    const expected={text: 'Star Wars movie text', date: '12-1-1984'};
     wrapper.instance().displayFilmText();
-    wrapper.setState({filmText: 'Star Wars movie text'});
-    expect(wrapper.state('filmText')).toEqual(expected);
+    wrapper.setState({ film: {text: 'Star Wars movie text', date: '12-1-1984'} });
+    expect(wrapper.state('film')).toEqual(expected);
   });
 
-  it('should update state when setRedistrict is invoked', () => {
+  it('should throw an error if the status is not ok', async() => {
+    const url = 'https://swapi.co/api/films'; 
+    const expected = new Error('Fetch call failed');
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      });
+    });
+    await expect(displayFilmText(url)).rejects.toEqual(expected);
+  })
+
+  it('should update state when setRedirect is invoked', () => {
     const initialState = false;
     const expected = true;
     wrapper.instance().setRedirect();

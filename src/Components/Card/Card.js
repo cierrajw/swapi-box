@@ -66,9 +66,9 @@ const Card = ({
 
       let residentResult = residents.map(resident => {
         if (residents.length > 1) {
-          return <h4 className="resident-list"> {resident}, </h4>;
+          return <p key={resident} className="resident-list"> {resident}, </p>;
         } else {
-          return <h4> {resident} </h4>;
+          return <p key={resident}> {resident} </p>;
         } 
       });
       
