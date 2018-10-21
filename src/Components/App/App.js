@@ -19,7 +19,6 @@ class App extends Component {
       allCards: [],
       favorites: [],
       type: '',
-      redirect: false
     };
   }
 
@@ -154,7 +153,7 @@ class App extends Component {
 
   openLandingPage = () =>{
     this.setState({
-      homepage: true
+      homepage: false
     })
   }
 
