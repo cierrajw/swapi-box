@@ -3,7 +3,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
 import rebelIcon from "../../assets/Images/rebel-alliance.png";
 import { BrowserRouter} from 'react-router-dom';
-import { Route, NavLink, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import './App.css'
 
 class App extends Component {
