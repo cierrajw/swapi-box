@@ -12,41 +12,29 @@ class Buttons extends Component {
     super();
 
     this.state={
-      peopleButtonClicked: false,
-      planetButtonClicked: false,
-      vehiclesButtonClicked: false
+      currentButtonClicked: ''
     };
   }
 
   handlePeopleClicked = () =>{
     this.props.getPeopleCards();
-
     this.setState({
-      peopleButtonClicked: true,
-      planetButtonClicked: false,
-      vehiclesButtonClicked: false
+      currentButtonClicked: 'people'
     });
   }
 
   handlePlanetClicked = () =>{
 
     this.props.getPlanetCards();
-
     this.setState({
-      peopleButtonClicked: false,
-      planetButtonClicked: true,
-      vehiclesButtonClicked: false
+      currentButtonClicked: 'planets',
     });
-
   }
 
   handleVehicleClicked = () => {
     this.props.getVehicleCards();
-
     this.setState({
-      vehiclesButtonClicked: true,
-      peopleButtonClicked: false,
-      planetButtonClicked: false
+      currentButtonClicked: 'vehicles'
     });
   }
 
@@ -60,17 +48,17 @@ class Buttons extends Component {
       return card.favorite;
     })
 
-    const { peopleButtonClicked, planetButtonClicked, vehiclesButtonClicked } = this.state;
-    const isPeopleClicked = peopleButtonClicked ? "button-selected": "card-section-button";
-    const isPlanetClicked = planetButtonClicked ? "button-selected": "card-section-button";
-    const isVehiclesClicked = vehiclesButtonClicked ? "button-selected": "card-section-button";
+    const isPeopleClicked = this.state.currentButtonClicked === 'people' ? "button-selected": "card-section-button";
+    const isPlanetClicked = this.state.currentButtonClicked === 'planets' ? "button-selected": "card-section-button";
+    const isVehiclesClicked = this.state.currentButtonClicked === 'vehicles' ? "button-selected": "card-section-button";
+    const isFavoritesClicked = this.state.currentButtonClicked === 'favorites' ? "button-selected": "favorites-button";
 
     return (
       <section className="buttons-section">
         <button className={isPeopleClicked} onClick={this.handlePeopleClicked}><img src={person} height="25" width="25" className="icon" />People</button>
         <button className={isPlanetClicked} onClick={this.handlePlanetClicked}><img src={planet} height="25" width="25" className="icon" />Planets</button>
         <button className={isVehiclesClicked} onClick={this.handleVehicleClicked}><img src={vehicle} height="25" width="25" className="icon" />Vehicles</button>
-        <button className="favorites-button" onClick={()=>this.handleFavoriteClick()}>Favorites: <span className="num-fave">{numFavorites.length}</span></button>
+        <button className={isFavoritesClicked} onClick={this.handleFavoriteClick}>Favorites: <span className="num-fave">{numFavorites.length}</span></button>
       </section>
     );
   }
@@ -80,6 +68,7 @@ Buttons.propTypes = {
   getPeopleCards: PropTypes.func,
   getPlanetCards: PropTypes.func,
   getVehicleCards: PropTypes.func,
+  displayFavorites: PropTypes.func,
   favoriteCards: PropTypes.array
 };
 
