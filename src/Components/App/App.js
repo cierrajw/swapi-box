@@ -28,6 +28,8 @@ class App extends Component {
     const categoryCards = this.state[`${type}Cards`].map(card => {
       if (card.id === id) {
         return {...card, favorite: !card.favorite};
+        // const filteredCards = this.state[`${type}Cards`].filter(card => return card)
+        // localStorage.setItem(`${type}`, JSON.stringify(filteredCard));  
       }
       return card;
     });
@@ -35,13 +37,19 @@ class App extends Component {
     const allCards = this.state.allCards.map(card => {
       if (card.id === id) {
         return {...card, favorite: !card.favorite};
+
       }
       return card;
     });
 
+    // const filteredCards = this.state.allCards.filter(card => {
+    //   return card.favorite
+    // })
+
     this.setState({
       allCards,
-      [`${type}Cards`]: allCards
+      // favorites: filteredCards,
+      [`${type}Cards`]: categoryCards
     });
   }
 
@@ -59,6 +67,12 @@ class App extends Component {
       allCards: allFavorites,
       favorites: allFavorites
     });
+
+    // if(!this.state.allcards) {
+    //   this.setState({
+    //     allCards: [{ name: "YOU HAVE NO FAVORITES"}]
+    //   });
+    // }
 
   }
 

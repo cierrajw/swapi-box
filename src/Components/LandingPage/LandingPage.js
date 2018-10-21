@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-// import ScrollSection from '../ScrollSection/ScrollSection';
 import Buttons from '../Buttons/Buttons';
 import CardContainer from '../CardContainer/CardContainer';
 import './landing-page.css';
@@ -13,8 +12,7 @@ class LandingPage extends Component{
 
   render(){
 
-    const { filmText, getPeopleCards, getVehicleCards, getPlanetCards, toggleFavorite, allCards} = this.props;
-    // <ScrollSection className="scroll-section" filmText={filmText.scroll}/>
+    const { getPeopleCards, getVehicleCards, getPlanetCards, toggleFavorite, allCards, displayFavorites } = this.props;
 
     return (
       <div className="LandingPage">
@@ -24,16 +22,16 @@ class LandingPage extends Component{
             <Header className="header" displayFavorites={this.props.displayFavorites} allCards={allCards}/>
             <CardContainer
               className="card-container"
-              allCards={this.props.allCards}
-              toggleFavorite={this.props.toggleFavorite} />
+              allCards={allCards}
+              toggleFavorite={toggleFavorite} 
+            />
             <Buttons
               className="buttons-section"
               getPeopleCards={getPeopleCards}
               getVehicleCards={getVehicleCards}
               getPlanetCards={getPlanetCards}
-              allCards={this.props.allCards}
-              displayFavorites={this.props.displayFavorites}
-              favorites={this.props.favorites}
+              allCards={allCards}
+              displayFavorites={displayFavorites}
             />
           </section>
 

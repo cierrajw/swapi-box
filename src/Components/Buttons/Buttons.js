@@ -28,7 +28,7 @@ class Buttons extends Component {
 
     this.props.getPlanetCards();
     this.setState({
-      currentButtonClicked: 'planets',
+      currentButtonClicked: 'planets'
     });
   }
 
@@ -50,7 +50,7 @@ class Buttons extends Component {
     
     const numFavorites = this.props.allCards.filter(card=>{
       return card.favorite; 
-    })
+    });
 
     const isPeopleClicked = this.state.currentButtonClicked === 'people' ? "button-selected": "card-section-button";
     const isPlanetClicked = this.state.currentButtonClicked === 'planets' ? "button-selected": "card-section-button";

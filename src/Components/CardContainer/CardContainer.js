@@ -25,7 +25,8 @@ const CardContainer = ({allCards = [], toggleFavorite}) => {
 
 CardContainer.propTypes = {
   displayedCards: PropTypes.array,
-  toggleFavorite: PropTypes.func
+  toggleFavorite: PropTypes.func,
+  allCards: PropTypes.array
 };
 
 export default CardContainer;

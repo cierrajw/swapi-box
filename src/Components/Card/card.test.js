@@ -5,9 +5,7 @@ import Card from './Card.js';
 describe('Card', () => {
 
   let mockedHandleClick;
-  let mockAddFavorites;
   let wrapper;
-  let props;
 
   beforeEach(()=>{
 

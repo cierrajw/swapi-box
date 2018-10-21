@@ -36,7 +36,7 @@ describe('Helper', () => {
         "population": undefined, 
         "species": undefined, 
         "type": "people"
-      }]
+      }];
       const result = await helper.fetchPeople(url);
       expect(result).toEqual(expected);
     });
