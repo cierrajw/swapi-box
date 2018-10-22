@@ -5,7 +5,6 @@ import CardContainer from '../CardContainer/CardContainer';
 import './landing-page.css';
 import PropTypes from 'prop-types';
 
-
 class LandingPage extends Component{
   constructor(){
     super();

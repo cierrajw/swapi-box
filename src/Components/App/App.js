@@ -16,8 +16,7 @@ class App extends Component {
       planetsCards: [],
       vehiclesCards: [],
       allCards: [],
-      favorites: [],
-      type: ''
+      favorites: []
     };
   }
 
@@ -28,11 +27,7 @@ class App extends Component {
   toggleFavorite = (id, type) =>{
     const categoryCards = this.state[`${type}Cards`].map(card => {
       if (card.id === id) {
-        const foundCard = {...card, favorite: !card.favorite};
-        const unselectedCards = this.state[`${type}Cards`].filter(card => card.id !== id);
-        const combineCards = [...unselectedCards, foundCard];
-        localStorage.setItem(`${type}`, JSON.stringify(combineCards));
-        // this.setState({ `${type}Cards`: combineCards })
+        return {...card, favorite: !card.favorite};
       }
       return card;
     });
@@ -40,23 +35,15 @@ class App extends Component {
     const allCards = this.state.allCards.map(card => {
       if (card.id === id) {
         return {...card, favorite: !card.favorite};
-
       }
       return card;
     });
 
-    // const filteredCards = this.state.allCards.filter(card => {
-    //   return card.favorite
-    // })
-
     this.setState({
       allCards,
-      // favorites: filteredCards,
       [`${type}Cards`]: categoryCards
     });
   }
-
-
 
   displayFavorites = () => {
 
@@ -70,12 +57,6 @@ class App extends Component {
       allCards: allFavorites,
       favorites: allFavorites
     });
-
-    // if(!this.state.allcards) {
-    //   this.setState({
-    //     allCards: [{ name: "YOU HAVE NO FAVORITES"}]
-    //   });
-    // }
 
   }
 
@@ -92,7 +73,6 @@ class App extends Component {
     }
 
     const peopleStorage = localStorage.getItem('people');
-    // this.setState({ allCards: JSON.parse(peopleStorage) });
     this.setState({ allCards: JSON.parse(peopleStorage) });
 
   }
