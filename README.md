@@ -1,19 +1,19 @@
 
-##SWAPIbox
+## SWAPIbox
 The point of this project was to take static data files and, using React, display the data to the page. Using Jest and Enzyme, we built a test suite for the application.
 
 Project Authors:
 Cierra Washington [GitHub](https://github.com/cierrajw/)
 Megan Haubelt [GitHub](https://github.com/Haub/)
 
-##Built with
+## Built with
 
 - React
 - HTML
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Set Up
+## Set Up
 - Clone this project
 
 - Run npm install from the root directory
