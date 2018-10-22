@@ -23,8 +23,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Run tests with npm test
 
 Our Design: 
-<img src = "../assets/Images/screenshot.png" />
-<img src = "../assets/Images/screenshot1.png" />
+![Swapi Box Intro Page](https://ibb.co/jdbMgV)
+![Swapi Box Main Page](https://ibb.co/cLmRFq)
 
 Wireframe:
-<img src = "../assets/Images/wireframe.png" />
+![Swapi Box Wireframe](https://ibb.co/gwzA8A)
+
