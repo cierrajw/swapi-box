@@ -26,37 +26,47 @@ class App extends Component {
   }
 
   toggleFavorite = (id, type) =>{
-    const categoryCards = this.state[`${type}Cards`].map(card => {
-      if (card.id === id) {
-        const foundCard = {...card, favorite: !card.favorite};
-        const unselectedCards = this.state[`${type}Cards`].filter(card => card.id !== id);
-        const combineCards = [...unselectedCards, foundCard];
-        localStorage.setItem(`${type}`, JSON.stringify(combineCards));
-        // this.setState({ `${type}Cards`: combineCards })
+    const categoryCards = this.state[`${type}Cards`]
+    categoryCards.forEach(card => {
+      if(card.id === id) {
+        card.favorite = !card.favorite;
       }
-      return card;
-    });
+      
+    })
 
     const allCards = this.state.allCards.map(card => {
-      if (card.id === id) {
-        return {...card, favorite: !card.favorite};
-
+      if(card.id === id) {
+        return {...card, favorite: !card.favorite}
       }
       return card;
-    });
-
-    // const filteredCards = this.state.allCards.filter(card => {
-    //   return card.favorite
-    // })
+    })
 
     this.setState({
       allCards,
-      // favorites: filteredCards,
       [`${type}Cards`]: categoryCards
-    });
+    })
   }
 
+  // toggleFavorite = (id, type) =>{
+  //   const categoryCards = this.state[`${type}Cards`].map(card => {
+  //     if(card.id === id) {
+  //       return {...card, favorite: !card.favorite}
+  //     }
+  //     return card
+  //   })
 
+  //   const allCards = this.state.allCards.map(card => {
+  //     if(card.id === id) {
+  //       return {...card, favorite: !card.favorite}
+  //     }
+  //     return card;
+  //   })
+
+  //   this.setState({
+  //     allCards,
+  //     [`${type}Cards`]: categoryCards
+  //   })
+  // }
 
   displayFavorites = () => {
 
