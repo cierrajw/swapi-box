@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Buttons from '../Buttons/Buttons';
 import CardContainer from '../CardContainer/CardContainer';
 import './landing-page.css';
 import PropTypes from 'prop-types';
+
 
 class LandingPage extends Component{
   constructor(){
@@ -13,10 +13,8 @@ class LandingPage extends Component{
 
   render(){
 
-
     const { getPeopleCards, getVehicleCards, getPlanetCards, toggleFavorite, allCards, displayFavorites } = this.props;
 
-    console.log(allCards)
     return (
       <div className="LandingPage">
         <main className="component-container">

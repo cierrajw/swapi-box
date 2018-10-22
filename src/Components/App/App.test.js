@@ -4,11 +4,9 @@ import App from './App';
 
 describe('App', () => {
   let wrapper;
-  let mockEvent;
 
   beforeEach(() => {
     wrapper=shallow(<App />);
-    mockEvent=jest.fn();
   });
 
   it('matches the snapshot', () => {
@@ -59,11 +57,11 @@ describe('App', () => {
         ok: false
       });
     });
-    await expect(displayFilmText(url)).rejects.toEqual(expected);
-  })
+    const result = await wrapper.instance().displayFilmText(url);
+    expect(result).rejects.toEqual(expected);
+  });
 
   it('should update state when setRedirect is invoked', () => {
-    const initialState = false;
     const expected = true;
     wrapper.instance().setRedirect();
     wrapper.setState({redirect: true});

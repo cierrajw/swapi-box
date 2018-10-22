@@ -36,6 +36,7 @@ ShallowWrapper {
             className="intro-swapi-button"
           >
             <img
+              alt=""
               height="80"
               src="rebel-alliance.png"
               width="80"
@@ -86,6 +87,7 @@ ShallowWrapper {
               className="intro-swapi-button"
             >
               <img
+                alt=""
                 height="80"
                 src="rebel-alliance.png"
                 width="80"
@@ -139,6 +141,7 @@ ShallowWrapper {
               className="intro-swapi-button"
             >
               <img
+                alt=""
                 height="80"
                 src="rebel-alliance.png"
                 width="80"
@@ -155,6 +158,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <img
+                alt=""
                 height="80"
                 src="rebel-alliance.png"
                 width="80"
@@ -167,6 +171,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "alt": "",
                 "height": "80",
                 "src": "rebel-alliance.png",
                 "width": "80",
@@ -322,6 +327,7 @@ ShallowWrapper {
               className="intro-swapi-button"
             >
               <img
+                alt=""
                 height="80"
                 src="rebel-alliance.png"
                 width="80"
@@ -372,6 +378,7 @@ ShallowWrapper {
                 className="intro-swapi-button"
               >
                 <img
+                  alt=""
                   height="80"
                   src="rebel-alliance.png"
                   width="80"
@@ -425,6 +432,7 @@ ShallowWrapper {
                 className="intro-swapi-button"
               >
                 <img
+                  alt=""
                   height="80"
                   src="rebel-alliance.png"
                   width="80"
@@ -441,6 +449,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <img
+                  alt=""
                   height="80"
                   src="rebel-alliance.png"
                   width="80"
@@ -453,6 +462,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
+                  "alt": "",
                   "height": "80",
                   "src": "rebel-alliance.png",
                   "width": "80",
