@@ -16,8 +16,7 @@ class App extends Component {
       planetsCards: [],
       vehiclesCards: [],
       allCards: [],
-      favorites: [],
-      type: ''
+      favorites: []
     };
   }
 
@@ -26,47 +25,25 @@ class App extends Component {
   }
 
   toggleFavorite = (id, type) =>{
-    const categoryCards = this.state[`${type}Cards`]
-    categoryCards.forEach(card => {
-      if(card.id === id) {
-        card.favorite = !card.favorite;
-      }
-      
-    })
-
-    const allCards = this.state.allCards.map(card => {
-      if(card.id === id) {
-        return {...card, favorite: !card.favorite}
+    const categoryCards = this.state[`${type}Cards`].map(card => {
+      if (card.id === id) {
+        return {...card, favorite: !card.favorite};
       }
       return card;
-    })
+    });
+
+    const allCards = this.state.allCards.map(card => {
+      if (card.id === id) {
+        return {...card, favorite: !card.favorite};
+      }
+      return card;
+    });
 
     this.setState({
       allCards,
       [`${type}Cards`]: categoryCards
-    })
+    });
   }
-
-  // toggleFavorite = (id, type) =>{
-  //   const categoryCards = this.state[`${type}Cards`].map(card => {
-  //     if(card.id === id) {
-  //       return {...card, favorite: !card.favorite}
-  //     }
-  //     return card
-  //   })
-
-  //   const allCards = this.state.allCards.map(card => {
-  //     if(card.id === id) {
-  //       return {...card, favorite: !card.favorite}
-  //     }
-  //     return card;
-  //   })
-
-  //   this.setState({
-  //     allCards,
-  //     [`${type}Cards`]: categoryCards
-  //   })
-  // }
 
   displayFavorites = () => {
 
@@ -80,12 +57,6 @@ class App extends Component {
       allCards: allFavorites,
       favorites: allFavorites
     });
-
-    // if(!this.state.allcards) {
-    //   this.setState({
-    //     allCards: [{ name: "YOU HAVE NO FAVORITES"}]
-    //   });
-    // }
 
   }
 
@@ -102,7 +73,6 @@ class App extends Component {
     }
 
     const peopleStorage = localStorage.getItem('people');
-    // this.setState({ allCards: JSON.parse(peopleStorage) });
     this.setState({ allCards: JSON.parse(peopleStorage) });
 
   }
