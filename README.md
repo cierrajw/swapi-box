@@ -23,6 +23,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Run tests with npm test
 
 Our Design: 
+<img src="https://ibb.co/jdbMgV />
 ![Swapi Box Intro Page](https://ibb.co/jdbMgV)
 ![Swapi Box Main Page](https://ibb.co/cLmRFq)
 
