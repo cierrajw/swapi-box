@@ -12,8 +12,8 @@ ReactDOM.render(
 
 const router = (
   <BrowserRouter>
-  <App />
+    <App />
   </BrowserRouter>
-)
+);
 
 ReactDOM.render(router, document.getElementById('root'));

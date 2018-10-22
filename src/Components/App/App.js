@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import LandingPage from '../LandingPage/LandingPage';
 import { fetchPeople, fetchVehicles, fetchPlanets} from './helper.js';
 import rebelIcon from "../../assets/Images/rebel-alliance.png";
-import { BrowserRouter} from 'react-router-dom';
 import { Route, NavLink } from 'react-router-dom';
-import './App.css'
+import './App.css';
 
 class App extends Component {
   constructor(){
@@ -18,7 +17,7 @@ class App extends Component {
       vehiclesCards: [],
       allCards: [],
       favorites: [],
-      type: '',
+      type: ''
     };
   }
 
@@ -29,9 +28,11 @@ class App extends Component {
   toggleFavorite = (id, type) =>{
     const categoryCards = this.state[`${type}Cards`].map(card => {
       if (card.id === id) {
-        return {...card, favorite: !card.favorite};
-        // const filteredCards = this.state[`${type}Cards`].filter(card => return card)
-        // localStorage.setItem(`${type}`, JSON.stringify(filteredCard));
+        const foundCard = {...card, favorite: !card.favorite};
+        const unselectedCards = this.state[`${type}Cards`].filter(card => card.id !== id);
+        const combineCards = [...unselectedCards, foundCard];
+        localStorage.setItem(`${type}`, JSON.stringify(combineCards));
+        // this.setState({ `${type}Cards`: combineCards })
       }
       return card;
     });
@@ -154,7 +155,7 @@ class App extends Component {
   openLandingPage = () =>{
     this.setState({
       homepage: false
-    })
+    });
   }
 
 
@@ -163,49 +164,51 @@ class App extends Component {
     const title = this.state.film.title;
     const date = this.state.film.date;
 
-    if(this.state.homepage){
-      return(
+    if (this.state.homepage) {
+      return (
         <div>
           <div className="intro-page">
             <h1 className="swapi-intro-title">swapi-box</h1>
-            <NavLink to='/landingpage' className='nav' onClick={this.openLandingPage}><button className="intro-swapi-button">
-              <img src={rebelIcon} width="80" height="80"/>
-              </button></NavLink>
-                <main className="main-div">
-                  <div className="crawl-text-div">
-                  <section className="filmtext-content">
+            <NavLink to='/landingpage' className='nav' onClick={this.openLandingPage}>
+              <button className="intro-swapi-button">
+                <img src={rebelIcon} width="80" height="80" alt="" />
+              </button>
+            </NavLink>
+            <main className="main-div">
+              <div className="crawl-text-div">
+                <section className="filmtext-content">
                   <div className='film-text'>
-                  <p>{scroll}</p>
-                  <h2>{title}</h2>
-                  <h5>{date}</h5>
+                    <p>{scroll}</p>
+                    <h2>{title}</h2>
+                    <h5>{date}</h5>
                   </div>
-                  </section>
-                  </div>
-                </main>
+                </section>
+              </div>
+            </main>
           </div>
         </div>
-      )
-    }else if(!this.state.homepage){
-      return(
+      );
+    } else if (!this.state.homepage) {
+      return (
         <div>
-        <Route exact path='/landingpage' render={()=>{
-          return(
-            <LandingPage
-            getVehicleCards={this.getVehicleCards}
-            getPeopleCards={this.getPeopleCards}
-            getPlanetCards={this.getPlanetCards}
-            filmText={this.state.film}
-            allCards={this.state.allCards}
-            favoriteCards={this.state.favoriteCards}
-            toggleFavorite={this.toggleFavorite}
-            displayFavorites={this.displayFavorites}
-            favorites={this.state.favorites}
-            />
-          )
-        }}
-        />
+          <Route exact path='/landingpage' render={()=>{
+            return (
+              <LandingPage
+                getVehicleCards={this.getVehicleCards}
+                getPeopleCards={this.getPeopleCards}
+                getPlanetCards={this.getPlanetCards}
+                filmText={this.state.film}
+                allCards={this.state.allCards}
+                favoriteCards={this.state.favoriteCards}
+                toggleFavorite={this.toggleFavorite}
+                displayFavorites={this.displayFavorites}
+                favorites={this.state.favorites}
+              />
+            );
+          }}
+          />
         </div>
-      )
+      );
     }
   }
 }

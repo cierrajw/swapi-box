@@ -64,7 +64,7 @@ const Card = ({
 
     case 'planets':
 
-      let residentResult = residents.map(resident => {
+      const residentResult = residents.map(resident => {
         if (residents.length > 1) {
           return <p key={resident} className="resident-list"> {resident}, </p>;
         } else {

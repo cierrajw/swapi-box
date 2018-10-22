@@ -1,14 +1,10 @@
-import { shallow } from 'enzyme';
 import * as helper from './helper.js';
 
 describe('Helper', () => {
 
-  let mockName;
   let mockPeople;
-  let mockUrl;
 
   beforeEach(()=>{
-    mockUrl = 'https://swapi.co/api/people/';
     mockPeople = {results: [{ "name": "Luke Skywalker" }] };
     window.fetch = jest.fn().mockImplementation(()=>{
       return Promise.resolve({
@@ -53,7 +49,6 @@ describe('Helper', () => {
 
     it('should return an object if fetch is successful', async () => {
       let mockObj = {language: 'anglish', type: 'species'};
-      let mockFetch = jest.fn();
       window.fetch = jest.fn().mockImplementation(()=>{
         return Promise.resolve({
           json: () => Promise.resolve(mockObj)
